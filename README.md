@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Getting Started
 
 Fuck the Git thing
-
+hello everybody
 First, run the development server:
 
 ```bash
