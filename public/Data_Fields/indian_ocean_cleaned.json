@@ -1,0 +1,4241 @@
+[
+  {
+    "id": 1,
+    "latitude": -15.266934,
+    "longitude": 91.761655,
+    "depth": 1604.01,
+    "timestamp": "2024-08-12 00:00:00",
+    "o2": 282.81,
+    "status": "healthy"
+  },
+  {
+    "id": 3,
+    "latitude": -27.288011,
+    "longitude": 53.049434,
+    "depth": 164.44,
+    "timestamp": "2024-12-01 00:00:00",
+    "o2": 238.27,
+    "status": "healthy"
+  },
+  {
+    "id": 5,
+    "latitude": -21.637979,
+    "longitude": 81.150693,
+    "depth": 1392.94,
+    "timestamp": "2024-09-05 00:00:00",
+    "o2": 327.15,
+    "status": "healthy"
+  },
+  {
+    "id": 7,
+    "latitude": -10.898268,
+    "longitude": 69.659053,
+    "depth": 1733.83,
+    "timestamp": "2024-01-22 00:00:00",
+    "o2": 46.13,
+    "status": "hypoxic"
+  },
+  {
+    "id": 8,
+    "latitude": -21.096695,
+    "longitude": 90.708898,
+    "depth": 933.77,
+    "timestamp": "2024-08-10 00:00:00",
+    "o2": 359.51,
+    "status": "healthy"
+  },
+  {
+    "id": 9,
+    "latitude": -5.553587,
+    "longitude": 62.227759,
+    "depth": 1031.23,
+    "timestamp": "2024-12-31 00:00:00",
+    "o2": 218.24,
+    "status": "healthy"
+  },
+  {
+    "id": 10,
+    "latitude": 2.192733,
+    "longitude": 52.974255,
+    "depth": 33.61,
+    "timestamp": "2024-08-30 00:00:00",
+    "o2": 182.78,
+    "status": "healthy"
+  },
+  {
+    "id": 12,
+    "latitude": 6.044993,
+    "longitude": 52.418599,
+    "depth": 530.52,
+    "timestamp": "2024-10-02 00:00:00",
+    "o2": 387.66,
+    "status": "healthy"
+  },
+  {
+    "id": 14,
+    "latitude": -10.859734,
+    "longitude": 79.112781,
+    "depth": 1203.24,
+    "timestamp": "2024-03-24 00:00:00",
+    "o2": 277.11,
+    "status": "healthy"
+  },
+  {
+    "id": 15,
+    "latitude": -7.905653,
+    "longitude": 46.908644,
+    "depth": 1700.46,
+    "timestamp": "2024-01-20 00:00:00",
+    "o2": 292.64,
+    "status": "healthy"
+  },
+  {
+    "id": 16,
+    "latitude": -17.72242,
+    "longitude": 62.535107,
+    "depth": 255.25,
+    "timestamp": "2024-08-24 00:00:00",
+    "o2": 307.25,
+    "status": "healthy"
+  },
+  {
+    "id": 22,
+    "latitude": -35.738753,
+    "longitude": 109.244475,
+    "depth": 1533.14,
+    "timestamp": "2024-08-12 00:00:00",
+    "o2": 244.16,
+    "status": "healthy"
+  },
+  {
+    "id": 24,
+    "latitude": -20.065274,
+    "longitude": 84.318759,
+    "depth": 1140.09,
+    "timestamp": "2024-12-30 00:00:00",
+    "o2": 223.57,
+    "status": "healthy"
+  },
+  {
+    "id": 27,
+    "latitude": -13.653666,
+    "longitude": 79.143994,
+    "depth": 1416.88,
+    "timestamp": "2024-07-09 00:00:00",
+    "o2": 263.55,
+    "status": "healthy"
+  },
+  {
+    "id": 28,
+    "latitude": -26.811487,
+    "longitude": 104.398329,
+    "depth": 1716.54,
+    "timestamp": "2024-07-31 00:00:00",
+    "o2": 187.2,
+    "status": "healthy"
+  },
+  {
+    "id": 31,
+    "latitude": -17.983731,
+    "longitude": 72.47181,
+    "depth": 1393.63,
+    "timestamp": "2024-04-09 00:00:00",
+    "o2": 342.48,
+    "status": "healthy"
+  },
+  {
+    "id": 33,
+    "latitude": -1.111646,
+    "longitude": 81.526177,
+    "depth": 1754.62,
+    "timestamp": "2024-09-23 00:00:00",
+    "o2": 344.0,
+    "status": "healthy"
+  },
+  {
+    "id": 36,
+    "latitude": 2.324303,
+    "longitude": 52.102061,
+    "depth": 1984.95,
+    "timestamp": "2024-11-20 00:00:00",
+    "o2": 339.63,
+    "status": "healthy"
+  },
+  {
+    "id": 37,
+    "latitude": -39.434939,
+    "longitude": 54.37645,
+    "depth": 1504.58,
+    "timestamp": "2024-12-06 00:00:00",
+    "o2": 347.21,
+    "status": "healthy"
+  },
+  {
+    "id": 38,
+    "latitude": -37.609567,
+    "longitude": 52.233438,
+    "depth": 1766.17,
+    "timestamp": "2024-01-18 00:00:00",
+    "o2": 378.95,
+    "status": "healthy"
+  },
+  {
+    "id": 40,
+    "latitude": -31.048174,
+    "longitude": 109.749858,
+    "depth": 381.81,
+    "timestamp": "2024-10-02 00:00:00",
+    "o2": 272.02,
+    "status": "healthy"
+  },
+  {
+    "id": 41,
+    "latitude": -14.669331,
+    "longitude": 67.804354,
+    "depth": 1747.71,
+    "timestamp": "2024-11-08 00:00:00",
+    "o2": 222.84,
+    "status": "healthy"
+  },
+  {
+    "id": 51,
+    "latitude": -33.65297,
+    "longitude": 107.514717,
+    "depth": 1484.97,
+    "timestamp": "2024-09-09 00:00:00",
+    "o2": 298.17,
+    "status": "healthy"
+  },
+  {
+    "id": 52,
+    "latitude": -4.090647,
+    "longitude": 92.235682,
+    "depth": 131.97,
+    "timestamp": "2024-06-13 00:00:00",
+    "o2": 365.02,
+    "status": "healthy"
+  },
+  {
+    "id": 54,
+    "latitude": -23.580637,
+    "longitude": 83.962998,
+    "depth": 28.84,
+    "timestamp": "2024-05-21 00:00:00",
+    "o2": 350.95,
+    "status": "healthy"
+  },
+  {
+    "id": 57,
+    "latitude": 13.941757,
+    "longitude": 66.094784,
+    "depth": 679.69,
+    "timestamp": "2024-03-22 00:00:00",
+    "o2": 367.96,
+    "status": "healthy"
+  },
+  {
+    "id": 60,
+    "latitude": -6.449448,
+    "longitude": 80.877187,
+    "depth": 1727.91,
+    "timestamp": "2024-04-03 00:00:00",
+    "o2": 212.16,
+    "status": "healthy"
+  },
+  {
+    "id": 67,
+    "latitude": -30.552111,
+    "longitude": 77.270048,
+    "depth": 1412.53,
+    "timestamp": "2024-12-20 00:00:00",
+    "o2": 418.02,
+    "status": "healthy"
+  },
+  {
+    "id": 69,
+    "latitude": -32.98458,
+    "longitude": 105.531102,
+    "depth": 260.12,
+    "timestamp": "2024-10-10 00:00:00",
+    "o2": 350.46,
+    "status": "healthy"
+  },
+  {
+    "id": 70,
+    "latitude": 1.997121,
+    "longitude": 92.653774,
+    "depth": 1274.97,
+    "timestamp": "2024-06-20 00:00:00",
+    "o2": 324.91,
+    "status": "healthy"
+  },
+  {
+    "id": 71,
+    "latitude": -31.206292,
+    "longitude": 89.162867,
+    "depth": 1702.19,
+    "timestamp": "2024-04-22 00:00:00",
+    "o2": 304.4,
+    "status": "healthy"
+  },
+  {
+    "id": 72,
+    "latitude": 4.047457,
+    "longitude": 85.273828,
+    "depth": 1053.93,
+    "timestamp": "2024-10-07 00:00:00",
+    "o2": 270.98,
+    "status": "healthy"
+  },
+  {
+    "id": 73,
+    "latitude": -25.445369,
+    "longitude": 105.581017,
+    "depth": 1505.81,
+    "timestamp": "2024-12-24 00:00:00",
+    "o2": 239.74,
+    "status": "healthy"
+  },
+  {
+    "id": 74,
+    "latitude": -31.375981,
+    "longitude": 111.501216,
+    "depth": 1690.6,
+    "timestamp": "2024-10-04 00:00:00",
+    "o2": 367.06,
+    "status": "healthy"
+  },
+  {
+    "id": 75,
+    "latitude": -34.090326,
+    "longitude": 61.556606,
+    "depth": 222.13,
+    "timestamp": "2024-02-05 00:00:00",
+    "o2": 400.24,
+    "status": "healthy"
+  },
+  {
+    "id": 76,
+    "latitude": -29.796203,
+    "longitude": 77.117594,
+    "depth": 1369.84,
+    "timestamp": "2024-04-25 00:00:00",
+    "o2": 384.32,
+    "status": "healthy"
+  },
+  {
+    "id": 77,
+    "latitude": -36.817852,
+    "longitude": 54.675826,
+    "depth": 1813.12,
+    "timestamp": "2024-10-10 00:00:00",
+    "o2": 228.08,
+    "status": "healthy"
+  },
+  {
+    "id": 78,
+    "latitude": -13.840678,
+    "longitude": 53.846574,
+    "depth": 1340.72,
+    "timestamp": "2024-04-22 00:00:00",
+    "o2": 271.67,
+    "status": "healthy"
+  },
+  {
+    "id": 79,
+    "latitude": -10.341583,
+    "longitude": 60.632636,
+    "depth": 954.74,
+    "timestamp": "2024-11-23 00:00:00",
+    "o2": 268.74,
+    "status": "healthy"
+  },
+  {
+    "id": 81,
+    "latitude": -21.051925,
+    "longitude": 109.185709,
+    "depth": 1699.53,
+    "timestamp": "2024-07-04 00:00:00",
+    "o2": 196.23,
+    "status": "healthy"
+  },
+  {
+    "id": 82,
+    "latitude": -25.391999,
+    "longitude": 75.87719,
+    "depth": 727.59,
+    "timestamp": "2024-01-09 00:00:00",
+    "o2": 273.77,
+    "status": "healthy"
+  },
+  {
+    "id": 85,
+    "latitude": -32.551201,
+    "longitude": 61.004782,
+    "depth": 571.77,
+    "timestamp": "2024-04-12 00:00:00",
+    "o2": 402.86,
+    "status": "healthy"
+  },
+  {
+    "id": 87,
+    "latitude": -26.974066,
+    "longitude": 40.216412,
+    "depth": 1425.74,
+    "timestamp": "2024-08-26 00:00:00",
+    "o2": 362.97,
+    "status": "healthy"
+  },
+  {
+    "id": 88,
+    "latitude": -27.205242,
+    "longitude": 83.458646,
+    "depth": 570.09,
+    "timestamp": "2024-10-11 00:00:00",
+    "o2": 335.95,
+    "status": "healthy"
+  },
+  {
+    "id": 93,
+    "latitude": -34.859899,
+    "longitude": 53.324921,
+    "depth": 366.52,
+    "timestamp": "2024-02-02 00:00:00",
+    "o2": 412.66,
+    "status": "healthy"
+  },
+  {
+    "id": 94,
+    "latitude": -37.791748,
+    "longitude": 100.127968,
+    "depth": 866.62,
+    "timestamp": "2024-11-24 00:00:00",
+    "o2": 321.11,
+    "status": "healthy"
+  },
+  {
+    "id": 96,
+    "latitude": 6.725484,
+    "longitude": 56.258795,
+    "depth": 652.27,
+    "timestamp": "2024-08-06 00:00:00",
+    "o2": 189.37,
+    "status": "healthy"
+  },
+  {
+    "id": 100,
+    "latitude": -36.006696,
+    "longitude": 78.540227,
+    "depth": 1605.03,
+    "timestamp": "2024-09-05 00:00:00",
+    "o2": 300.68,
+    "status": "healthy"
+  },
+  {
+    "id": 102,
+    "latitude": -29.073609,
+    "longitude": 98.554699,
+    "depth": 633.31,
+    "timestamp": "2024-11-18 00:00:00",
+    "o2": 343.85,
+    "status": "healthy"
+  },
+  {
+    "id": 103,
+    "latitude": -23.080041,
+    "longitude": 94.811301,
+    "depth": 1821.73,
+    "timestamp": "2024-12-31 00:00:00",
+    "o2": 209.91,
+    "status": "healthy"
+  },
+  {
+    "id": 105,
+    "latitude": -8.447706,
+    "longitude": 90.766707,
+    "depth": 1876.74,
+    "timestamp": "2024-01-23 00:00:00",
+    "o2": 292.28,
+    "status": "healthy"
+  },
+  {
+    "id": 106,
+    "latitude": -5.744639,
+    "longitude": 54.567554,
+    "depth": 1590.51,
+    "timestamp": "2024-03-01 00:00:00",
+    "o2": 311.74,
+    "status": "healthy"
+  },
+  {
+    "id": 107,
+    "latitude": 1.517045,
+    "longitude": 56.648265,
+    "depth": 82.42,
+    "timestamp": "2024-12-10 00:00:00",
+    "o2": 202.72,
+    "status": "healthy"
+  },
+  {
+    "id": 108,
+    "latitude": -26.877952,
+    "longitude": 99.961766,
+    "depth": 1742.46,
+    "timestamp": "2024-04-27 00:00:00",
+    "o2": 402.14,
+    "status": "healthy"
+  },
+  {
+    "id": 110,
+    "latitude": -29.573696,
+    "longitude": 66.395368,
+    "depth": 554.25,
+    "timestamp": "2024-12-14 00:00:00",
+    "o2": 293.95,
+    "status": "healthy"
+  },
+  {
+    "id": 112,
+    "latitude": -27.371138,
+    "longitude": 47.667035,
+    "depth": 1546.47,
+    "timestamp": "2024-03-02 00:00:00",
+    "o2": 283.13,
+    "status": "healthy"
+  },
+  {
+    "id": 114,
+    "latitude": 0.584772,
+    "longitude": 81.366808,
+    "depth": 1198.54,
+    "timestamp": "2024-01-12 00:00:00",
+    "o2": 219.2,
+    "status": "healthy"
+  },
+  {
+    "id": 115,
+    "latitude": -5.917814,
+    "longitude": 68.902901,
+    "depth": 1330.92,
+    "timestamp": "2024-02-14 00:00:00",
+    "o2": 401.98,
+    "status": "healthy"
+  },
+  {
+    "id": 122,
+    "latitude": -11.545092,
+    "longitude": 88.072653,
+    "depth": 200.52,
+    "timestamp": "2024-02-15 00:00:00",
+    "o2": 372.85,
+    "status": "healthy"
+  },
+  {
+    "id": 127,
+    "latitude": -6.919297,
+    "longitude": 89.275042,
+    "depth": 734.42,
+    "timestamp": "2024-02-26 00:00:00",
+    "o2": 400.73,
+    "status": "healthy"
+  },
+  {
+    "id": 129,
+    "latitude": -16.963742,
+    "longitude": 60.095828,
+    "depth": 429.78,
+    "timestamp": "2024-08-18 00:00:00",
+    "o2": 367.68,
+    "status": "healthy"
+  },
+  {
+    "id": 130,
+    "latitude": -37.617446,
+    "longitude": 95.289054,
+    "depth": 1219.09,
+    "timestamp": "2024-07-06 00:00:00",
+    "o2": 276.75,
+    "status": "healthy"
+  },
+  {
+    "id": 131,
+    "latitude": -28.511897,
+    "longitude": 73.813158,
+    "depth": 52.96,
+    "timestamp": "2024-02-18 00:00:00",
+    "o2": 212.96,
+    "status": "healthy"
+  },
+  {
+    "id": 134,
+    "latitude": -10.299266,
+    "longitude": 91.82699,
+    "depth": 1318.44,
+    "timestamp": "2024-03-15 00:00:00",
+    "o2": 312.72,
+    "status": "healthy"
+  },
+  {
+    "id": 136,
+    "latitude": 12.003459,
+    "longitude": 66.889134,
+    "depth": 303.63,
+    "timestamp": "2024-04-02 00:00:00",
+    "o2": 265.71,
+    "status": "healthy"
+  },
+  {
+    "id": 137,
+    "latitude": -6.498594,
+    "longitude": 58.40572,
+    "depth": 440.88,
+    "timestamp": "2024-08-29 00:00:00",
+    "o2": 182.56,
+    "status": "healthy"
+  },
+  {
+    "id": 138,
+    "latitude": -27.303347,
+    "longitude": 76.269986,
+    "depth": 539.69,
+    "timestamp": "2024-08-24 00:00:00",
+    "o2": 379.38,
+    "status": "healthy"
+  },
+  {
+    "id": 140,
+    "latitude": -13.614965,
+    "longitude": 73.825378,
+    "depth": 537.71,
+    "timestamp": "2024-08-04 00:00:00",
+    "o2": 335.19,
+    "status": "healthy"
+  },
+  {
+    "id": 142,
+    "latitude": -3.431324,
+    "longitude": 74.0689,
+    "depth": 754.0,
+    "timestamp": "2024-01-10 00:00:00",
+    "o2": 403.1,
+    "status": "healthy"
+  },
+  {
+    "id": 143,
+    "latitude": -11.305668,
+    "longitude": 76.095703,
+    "depth": 1739.26,
+    "timestamp": "2024-08-16 00:00:00",
+    "o2": 182.92,
+    "status": "healthy"
+  },
+  {
+    "id": 147,
+    "latitude": -30.650425,
+    "longitude": 108.626549,
+    "depth": 159.23,
+    "timestamp": "2024-10-22 00:00:00",
+    "o2": 337.37,
+    "status": "healthy"
+  },
+  {
+    "id": 148,
+    "latitude": -35.021327,
+    "longitude": 71.328236,
+    "depth": 1776.21,
+    "timestamp": "2024-11-22 00:00:00",
+    "o2": 372.52,
+    "status": "healthy"
+  },
+  {
+    "id": 149,
+    "latitude": -23.561056,
+    "longitude": 77.913319,
+    "depth": 1478.87,
+    "timestamp": "2024-08-26 00:00:00",
+    "o2": 278.05,
+    "status": "healthy"
+  },
+  {
+    "id": 151,
+    "latitude": -9.468212,
+    "longitude": 42.718211,
+    "depth": 1668.15,
+    "timestamp": "2024-12-29 00:00:00",
+    "o2": 47.69,
+    "status": "hypoxic"
+  },
+  {
+    "id": 152,
+    "latitude": -7.033908,
+    "longitude": 60.368678,
+    "depth": 1940.55,
+    "timestamp": "2024-11-19 00:00:00",
+    "o2": 339.93,
+    "status": "healthy"
+  },
+  {
+    "id": 153,
+    "latitude": 7.762758,
+    "longitude": 57.553588,
+    "depth": 1944.81,
+    "timestamp": "2024-07-15 00:00:00",
+    "o2": 398.57,
+    "status": "healthy"
+  },
+  {
+    "id": 154,
+    "latitude": -37.728636,
+    "longitude": 64.05862,
+    "depth": 134.82,
+    "timestamp": "2024-06-28 00:00:00",
+    "o2": 364.02,
+    "status": "healthy"
+  },
+  {
+    "id": 158,
+    "latitude": -1.419421,
+    "longitude": 69.225888,
+    "depth": 1421.34,
+    "timestamp": "2024-02-13 00:00:00",
+    "o2": 386.51,
+    "status": "healthy"
+  },
+  {
+    "id": 160,
+    "latitude": -6.626849,
+    "longitude": 93.932532,
+    "depth": 483.13,
+    "timestamp": "2024-01-05 00:00:00",
+    "o2": 342.55,
+    "status": "healthy"
+  },
+  {
+    "id": 161,
+    "latitude": -2.731566,
+    "longitude": 60.675097,
+    "depth": 1339.59,
+    "timestamp": "2024-05-06 00:00:00",
+    "o2": 413.94,
+    "status": "healthy"
+  },
+  {
+    "id": 162,
+    "latitude": -10.462112,
+    "longitude": 87.296727,
+    "depth": 461.12,
+    "timestamp": "2024-05-19 00:00:00",
+    "o2": 419.98,
+    "status": "healthy"
+  },
+  {
+    "id": 163,
+    "latitude": -26.526375,
+    "longitude": 97.285322,
+    "depth": 293.72,
+    "timestamp": "2024-03-04 00:00:00",
+    "o2": 207.65,
+    "status": "healthy"
+  },
+  {
+    "id": 166,
+    "latitude": 11.505932,
+    "longitude": 60.995073,
+    "depth": 1750.98,
+    "timestamp": "2024-11-04 00:00:00",
+    "o2": 212.35,
+    "status": "healthy"
+  },
+  {
+    "id": 168,
+    "latitude": -25.078292,
+    "longitude": 53.179205,
+    "depth": 488.03,
+    "timestamp": "2024-10-03 00:00:00",
+    "o2": 331.79,
+    "status": "healthy"
+  },
+  {
+    "id": 170,
+    "latitude": -6.821863,
+    "longitude": 59.38371,
+    "depth": 1165.82,
+    "timestamp": "2024-09-18 00:00:00",
+    "o2": 220.65,
+    "status": "healthy"
+  },
+  {
+    "id": 171,
+    "latitude": -1.555957,
+    "longitude": 94.188408,
+    "depth": 1015.65,
+    "timestamp": "2024-03-23 00:00:00",
+    "o2": 363.07,
+    "status": "healthy"
+  },
+  {
+    "id": 172,
+    "latitude": -10.64994,
+    "longitude": 68.741056,
+    "depth": 756.68,
+    "timestamp": "2024-09-26 00:00:00",
+    "o2": 184.09,
+    "status": "healthy"
+  },
+  {
+    "id": 174,
+    "latitude": -1.941969,
+    "longitude": 80.906946,
+    "depth": 755.75,
+    "timestamp": "2024-05-01 00:00:00",
+    "o2": 330.77,
+    "status": "healthy"
+  },
+  {
+    "id": 178,
+    "latitude": -39.887046,
+    "longitude": 117.946612,
+    "depth": 416.1,
+    "timestamp": "2024-01-25 00:00:00",
+    "o2": 237.68,
+    "status": "healthy"
+  },
+  {
+    "id": 180,
+    "latitude": -7.635461,
+    "longitude": 50.395525,
+    "depth": 1842.89,
+    "timestamp": "2024-07-15 00:00:00",
+    "o2": 61.14,
+    "status": "hypoxic"
+  },
+  {
+    "id": 184,
+    "latitude": -32.115367,
+    "longitude": 97.737555,
+    "depth": 217.64,
+    "timestamp": "2024-07-12 00:00:00",
+    "o2": 35.56,
+    "status": "hypoxic"
+  },
+  {
+    "id": 185,
+    "latitude": -27.629832,
+    "longitude": 100.733454,
+    "depth": 1732.02,
+    "timestamp": "2024-10-07 00:00:00",
+    "o2": 412.52,
+    "status": "healthy"
+  },
+  {
+    "id": 186,
+    "latitude": -11.480549,
+    "longitude": 41.169781,
+    "depth": 1386.79,
+    "timestamp": "2024-04-08 00:00:00",
+    "o2": 255.34,
+    "status": "healthy"
+  },
+  {
+    "id": 188,
+    "latitude": -38.428234,
+    "longitude": 58.173472,
+    "depth": 909.88,
+    "timestamp": "2024-09-03 00:00:00",
+    "o2": 237.4,
+    "status": "healthy"
+  },
+  {
+    "id": 189,
+    "latitude": -28.466059,
+    "longitude": 55.874327,
+    "depth": 896.04,
+    "timestamp": "2024-02-11 00:00:00",
+    "o2": 196.67,
+    "status": "healthy"
+  },
+  {
+    "id": 191,
+    "latitude": -12.825691,
+    "longitude": 93.468494,
+    "depth": 1571.99,
+    "timestamp": "2024-04-30 00:00:00",
+    "o2": 260.61,
+    "status": "healthy"
+  },
+  {
+    "id": 193,
+    "latitude": -5.015457,
+    "longitude": 86.61395,
+    "depth": 1218.48,
+    "timestamp": "2024-05-21 00:00:00",
+    "o2": 221.05,
+    "status": "healthy"
+  },
+  {
+    "id": 196,
+    "latitude": -11.789588,
+    "longitude": 78.417269,
+    "depth": 1022.75,
+    "timestamp": "2024-12-14 00:00:00",
+    "o2": 204.06,
+    "status": "healthy"
+  },
+  {
+    "id": 197,
+    "latitude": -34.320825,
+    "longitude": 94.452668,
+    "depth": 257.03,
+    "timestamp": "2024-12-05 00:00:00",
+    "o2": 341.6,
+    "status": "healthy"
+  },
+  {
+    "id": 198,
+    "latitude": -32.822482,
+    "longitude": 76.656005,
+    "depth": 757.62,
+    "timestamp": "2024-09-09 00:00:00",
+    "o2": 384.23,
+    "status": "healthy"
+  },
+  {
+    "id": 201,
+    "latitude": -37.20472,
+    "longitude": 100.869134,
+    "depth": 1701.05,
+    "timestamp": "2024-02-24 00:00:00",
+    "o2": 274.84,
+    "status": "healthy"
+  },
+  {
+    "id": 202,
+    "latitude": -20.9809,
+    "longitude": 81.241852,
+    "depth": 970.52,
+    "timestamp": "2024-12-26 00:00:00",
+    "o2": 367.08,
+    "status": "healthy"
+  },
+  {
+    "id": 203,
+    "latitude": -25.590741,
+    "longitude": 92.621659,
+    "depth": 72.59,
+    "timestamp": "2024-12-06 00:00:00",
+    "o2": 245.51,
+    "status": "healthy"
+  },
+  {
+    "id": 205,
+    "latitude": -37.632703,
+    "longitude": 81.637179,
+    "depth": 1044.41,
+    "timestamp": "2024-05-23 00:00:00",
+    "o2": 410.11,
+    "status": "healthy"
+  },
+  {
+    "id": 206,
+    "latitude": -3.048877,
+    "longitude": 93.368824,
+    "depth": 1757.93,
+    "timestamp": "2024-05-29 00:00:00",
+    "o2": 401.84,
+    "status": "healthy"
+  },
+  {
+    "id": 207,
+    "latitude": -20.131195,
+    "longitude": 108.843698,
+    "depth": 68.22,
+    "timestamp": "2024-11-15 00:00:00",
+    "o2": 194.65,
+    "status": "healthy"
+  },
+  {
+    "id": 208,
+    "latitude": 1.320385,
+    "longitude": 77.140867,
+    "depth": 1553.32,
+    "timestamp": "2024-01-19 00:00:00",
+    "o2": 219.89,
+    "status": "healthy"
+  },
+  {
+    "id": 209,
+    "latitude": -26.982326,
+    "longitude": 87.936129,
+    "depth": 523.04,
+    "timestamp": "2024-06-02 00:00:00",
+    "o2": 386.52,
+    "status": "healthy"
+  },
+  {
+    "id": 210,
+    "latitude": -5.453988,
+    "longitude": 86.692428,
+    "depth": 1296.01,
+    "timestamp": "2024-08-31 00:00:00",
+    "o2": 253.15,
+    "status": "healthy"
+  },
+  {
+    "id": 211,
+    "latitude": 9.714251,
+    "longitude": 55.516458,
+    "depth": 12.61,
+    "timestamp": "2024-11-20 00:00:00",
+    "o2": 382.74,
+    "status": "healthy"
+  },
+  {
+    "id": 213,
+    "latitude": 11.631798,
+    "longitude": 59.105087,
+    "depth": 1967.8,
+    "timestamp": "2024-01-11 00:00:00",
+    "o2": 402.4,
+    "status": "healthy"
+  },
+  {
+    "id": 215,
+    "latitude": -36.62552,
+    "longitude": 109.621675,
+    "depth": 205.87,
+    "timestamp": "2024-08-09 00:00:00",
+    "o2": 394.79,
+    "status": "healthy"
+  },
+  {
+    "id": 216,
+    "latitude": -0.057255,
+    "longitude": 43.968923,
+    "depth": 136.39,
+    "timestamp": "2024-11-26 00:00:00",
+    "o2": 270.25,
+    "status": "healthy"
+  },
+  {
+    "id": 218,
+    "latitude": -7.650994,
+    "longitude": 91.791236,
+    "depth": 1787.28,
+    "timestamp": "2024-02-22 00:00:00",
+    "o2": 371.17,
+    "status": "healthy"
+  },
+  {
+    "id": 219,
+    "latitude": -39.232292,
+    "longitude": 30.41407,
+    "depth": 1975.16,
+    "timestamp": "2024-06-15 00:00:00",
+    "o2": 397.91,
+    "status": "healthy"
+  },
+  {
+    "id": 220,
+    "latitude": -31.025723,
+    "longitude": 91.723786,
+    "depth": 871.65,
+    "timestamp": "2024-01-24 00:00:00",
+    "o2": 217.78,
+    "status": "healthy"
+  },
+  {
+    "id": 223,
+    "latitude": 10.787729,
+    "longitude": 53.489435,
+    "depth": 379.79,
+    "timestamp": "2024-06-21 00:00:00",
+    "o2": 195.06,
+    "status": "healthy"
+  },
+  {
+    "id": 224,
+    "latitude": -21.084941,
+    "longitude": 41.744975,
+    "depth": 1564.09,
+    "timestamp": "2024-07-13 00:00:00",
+    "o2": 221.91,
+    "status": "healthy"
+  },
+  {
+    "id": 225,
+    "latitude": -22.117496,
+    "longitude": 76.992506,
+    "depth": 611.18,
+    "timestamp": "2024-11-05 00:00:00",
+    "o2": 189.01,
+    "status": "healthy"
+  },
+  {
+    "id": 227,
+    "latitude": -15.167665,
+    "longitude": 94.129766,
+    "depth": 669.67,
+    "timestamp": "2024-07-10 00:00:00",
+    "o2": 365.32,
+    "status": "healthy"
+  },
+  {
+    "id": 229,
+    "latitude": -2.769967,
+    "longitude": 56.168283,
+    "depth": 1754.56,
+    "timestamp": "2024-04-28 00:00:00",
+    "o2": 194.91,
+    "status": "healthy"
+  },
+  {
+    "id": 231,
+    "latitude": -15.260472,
+    "longitude": 54.654178,
+    "depth": 1726.14,
+    "timestamp": "2024-09-21 00:00:00",
+    "o2": 352.22,
+    "status": "healthy"
+  },
+  {
+    "id": 232,
+    "latitude": -37.898688,
+    "longitude": 37.089679,
+    "depth": 1653.84,
+    "timestamp": "2024-09-19 00:00:00",
+    "o2": 315.28,
+    "status": "healthy"
+  },
+  {
+    "id": 235,
+    "latitude": -9.159341,
+    "longitude": 83.792487,
+    "depth": 1382.79,
+    "timestamp": "2024-05-29 00:00:00",
+    "o2": 302.34,
+    "status": "healthy"
+  },
+  {
+    "id": 236,
+    "latitude": -32.123917,
+    "longitude": 100.868683,
+    "depth": 1278.31,
+    "timestamp": "2024-04-22 00:00:00",
+    "o2": 359.16,
+    "status": "healthy"
+  },
+  {
+    "id": 237,
+    "latitude": -19.125123,
+    "longitude": 55.395168,
+    "depth": 1462.94,
+    "timestamp": "2024-04-24 00:00:00",
+    "o2": 335.56,
+    "status": "healthy"
+  },
+  {
+    "id": 238,
+    "latitude": 2.396314,
+    "longitude": 70.870986,
+    "depth": 1812.93,
+    "timestamp": "2024-08-16 00:00:00",
+    "o2": 207.49,
+    "status": "healthy"
+  },
+  {
+    "id": 240,
+    "latitude": -4.062176,
+    "longitude": 64.025698,
+    "depth": 1686.88,
+    "timestamp": "2024-09-17 00:00:00",
+    "o2": 282.36,
+    "status": "healthy"
+  },
+  {
+    "id": 244,
+    "latitude": -19.819847,
+    "longitude": 41.486795,
+    "depth": 492.92,
+    "timestamp": "2024-02-29 00:00:00",
+    "o2": 187.15,
+    "status": "healthy"
+  },
+  {
+    "id": 245,
+    "latitude": 22.17849,
+    "longitude": 36.134132,
+    "depth": 1251.87,
+    "timestamp": "2024-11-23 00:00:00",
+    "o2": 375.17,
+    "status": "healthy"
+  },
+  {
+    "id": 246,
+    "latitude": -26.530619,
+    "longitude": 69.291165,
+    "depth": 1369.18,
+    "timestamp": "2024-03-18 00:00:00",
+    "o2": 380.93,
+    "status": "healthy"
+  },
+  {
+    "id": 248,
+    "latitude": -34.613354,
+    "longitude": 93.688526,
+    "depth": 961.42,
+    "timestamp": "2024-11-25 00:00:00",
+    "o2": 241.23,
+    "status": "healthy"
+  },
+  {
+    "id": 252,
+    "latitude": -37.238659,
+    "longitude": 85.182861,
+    "depth": 1103.64,
+    "timestamp": "2024-08-24 00:00:00",
+    "o2": 378.23,
+    "status": "healthy"
+  },
+  {
+    "id": 254,
+    "latitude": -39.70013,
+    "longitude": 109.71424,
+    "depth": 1516.72,
+    "timestamp": "2024-11-26 00:00:00",
+    "o2": 348.59,
+    "status": "healthy"
+  },
+  {
+    "id": 255,
+    "latitude": -28.899478,
+    "longitude": 75.37532,
+    "depth": 169.84,
+    "timestamp": "2024-04-17 00:00:00",
+    "o2": 311.06,
+    "status": "healthy"
+  },
+  {
+    "id": 257,
+    "latitude": -38.76741,
+    "longitude": 72.771917,
+    "depth": 1642.08,
+    "timestamp": "2024-11-14 00:00:00",
+    "o2": 370.5,
+    "status": "healthy"
+  },
+  {
+    "id": 262,
+    "latitude": 24.500582,
+    "longitude": 33.887386,
+    "depth": 635.77,
+    "timestamp": "2024-06-21 00:00:00",
+    "o2": 328.43,
+    "status": "healthy"
+  },
+  {
+    "id": 264,
+    "latitude": -19.309505,
+    "longitude": 82.565354,
+    "depth": 156.52,
+    "timestamp": "2024-07-12 00:00:00",
+    "o2": 336.4,
+    "status": "healthy"
+  },
+  {
+    "id": 267,
+    "latitude": -16.27153,
+    "longitude": 75.980631,
+    "depth": 1785.56,
+    "timestamp": "2024-06-18 00:00:00",
+    "o2": 317.38,
+    "status": "healthy"
+  },
+  {
+    "id": 269,
+    "latitude": -36.547641,
+    "longitude": 112.227894,
+    "depth": 1594.36,
+    "timestamp": "2024-07-02 00:00:00",
+    "o2": 379.74,
+    "status": "healthy"
+  },
+  {
+    "id": 271,
+    "latitude": -35.24649,
+    "longitude": 55.805771,
+    "depth": 1485.79,
+    "timestamp": "2024-02-13 00:00:00",
+    "o2": 301.18,
+    "status": "healthy"
+  },
+  {
+    "id": 272,
+    "latitude": -37.643653,
+    "longitude": 61.665409,
+    "depth": 1679.53,
+    "timestamp": "2024-01-10 00:00:00",
+    "o2": 252.59,
+    "status": "healthy"
+  },
+  {
+    "id": 273,
+    "latitude": -22.111942,
+    "longitude": 110.438309,
+    "depth": 476.93,
+    "timestamp": "2024-02-19 00:00:00",
+    "o2": 250.91,
+    "status": "healthy"
+  },
+  {
+    "id": 274,
+    "latitude": -31.015691,
+    "longitude": 89.553278,
+    "depth": 403.05,
+    "timestamp": "2024-08-30 00:00:00",
+    "o2": 30.57,
+    "status": "hypoxic"
+  },
+  {
+    "id": 275,
+    "latitude": -14.34365,
+    "longitude": 90.260861,
+    "depth": 162.54,
+    "timestamp": "2024-07-14 00:00:00",
+    "o2": 224.76,
+    "status": "healthy"
+  },
+  {
+    "id": 279,
+    "latitude": -20.341105,
+    "longitude": 95.409366,
+    "depth": 744.63,
+    "timestamp": "2024-12-14 00:00:00",
+    "o2": 338.65,
+    "status": "healthy"
+  },
+  {
+    "id": 281,
+    "latitude": -28.110324,
+    "longitude": 102.057557,
+    "depth": 1560.71,
+    "timestamp": "2024-04-13 00:00:00",
+    "o2": 240.98,
+    "status": "healthy"
+  },
+  {
+    "id": 282,
+    "latitude": -26.429118,
+    "longitude": 94.009244,
+    "depth": 1246.52,
+    "timestamp": "2024-03-08 00:00:00",
+    "o2": 283.76,
+    "status": "healthy"
+  },
+  {
+    "id": 283,
+    "latitude": -27.115373,
+    "longitude": 50.884414,
+    "depth": 1270.83,
+    "timestamp": "2024-05-22 00:00:00",
+    "o2": 283.03,
+    "status": "healthy"
+  },
+  {
+    "id": 285,
+    "latitude": -34.672438,
+    "longitude": 54.991838,
+    "depth": 1592.78,
+    "timestamp": "2024-08-31 00:00:00",
+    "o2": 254.22,
+    "status": "healthy"
+  },
+  {
+    "id": 286,
+    "latitude": -28.505211,
+    "longitude": 44.992752,
+    "depth": 1873.18,
+    "timestamp": "2024-07-23 00:00:00",
+    "o2": 265.09,
+    "status": "healthy"
+  },
+  {
+    "id": 287,
+    "latitude": -27.790291,
+    "longitude": 106.231759,
+    "depth": 1306.69,
+    "timestamp": "2024-11-29 00:00:00",
+    "o2": 312.84,
+    "status": "healthy"
+  },
+  {
+    "id": 291,
+    "latitude": -39.864655,
+    "longitude": 99.829002,
+    "depth": 492.08,
+    "timestamp": "2024-03-01 00:00:00",
+    "o2": 398.28,
+    "status": "healthy"
+  },
+  {
+    "id": 294,
+    "latitude": 14.100592,
+    "longitude": 65.892044,
+    "depth": 386.42,
+    "timestamp": "2024-10-30 00:00:00",
+    "o2": 32.8,
+    "status": "hypoxic"
+  },
+  {
+    "id": 297,
+    "latitude": 5.993833,
+    "longitude": 54.576079,
+    "depth": 1218.38,
+    "timestamp": "2024-12-08 00:00:00",
+    "o2": 378.82,
+    "status": "healthy"
+  },
+  {
+    "id": 298,
+    "latitude": 2.838944,
+    "longitude": 89.98662,
+    "depth": 1860.69,
+    "timestamp": "2024-04-14 00:00:00",
+    "o2": 324.67,
+    "status": "healthy"
+  },
+  {
+    "id": 300,
+    "latitude": -11.809095,
+    "longitude": 74.82912,
+    "depth": 90.86,
+    "timestamp": "2024-11-01 00:00:00",
+    "o2": 264.13,
+    "status": "healthy"
+  },
+  {
+    "id": 305,
+    "latitude": 24.799004,
+    "longitude": 60.457253,
+    "depth": 1795.38,
+    "timestamp": "2024-06-18 00:00:00",
+    "o2": 306.36,
+    "status": "healthy"
+  },
+  {
+    "id": 309,
+    "latitude": 8.112634,
+    "longitude": 58.60559,
+    "depth": 721.69,
+    "timestamp": "2024-11-09 00:00:00",
+    "o2": 189.21,
+    "status": "healthy"
+  },
+  {
+    "id": 312,
+    "latitude": -29.051312,
+    "longitude": 110.823011,
+    "depth": 495.84,
+    "timestamp": "2024-05-24 00:00:00",
+    "o2": 283.12,
+    "status": "healthy"
+  },
+  {
+    "id": 313,
+    "latitude": -6.285716,
+    "longitude": 94.991059,
+    "depth": 862.46,
+    "timestamp": "2024-09-21 00:00:00",
+    "o2": 190.24,
+    "status": "healthy"
+  },
+  {
+    "id": 314,
+    "latitude": 7.040206,
+    "longitude": 61.394254,
+    "depth": 728.57,
+    "timestamp": "2024-11-23 00:00:00",
+    "o2": 201.56,
+    "status": "healthy"
+  },
+  {
+    "id": 316,
+    "latitude": -12.108478,
+    "longitude": 66.843385,
+    "depth": 1316.91,
+    "timestamp": "2024-01-02 00:00:00",
+    "o2": 392.85,
+    "status": "healthy"
+  },
+  {
+    "id": 320,
+    "latitude": -16.327666,
+    "longitude": 63.889368,
+    "depth": 614.15,
+    "timestamp": "2024-03-08 00:00:00",
+    "o2": 406.32,
+    "status": "healthy"
+  },
+  {
+    "id": 322,
+    "latitude": -30.447256,
+    "longitude": 77.724125,
+    "depth": 1562.52,
+    "timestamp": "2024-04-07 00:00:00",
+    "o2": 398.22,
+    "status": "healthy"
+  },
+  {
+    "id": 324,
+    "latitude": -29.434377,
+    "longitude": 50.814041,
+    "depth": 712.37,
+    "timestamp": "2024-06-03 00:00:00",
+    "o2": 399.69,
+    "status": "healthy"
+  },
+  {
+    "id": 328,
+    "latitude": 11.224982,
+    "longitude": 66.712897,
+    "depth": 1987.13,
+    "timestamp": "2024-02-25 00:00:00",
+    "o2": 394.62,
+    "status": "healthy"
+  },
+  {
+    "id": 329,
+    "latitude": -26.890201,
+    "longitude": 108.747284,
+    "depth": 645.37,
+    "timestamp": "2024-09-18 00:00:00",
+    "o2": 302.12,
+    "status": "healthy"
+  },
+  {
+    "id": 330,
+    "latitude": -35.857241,
+    "longitude": 67.952445,
+    "depth": 146.53,
+    "timestamp": "2024-07-31 00:00:00",
+    "o2": 307.78,
+    "status": "healthy"
+  },
+  {
+    "id": 331,
+    "latitude": -2.76514,
+    "longitude": 89.759567,
+    "depth": 1772.87,
+    "timestamp": "2024-02-09 00:00:00",
+    "o2": 265.94,
+    "status": "healthy"
+  },
+  {
+    "id": 332,
+    "latitude": -8.236055,
+    "longitude": 71.340692,
+    "depth": 1429.48,
+    "timestamp": "2024-12-01 00:00:00",
+    "o2": 318.67,
+    "status": "healthy"
+  },
+  {
+    "id": 334,
+    "latitude": -22.526576,
+    "longitude": 102.272996,
+    "depth": 1220.7,
+    "timestamp": "2024-12-06 00:00:00",
+    "o2": 230.68,
+    "status": "healthy"
+  },
+  {
+    "id": 337,
+    "latitude": 1.162292,
+    "longitude": 71.889958,
+    "depth": 625.59,
+    "timestamp": "2024-04-13 00:00:00",
+    "o2": 284.65,
+    "status": "healthy"
+  },
+  {
+    "id": 345,
+    "latitude": -39.897721,
+    "longitude": 60.200738,
+    "depth": 1164.69,
+    "timestamp": "2024-12-02 00:00:00",
+    "o2": 307.23,
+    "status": "healthy"
+  },
+  {
+    "id": 346,
+    "latitude": -25.241598,
+    "longitude": 71.751787,
+    "depth": 1983.34,
+    "timestamp": "2024-10-04 00:00:00",
+    "o2": 299.51,
+    "status": "healthy"
+  },
+  {
+    "id": 350,
+    "latitude": -2.975444,
+    "longitude": 60.421182,
+    "depth": 1620.32,
+    "timestamp": "2024-10-09 00:00:00",
+    "o2": 403.06,
+    "status": "healthy"
+  },
+  {
+    "id": 354,
+    "latitude": -9.771258,
+    "longitude": 42.717638,
+    "depth": 55.97,
+    "timestamp": "2024-03-08 00:00:00",
+    "o2": 186.28,
+    "status": "healthy"
+  },
+  {
+    "id": 356,
+    "latitude": -36.395592,
+    "longitude": 72.449934,
+    "depth": 843.7,
+    "timestamp": "2024-02-07 00:00:00",
+    "o2": 330.99,
+    "status": "healthy"
+  },
+  {
+    "id": 358,
+    "latitude": 0.860794,
+    "longitude": 67.732516,
+    "depth": 816.65,
+    "timestamp": "2024-10-03 00:00:00",
+    "o2": 338.92,
+    "status": "healthy"
+  },
+  {
+    "id": 359,
+    "latitude": -20.331611,
+    "longitude": 100.531988,
+    "depth": 116.26,
+    "timestamp": "2024-05-09 00:00:00",
+    "o2": 294.33,
+    "status": "healthy"
+  },
+  {
+    "id": 361,
+    "latitude": -29.255516,
+    "longitude": 104.824434,
+    "depth": 477.56,
+    "timestamp": "2024-11-28 00:00:00",
+    "o2": 277.49,
+    "status": "healthy"
+  },
+  {
+    "id": 363,
+    "latitude": -11.635142,
+    "longitude": 58.475723,
+    "depth": 1325.93,
+    "timestamp": "2024-07-01 00:00:00",
+    "o2": 405.03,
+    "status": "healthy"
+  },
+  {
+    "id": 367,
+    "latitude": -26.754011,
+    "longitude": 64.037035,
+    "depth": 1260.51,
+    "timestamp": "2024-02-17 00:00:00",
+    "o2": 305.87,
+    "status": "healthy"
+  },
+  {
+    "id": 370,
+    "latitude": -3.518813,
+    "longitude": 52.817738,
+    "depth": 1675.61,
+    "timestamp": "2024-12-01 00:00:00",
+    "o2": 357.17,
+    "status": "healthy"
+  },
+  {
+    "id": 376,
+    "latitude": -4.984123,
+    "longitude": 51.693693,
+    "depth": 942.58,
+    "timestamp": "2024-02-26 00:00:00",
+    "o2": 227.92,
+    "status": "healthy"
+  },
+  {
+    "id": 381,
+    "latitude": -29.858553,
+    "longitude": 42.524111,
+    "depth": 1375.88,
+    "timestamp": "2024-11-26 00:00:00",
+    "o2": 316.23,
+    "status": "healthy"
+  },
+  {
+    "id": 383,
+    "latitude": 21.826488,
+    "longitude": 104.504413,
+    "depth": 1349.08,
+    "timestamp": "2024-11-18 00:00:00",
+    "o2": 395.44,
+    "status": "healthy"
+  },
+  {
+    "id": 384,
+    "latitude": -37.524351,
+    "longitude": 117.27407,
+    "depth": 1006.81,
+    "timestamp": "2024-04-26 00:00:00",
+    "o2": 293.68,
+    "status": "healthy"
+  },
+  {
+    "id": 385,
+    "latitude": 17.11844,
+    "longitude": 64.137272,
+    "depth": 254.55,
+    "timestamp": "2024-04-03 00:00:00",
+    "o2": 324.8,
+    "status": "healthy"
+  },
+  {
+    "id": 386,
+    "latitude": -25.745075,
+    "longitude": 72.268544,
+    "depth": 1745.69,
+    "timestamp": "2024-09-17 00:00:00",
+    "o2": 387.35,
+    "status": "healthy"
+  },
+  {
+    "id": 387,
+    "latitude": -37.797239,
+    "longitude": 69.060219,
+    "depth": 1407.12,
+    "timestamp": "2024-06-26 00:00:00",
+    "o2": 219.5,
+    "status": "healthy"
+  },
+  {
+    "id": 391,
+    "latitude": -39.679672,
+    "longitude": 52.487917,
+    "depth": 490.3,
+    "timestamp": "2024-04-26 00:00:00",
+    "o2": 332.77,
+    "status": "healthy"
+  },
+  {
+    "id": 392,
+    "latitude": -34.629666,
+    "longitude": 78.726872,
+    "depth": 1225.52,
+    "timestamp": "2024-07-20 00:00:00",
+    "o2": 338.53,
+    "status": "healthy"
+  },
+  {
+    "id": 393,
+    "latitude": -39.491264,
+    "longitude": 71.954874,
+    "depth": 56.75,
+    "timestamp": "2024-01-24 00:00:00",
+    "o2": 264.77,
+    "status": "healthy"
+  },
+  {
+    "id": 394,
+    "latitude": -32.323931,
+    "longitude": 44.051484,
+    "depth": 1507.81,
+    "timestamp": "2024-11-05 00:00:00",
+    "o2": 254.78,
+    "status": "healthy"
+  },
+  {
+    "id": 398,
+    "latitude": -34.375478,
+    "longitude": 46.233143,
+    "depth": 1684.99,
+    "timestamp": "2024-03-29 00:00:00",
+    "o2": 380.83,
+    "status": "healthy"
+  },
+  {
+    "id": 400,
+    "latitude": -18.321868,
+    "longitude": 92.24159,
+    "depth": 1848.65,
+    "timestamp": "2024-09-23 00:00:00",
+    "o2": 324.94,
+    "status": "healthy"
+  },
+  {
+    "id": 405,
+    "latitude": 1.909353,
+    "longitude": 65.769591,
+    "depth": 1052.3,
+    "timestamp": "2024-01-22 00:00:00",
+    "o2": 358.1,
+    "status": "healthy"
+  },
+  {
+    "id": 407,
+    "latitude": 16.27257,
+    "longitude": 60.574294,
+    "depth": 992.52,
+    "timestamp": "2024-10-16 00:00:00",
+    "o2": 188.84,
+    "status": "healthy"
+  },
+  {
+    "id": 409,
+    "latitude": -22.652434,
+    "longitude": 95.764619,
+    "depth": 566.96,
+    "timestamp": "2024-07-13 00:00:00",
+    "o2": 267.24,
+    "status": "healthy"
+  },
+  {
+    "id": 411,
+    "latitude": 23.997878,
+    "longitude": 30.937568,
+    "depth": 1161.03,
+    "timestamp": "2024-10-17 00:00:00",
+    "o2": 373.89,
+    "status": "healthy"
+  },
+  {
+    "id": 412,
+    "latitude": -37.619355,
+    "longitude": 98.377018,
+    "depth": 1493.74,
+    "timestamp": "2024-05-16 00:00:00",
+    "o2": 193.44,
+    "status": "healthy"
+  },
+  {
+    "id": 416,
+    "latitude": -39.238679,
+    "longitude": 60.381849,
+    "depth": 1133.23,
+    "timestamp": "2024-07-15 00:00:00",
+    "o2": 313.87,
+    "status": "healthy"
+  },
+  {
+    "id": 417,
+    "latitude": -33.231359,
+    "longitude": 75.468387,
+    "depth": 916.77,
+    "timestamp": "2024-12-02 00:00:00",
+    "o2": 348.23,
+    "status": "healthy"
+  },
+  {
+    "id": 418,
+    "latitude": -29.104859,
+    "longitude": 64.218174,
+    "depth": 193.89,
+    "timestamp": "2024-06-05 00:00:00",
+    "o2": 260.96,
+    "status": "healthy"
+  },
+  {
+    "id": 420,
+    "latitude": -12.274929,
+    "longitude": 94.239945,
+    "depth": 1434.17,
+    "timestamp": "2024-12-13 00:00:00",
+    "o2": 45.07,
+    "status": "hypoxic"
+  },
+  {
+    "id": 422,
+    "latitude": -2.337686,
+    "longitude": 94.153526,
+    "depth": 669.72,
+    "timestamp": "2024-03-21 00:00:00",
+    "o2": 320.12,
+    "status": "healthy"
+  },
+  {
+    "id": 425,
+    "latitude": -21.127245,
+    "longitude": 77.21536,
+    "depth": 1172.35,
+    "timestamp": "2024-12-07 00:00:00",
+    "o2": 289.76,
+    "status": "healthy"
+  },
+  {
+    "id": 428,
+    "latitude": -36.7466,
+    "longitude": 58.968818,
+    "depth": 1977.2,
+    "timestamp": "2024-02-18 00:00:00",
+    "o2": 306.34,
+    "status": "healthy"
+  },
+  {
+    "id": 429,
+    "latitude": -37.492168,
+    "longitude": 45.999777,
+    "depth": 339.92,
+    "timestamp": "2024-06-15 00:00:00",
+    "o2": 353.34,
+    "status": "healthy"
+  },
+  {
+    "id": 432,
+    "latitude": 2.886094,
+    "longitude": 64.317447,
+    "depth": 694.57,
+    "timestamp": "2024-01-01 00:00:00",
+    "o2": 342.99,
+    "status": "healthy"
+  },
+  {
+    "id": 435,
+    "latitude": -17.298971,
+    "longitude": 65.837668,
+    "depth": 1081.96,
+    "timestamp": "2024-06-13 00:00:00",
+    "o2": 320.67,
+    "status": "healthy"
+  },
+  {
+    "id": 440,
+    "latitude": -3.120148,
+    "longitude": 52.054023,
+    "depth": 1490.4,
+    "timestamp": "2024-01-22 00:00:00",
+    "o2": 60.43,
+    "status": "hypoxic"
+  },
+  {
+    "id": 449,
+    "latitude": -32.528306,
+    "longitude": 84.08024,
+    "depth": 323.06,
+    "timestamp": "2024-05-16 00:00:00",
+    "o2": 245.72,
+    "status": "healthy"
+  },
+  {
+    "id": 451,
+    "latitude": -7.593753,
+    "longitude": 86.463323,
+    "depth": 1355.61,
+    "timestamp": "2024-04-13 00:00:00",
+    "o2": 413.98,
+    "status": "healthy"
+  },
+  {
+    "id": 452,
+    "latitude": -9.836198,
+    "longitude": 80.814487,
+    "depth": 776.34,
+    "timestamp": "2024-08-20 00:00:00",
+    "o2": 217.38,
+    "status": "healthy"
+  },
+  {
+    "id": 453,
+    "latitude": -33.730414,
+    "longitude": 80.311605,
+    "depth": 1257.35,
+    "timestamp": "2024-12-26 00:00:00",
+    "o2": 277.11,
+    "status": "healthy"
+  },
+  {
+    "id": 454,
+    "latitude": -31.258263,
+    "longitude": 105.62951,
+    "depth": 1605.8,
+    "timestamp": "2024-04-20 00:00:00",
+    "o2": 382.54,
+    "status": "healthy"
+  },
+  {
+    "id": 455,
+    "latitude": 18.337319,
+    "longitude": 60.066366,
+    "depth": 1690.22,
+    "timestamp": "2024-09-09 00:00:00",
+    "o2": 279.36,
+    "status": "healthy"
+  },
+  {
+    "id": 457,
+    "latitude": 19.961576,
+    "longitude": 65.61671,
+    "depth": 992.56,
+    "timestamp": "2024-12-18 00:00:00",
+    "o2": 383.22,
+    "status": "healthy"
+  },
+  {
+    "id": 462,
+    "latitude": -35.532461,
+    "longitude": 93.1255,
+    "depth": 1630.05,
+    "timestamp": "2024-01-28 00:00:00",
+    "o2": 372.73,
+    "status": "healthy"
+  },
+  {
+    "id": 464,
+    "latitude": -9.216693,
+    "longitude": 58.393621,
+    "depth": 1916.79,
+    "timestamp": "2024-09-24 00:00:00",
+    "o2": 61.2,
+    "status": "hypoxic"
+  },
+  {
+    "id": 465,
+    "latitude": -2.159382,
+    "longitude": 60.84301,
+    "depth": 1546.74,
+    "timestamp": "2024-02-15 00:00:00",
+    "o2": 208.51,
+    "status": "healthy"
+  },
+  {
+    "id": 467,
+    "latitude": -35.260755,
+    "longitude": 39.179388,
+    "depth": 665.79,
+    "timestamp": "2024-06-07 00:00:00",
+    "o2": 196.21,
+    "status": "healthy"
+  },
+  {
+    "id": 468,
+    "latitude": -27.090653,
+    "longitude": 48.691909,
+    "depth": 1124.3,
+    "timestamp": "2024-01-22 00:00:00",
+    "o2": 205.94,
+    "status": "healthy"
+  },
+  {
+    "id": 471,
+    "latitude": -2.675518,
+    "longitude": 81.513515,
+    "depth": 909.8,
+    "timestamp": "2024-06-13 00:00:00",
+    "o2": 413.89,
+    "status": "healthy"
+  },
+  {
+    "id": 473,
+    "latitude": -39.138733,
+    "longitude": 59.075152,
+    "depth": 741.63,
+    "timestamp": "2024-07-17 00:00:00",
+    "o2": 359.56,
+    "status": "healthy"
+  },
+  {
+    "id": 474,
+    "latitude": -38.80995,
+    "longitude": 93.193739,
+    "depth": 1757.93,
+    "timestamp": "2024-02-04 00:00:00",
+    "o2": 404.22,
+    "status": "healthy"
+  },
+  {
+    "id": 476,
+    "latitude": -39.497399,
+    "longitude": 117.161502,
+    "depth": 1402.49,
+    "timestamp": "2024-12-01 00:00:00",
+    "o2": 327.96,
+    "status": "healthy"
+  },
+  {
+    "id": 479,
+    "latitude": 3.938946,
+    "longitude": 86.655099,
+    "depth": 1090.72,
+    "timestamp": "2024-03-09 00:00:00",
+    "o2": 306.16,
+    "status": "healthy"
+  },
+  {
+    "id": 480,
+    "latitude": -38.677447,
+    "longitude": 65.118884,
+    "depth": 1404.46,
+    "timestamp": "2024-02-04 00:00:00",
+    "o2": 417.07,
+    "status": "healthy"
+  },
+  {
+    "id": 481,
+    "latitude": -24.440629,
+    "longitude": 111.041273,
+    "depth": 1824.39,
+    "timestamp": "2024-03-23 00:00:00",
+    "o2": 384.78,
+    "status": "healthy"
+  },
+  {
+    "id": 482,
+    "latitude": -3.109197,
+    "longitude": 59.125333,
+    "depth": 1318.56,
+    "timestamp": "2024-05-04 00:00:00",
+    "o2": 59.77,
+    "status": "hypoxic"
+  },
+  {
+    "id": 484,
+    "latitude": -2.540829,
+    "longitude": 81.936614,
+    "depth": 1551.54,
+    "timestamp": "2024-12-10 00:00:00",
+    "o2": 263.74,
+    "status": "healthy"
+  },
+  {
+    "id": 486,
+    "latitude": -37.773618,
+    "longitude": 114.895921,
+    "depth": 1754.01,
+    "timestamp": "2024-07-20 00:00:00",
+    "o2": 332.29,
+    "status": "healthy"
+  },
+  {
+    "id": 490,
+    "latitude": -22.619714,
+    "longitude": 97.343495,
+    "depth": 280.86,
+    "timestamp": "2024-09-07 00:00:00",
+    "o2": 252.62,
+    "status": "healthy"
+  },
+  {
+    "id": 491,
+    "latitude": 3.377213,
+    "longitude": 69.549999,
+    "depth": 1113.88,
+    "timestamp": "2024-01-27 00:00:00",
+    "o2": 313.13,
+    "status": "healthy"
+  },
+  {
+    "id": 492,
+    "latitude": -37.357294,
+    "longitude": 91.937431,
+    "depth": 259.49,
+    "timestamp": "2024-02-10 00:00:00",
+    "o2": 225.23,
+    "status": "healthy"
+  },
+  {
+    "id": 493,
+    "latitude": 0.694946,
+    "longitude": 58.825369,
+    "depth": 974.62,
+    "timestamp": "2024-01-11 00:00:00",
+    "o2": 212.57,
+    "status": "healthy"
+  },
+  {
+    "id": 494,
+    "latitude": -23.292108,
+    "longitude": 57.892986,
+    "depth": 1915.15,
+    "timestamp": "2024-10-25 00:00:00",
+    "o2": 284.23,
+    "status": "healthy"
+  },
+  {
+    "id": 495,
+    "latitude": -34.34258,
+    "longitude": 76.642313,
+    "depth": 61.0,
+    "timestamp": "2024-11-12 00:00:00",
+    "o2": 192.62,
+    "status": "healthy"
+  },
+  {
+    "id": 499,
+    "latitude": -9.671268,
+    "longitude": 83.003749,
+    "depth": 1106.35,
+    "timestamp": "2024-12-28 00:00:00",
+    "o2": 410.55,
+    "status": "healthy"
+  },
+  {
+    "id": 506,
+    "latitude": -12.811273,
+    "longitude": 75.174219,
+    "depth": 456.33,
+    "timestamp": "2024-12-13 00:00:00",
+    "o2": 250.24,
+    "status": "healthy"
+  },
+  {
+    "id": 508,
+    "latitude": -28.842868,
+    "longitude": 56.593665,
+    "depth": 623.69,
+    "timestamp": "2024-11-16 00:00:00",
+    "o2": 238.09,
+    "status": "healthy"
+  },
+  {
+    "id": 509,
+    "latitude": -2.910357,
+    "longitude": 78.751214,
+    "depth": 111.09,
+    "timestamp": "2024-12-13 00:00:00",
+    "o2": 181.79,
+    "status": "healthy"
+  },
+  {
+    "id": 510,
+    "latitude": -24.549133,
+    "longitude": 54.566659,
+    "depth": 1237.47,
+    "timestamp": "2024-09-16 00:00:00",
+    "o2": 321.31,
+    "status": "healthy"
+  },
+  {
+    "id": 511,
+    "latitude": -25.887384,
+    "longitude": 56.251683,
+    "depth": 1202.67,
+    "timestamp": "2024-12-30 00:00:00",
+    "o2": 202.75,
+    "status": "healthy"
+  },
+  {
+    "id": 512,
+    "latitude": -36.111369,
+    "longitude": 42.77597,
+    "depth": 887.34,
+    "timestamp": "2024-12-17 00:00:00",
+    "o2": 303.62,
+    "status": "healthy"
+  },
+  {
+    "id": 513,
+    "latitude": -35.454729,
+    "longitude": 39.072646,
+    "depth": 401.55,
+    "timestamp": "2024-09-13 00:00:00",
+    "o2": 335.03,
+    "status": "healthy"
+  },
+  {
+    "id": 518,
+    "latitude": 4.380421,
+    "longitude": 86.628105,
+    "depth": 1040.14,
+    "timestamp": "2024-09-04 00:00:00",
+    "o2": 199.05,
+    "status": "healthy"
+  },
+  {
+    "id": 520,
+    "latitude": -7.070686,
+    "longitude": 87.97118,
+    "depth": 1208.28,
+    "timestamp": "2024-08-19 00:00:00",
+    "o2": 313.09,
+    "status": "healthy"
+  },
+  {
+    "id": 521,
+    "latitude": -15.418435,
+    "longitude": 73.364155,
+    "depth": 1173.89,
+    "timestamp": "2024-12-18 00:00:00",
+    "o2": 188.91,
+    "status": "healthy"
+  },
+  {
+    "id": 522,
+    "latitude": -22.307207,
+    "longitude": 57.335334,
+    "depth": 262.05,
+    "timestamp": "2024-12-10 00:00:00",
+    "o2": 231.8,
+    "status": "healthy"
+  },
+  {
+    "id": 523,
+    "latitude": 1.681372,
+    "longitude": 92.043424,
+    "depth": 494.77,
+    "timestamp": "2024-02-12 00:00:00",
+    "o2": 186.18,
+    "status": "healthy"
+  },
+  {
+    "id": 524,
+    "latitude": -11.571079,
+    "longitude": 60.338137,
+    "depth": 352.84,
+    "timestamp": "2024-05-04 00:00:00",
+    "o2": 208.06,
+    "status": "healthy"
+  },
+  {
+    "id": 525,
+    "latitude": -25.947762,
+    "longitude": 92.64341,
+    "depth": 1850.4,
+    "timestamp": "2024-05-15 00:00:00",
+    "o2": 337.84,
+    "status": "healthy"
+  },
+  {
+    "id": 526,
+    "latitude": -10.009798,
+    "longitude": 81.784186,
+    "depth": 1624.9,
+    "timestamp": "2024-04-13 00:00:00",
+    "o2": 271.21,
+    "status": "healthy"
+  },
+  {
+    "id": 529,
+    "latitude": -29.177939,
+    "longitude": 100.318096,
+    "depth": 1271.13,
+    "timestamp": "2024-08-13 00:00:00",
+    "o2": 214.27,
+    "status": "healthy"
+  },
+  {
+    "id": 533,
+    "latitude": 1.487602,
+    "longitude": 66.020986,
+    "depth": 1491.3,
+    "timestamp": "2024-12-26 00:00:00",
+    "o2": 225.17,
+    "status": "healthy"
+  },
+  {
+    "id": 534,
+    "latitude": -37.537733,
+    "longitude": 95.54638,
+    "depth": 1343.04,
+    "timestamp": "2024-11-29 00:00:00",
+    "o2": 305.07,
+    "status": "healthy"
+  },
+  {
+    "id": 539,
+    "latitude": -10.89796,
+    "longitude": 73.211288,
+    "depth": 1398.71,
+    "timestamp": "2024-05-06 00:00:00",
+    "o2": 344.76,
+    "status": "healthy"
+  },
+  {
+    "id": 540,
+    "latitude": 14.143352,
+    "longitude": 64.59097,
+    "depth": 1066.68,
+    "timestamp": "2024-02-08 00:00:00",
+    "o2": 210.11,
+    "status": "healthy"
+  },
+  {
+    "id": 541,
+    "latitude": -34.832557,
+    "longitude": 77.368732,
+    "depth": 147.3,
+    "timestamp": "2024-06-26 00:00:00",
+    "o2": 249.85,
+    "status": "healthy"
+  },
+  {
+    "id": 542,
+    "latitude": -8.778677,
+    "longitude": 68.674196,
+    "depth": 1.75,
+    "timestamp": "2024-02-01 00:00:00",
+    "o2": 240.76,
+    "status": "healthy"
+  },
+  {
+    "id": 543,
+    "latitude": -21.902618,
+    "longitude": 63.904077,
+    "depth": 380.93,
+    "timestamp": "2024-03-18 00:00:00",
+    "o2": 229.62,
+    "status": "healthy"
+  },
+  {
+    "id": 549,
+    "latitude": -34.655355,
+    "longitude": 76.037114,
+    "depth": 1945.06,
+    "timestamp": "2024-04-30 00:00:00",
+    "o2": 223.07,
+    "status": "healthy"
+  },
+  {
+    "id": 555,
+    "latitude": -27.18873,
+    "longitude": 96.571212,
+    "depth": 775.52,
+    "timestamp": "2024-03-31 00:00:00",
+    "o2": 228.18,
+    "status": "healthy"
+  },
+  {
+    "id": 556,
+    "latitude": -18.052129,
+    "longitude": 65.908909,
+    "depth": 1352.19,
+    "timestamp": "2024-01-22 00:00:00",
+    "o2": 395.38,
+    "status": "healthy"
+  },
+  {
+    "id": 565,
+    "latitude": -39.096857,
+    "longitude": 70.424804,
+    "depth": 252.77,
+    "timestamp": "2024-12-10 00:00:00",
+    "o2": 37.82,
+    "status": "hypoxic"
+  },
+  {
+    "id": 566,
+    "latitude": -35.493351,
+    "longitude": 94.929332,
+    "depth": 413.66,
+    "timestamp": "2024-02-29 00:00:00",
+    "o2": 277.03,
+    "status": "healthy"
+  },
+  {
+    "id": 569,
+    "latitude": 1.092202,
+    "longitude": 69.400662,
+    "depth": 1002.71,
+    "timestamp": "2024-07-14 00:00:00",
+    "o2": 273.69,
+    "status": "healthy"
+  },
+  {
+    "id": 570,
+    "latitude": -35.394856,
+    "longitude": 84.654849,
+    "depth": 502.36,
+    "timestamp": "2024-09-17 00:00:00",
+    "o2": 211.97,
+    "status": "healthy"
+  },
+  {
+    "id": 573,
+    "latitude": 11.623777,
+    "longitude": 64.284271,
+    "depth": 1602.02,
+    "timestamp": "2024-05-24 00:00:00",
+    "o2": 210.25,
+    "status": "healthy"
+  },
+  {
+    "id": 574,
+    "latitude": -2.012154,
+    "longitude": 69.277424,
+    "depth": 706.61,
+    "timestamp": "2024-04-25 00:00:00",
+    "o2": 280.5,
+    "status": "healthy"
+  },
+  {
+    "id": 576,
+    "latitude": -13.958022,
+    "longitude": 82.372773,
+    "depth": 969.89,
+    "timestamp": "2024-08-19 00:00:00",
+    "o2": 273.87,
+    "status": "healthy"
+  },
+  {
+    "id": 577,
+    "latitude": -10.56475,
+    "longitude": 93.310482,
+    "depth": 86.41,
+    "timestamp": "2024-09-22 00:00:00",
+    "o2": 281.62,
+    "status": "healthy"
+  },
+  {
+    "id": 579,
+    "latitude": -4.564796,
+    "longitude": 57.397928,
+    "depth": 47.7,
+    "timestamp": "2024-01-19 00:00:00",
+    "o2": 396.88,
+    "status": "healthy"
+  },
+  {
+    "id": 584,
+    "latitude": -35.292657,
+    "longitude": 60.936006,
+    "depth": 773.78,
+    "timestamp": "2024-01-25 00:00:00",
+    "o2": 239.97,
+    "status": "healthy"
+  },
+  {
+    "id": 585,
+    "latitude": -24.147514,
+    "longitude": 90.466079,
+    "depth": 446.4,
+    "timestamp": "2024-05-30 00:00:00",
+    "o2": 375.11,
+    "status": "healthy"
+  },
+  {
+    "id": 586,
+    "latitude": -0.085942,
+    "longitude": 66.037006,
+    "depth": 1896.45,
+    "timestamp": "2024-04-04 00:00:00",
+    "o2": 196.6,
+    "status": "healthy"
+  },
+  {
+    "id": 588,
+    "latitude": -30.781292,
+    "longitude": 94.180031,
+    "depth": 1975.56,
+    "timestamp": "2024-07-04 00:00:00",
+    "o2": 255.01,
+    "status": "healthy"
+  },
+  {
+    "id": 589,
+    "latitude": -39.381209,
+    "longitude": 61.405685,
+    "depth": 37.54,
+    "timestamp": "2024-01-22 00:00:00",
+    "o2": 333.46,
+    "status": "healthy"
+  },
+  {
+    "id": 593,
+    "latitude": -38.41316,
+    "longitude": 58.212879,
+    "depth": 1024.28,
+    "timestamp": "2024-07-01 00:00:00",
+    "o2": 248.33,
+    "status": "healthy"
+  },
+  {
+    "id": 594,
+    "latitude": -4.320432,
+    "longitude": 56.428362,
+    "depth": 686.39,
+    "timestamp": "2024-01-31 00:00:00",
+    "o2": 195.43,
+    "status": "healthy"
+  },
+  {
+    "id": 595,
+    "latitude": -35.930576,
+    "longitude": 46.940407,
+    "depth": 1575.19,
+    "timestamp": "2024-07-07 00:00:00",
+    "o2": 46.28,
+    "status": "hypoxic"
+  },
+  {
+    "id": 602,
+    "latitude": -5.230128,
+    "longitude": 73.208349,
+    "depth": 642.23,
+    "timestamp": "2024-08-08 00:00:00",
+    "o2": 196.24,
+    "status": "healthy"
+  },
+  {
+    "id": 603,
+    "latitude": -4.126339,
+    "longitude": 75.02611,
+    "depth": 1780.6,
+    "timestamp": "2024-03-10 00:00:00",
+    "o2": 323.67,
+    "status": "healthy"
+  },
+  {
+    "id": 606,
+    "latitude": -13.806757,
+    "longitude": 88.651361,
+    "depth": 411.39,
+    "timestamp": "2024-02-16 00:00:00",
+    "o2": 405.57,
+    "status": "healthy"
+  },
+  {
+    "id": 611,
+    "latitude": -30.929765,
+    "longitude": 43.578866,
+    "depth": 1825.12,
+    "timestamp": "2024-04-12 00:00:00",
+    "o2": 341.67,
+    "status": "healthy"
+  },
+  {
+    "id": 617,
+    "latitude": -22.944688,
+    "longitude": 72.867301,
+    "depth": 684.63,
+    "timestamp": "2024-02-14 00:00:00",
+    "o2": 289.05,
+    "status": "healthy"
+  },
+  {
+    "id": 618,
+    "latitude": -0.328503,
+    "longitude": 79.034334,
+    "depth": 894.67,
+    "timestamp": "2024-11-24 00:00:00",
+    "o2": 394.42,
+    "status": "healthy"
+  },
+  {
+    "id": 622,
+    "latitude": -36.277259,
+    "longitude": 99.205962,
+    "depth": 788.29,
+    "timestamp": "2024-08-07 00:00:00",
+    "o2": 399.87,
+    "status": "healthy"
+  },
+  {
+    "id": 623,
+    "latitude": -6.012732,
+    "longitude": 72.377104,
+    "depth": 1750.83,
+    "timestamp": "2024-04-06 00:00:00",
+    "o2": 220.83,
+    "status": "healthy"
+  },
+  {
+    "id": 624,
+    "latitude": -14.583702,
+    "longitude": 60.680278,
+    "depth": 618.95,
+    "timestamp": "2024-03-16 00:00:00",
+    "o2": 390.23,
+    "status": "healthy"
+  },
+  {
+    "id": 625,
+    "latitude": -23.9473,
+    "longitude": 74.861763,
+    "depth": 384.46,
+    "timestamp": "2024-08-03 00:00:00",
+    "o2": 53.0,
+    "status": "hypoxic"
+  },
+  {
+    "id": 628,
+    "latitude": -14.193367,
+    "longitude": 75.044414,
+    "depth": 961.88,
+    "timestamp": "2024-10-21 00:00:00",
+    "o2": 190.19,
+    "status": "healthy"
+  },
+  {
+    "id": 629,
+    "latitude": -6.762439,
+    "longitude": 92.846228,
+    "depth": 19.94,
+    "timestamp": "2024-12-30 00:00:00",
+    "o2": 234.71,
+    "status": "healthy"
+  },
+  {
+    "id": 630,
+    "latitude": -36.59763,
+    "longitude": 104.684442,
+    "depth": 1355.99,
+    "timestamp": "2024-10-04 00:00:00",
+    "o2": 47.12,
+    "status": "hypoxic"
+  },
+  {
+    "id": 632,
+    "latitude": -24.374145,
+    "longitude": 96.779845,
+    "depth": 1090.68,
+    "timestamp": "2024-10-12 00:00:00",
+    "o2": 376.63,
+    "status": "healthy"
+  },
+  {
+    "id": 633,
+    "latitude": -24.900626,
+    "longitude": 66.410241,
+    "depth": 1119.74,
+    "timestamp": "2024-04-14 00:00:00",
+    "o2": 329.85,
+    "status": "healthy"
+  },
+  {
+    "id": 638,
+    "latitude": -22.840442,
+    "longitude": 64.106365,
+    "depth": 1479.63,
+    "timestamp": "2024-02-14 00:00:00",
+    "o2": 181.31,
+    "status": "healthy"
+  },
+  {
+    "id": 641,
+    "latitude": -11.600744,
+    "longitude": 48.416053,
+    "depth": 428.65,
+    "timestamp": "2024-09-10 00:00:00",
+    "o2": 217.27,
+    "status": "healthy"
+  },
+  {
+    "id": 642,
+    "latitude": -30.58982,
+    "longitude": 106.088318,
+    "depth": 1902.52,
+    "timestamp": "2024-10-27 00:00:00",
+    "o2": 203.16,
+    "status": "healthy"
+  },
+  {
+    "id": 643,
+    "latitude": -11.486778,
+    "longitude": 88.711499,
+    "depth": 981.03,
+    "timestamp": "2024-12-25 00:00:00",
+    "o2": 209.77,
+    "status": "healthy"
+  },
+  {
+    "id": 644,
+    "latitude": -14.61361,
+    "longitude": 90.583739,
+    "depth": 1054.67,
+    "timestamp": "2024-12-18 00:00:00",
+    "o2": 408.92,
+    "status": "healthy"
+  },
+  {
+    "id": 646,
+    "latitude": -39.765326,
+    "longitude": 84.759071,
+    "depth": 1947.77,
+    "timestamp": "2024-05-05 00:00:00",
+    "o2": 401.46,
+    "status": "healthy"
+  },
+  {
+    "id": 648,
+    "latitude": -33.156043,
+    "longitude": 65.487663,
+    "depth": 1935.09,
+    "timestamp": "2024-06-11 00:00:00",
+    "o2": 236.89,
+    "status": "healthy"
+  },
+  {
+    "id": 650,
+    "latitude": -29.450067,
+    "longitude": 63.136247,
+    "depth": 357.81,
+    "timestamp": "2024-08-05 00:00:00",
+    "o2": 280.67,
+    "status": "healthy"
+  },
+  {
+    "id": 653,
+    "latitude": -30.179318,
+    "longitude": 67.901138,
+    "depth": 1024.98,
+    "timestamp": "2024-12-29 00:00:00",
+    "o2": 419.6,
+    "status": "healthy"
+  },
+  {
+    "id": 654,
+    "latitude": -15.198079,
+    "longitude": 83.905706,
+    "depth": 1383.76,
+    "timestamp": "2024-08-17 00:00:00",
+    "o2": 319.02,
+    "status": "healthy"
+  },
+  {
+    "id": 655,
+    "latitude": -22.895315,
+    "longitude": 40.255908,
+    "depth": 1529.92,
+    "timestamp": "2024-11-04 00:00:00",
+    "o2": 181.41,
+    "status": "healthy"
+  },
+  {
+    "id": 659,
+    "latitude": -1.468005,
+    "longitude": 60.217043,
+    "depth": 201.76,
+    "timestamp": "2024-08-07 00:00:00",
+    "o2": 332.46,
+    "status": "healthy"
+  },
+  {
+    "id": 662,
+    "latitude": -26.098102,
+    "longitude": 62.650087,
+    "depth": 1139.93,
+    "timestamp": "2024-11-15 00:00:00",
+    "o2": 417.13,
+    "status": "healthy"
+  },
+  {
+    "id": 664,
+    "latitude": -37.193827,
+    "longitude": 36.742872,
+    "depth": 1270.58,
+    "timestamp": "2024-10-28 00:00:00",
+    "o2": 384.78,
+    "status": "healthy"
+  },
+  {
+    "id": 665,
+    "latitude": -37.893646,
+    "longitude": 92.894527,
+    "depth": 1180.15,
+    "timestamp": "2024-08-15 00:00:00",
+    "o2": 244.89,
+    "status": "healthy"
+  },
+  {
+    "id": 666,
+    "latitude": -13.634185,
+    "longitude": 60.534846,
+    "depth": 736.67,
+    "timestamp": "2024-11-14 00:00:00",
+    "o2": 308.41,
+    "status": "healthy"
+  },
+  {
+    "id": 668,
+    "latitude": -22.847973,
+    "longitude": 100.614208,
+    "depth": 698.27,
+    "timestamp": "2024-07-31 00:00:00",
+    "o2": 346.41,
+    "status": "healthy"
+  },
+  {
+    "id": 672,
+    "latitude": -35.231062,
+    "longitude": 48.932214,
+    "depth": 185.1,
+    "timestamp": "2024-05-30 00:00:00",
+    "o2": 337.59,
+    "status": "healthy"
+  },
+  {
+    "id": 674,
+    "latitude": -2.275827,
+    "longitude": 52.151156,
+    "depth": 216.09,
+    "timestamp": "2024-01-08 00:00:00",
+    "o2": 189.96,
+    "status": "healthy"
+  },
+  {
+    "id": 675,
+    "latitude": -18.146264,
+    "longitude": 70.640865,
+    "depth": 908.75,
+    "timestamp": "2024-02-08 00:00:00",
+    "o2": 298.2,
+    "status": "healthy"
+  },
+  {
+    "id": 676,
+    "latitude": -21.694272,
+    "longitude": 40.528957,
+    "depth": 559.39,
+    "timestamp": "2024-09-26 00:00:00",
+    "o2": 375.54,
+    "status": "healthy"
+  },
+  {
+    "id": 677,
+    "latitude": -10.111233,
+    "longitude": 68.866091,
+    "depth": 955.48,
+    "timestamp": "2024-08-05 00:00:00",
+    "o2": 418.09,
+    "status": "healthy"
+  },
+  {
+    "id": 678,
+    "latitude": -28.411197,
+    "longitude": 94.708964,
+    "depth": 456.05,
+    "timestamp": "2024-12-08 00:00:00",
+    "o2": 279.2,
+    "status": "healthy"
+  },
+  {
+    "id": 680,
+    "latitude": -31.706869,
+    "longitude": 53.628664,
+    "depth": 1213.5,
+    "timestamp": "2024-08-05 00:00:00",
+    "o2": 395.42,
+    "status": "healthy"
+  },
+  {
+    "id": 682,
+    "latitude": -38.63265,
+    "longitude": 65.64729,
+    "depth": 1294.78,
+    "timestamp": "2024-07-06 00:00:00",
+    "o2": 193.92,
+    "status": "healthy"
+  },
+  {
+    "id": 683,
+    "latitude": -28.297371,
+    "longitude": 44.298152,
+    "depth": 24.19,
+    "timestamp": "2024-04-20 00:00:00",
+    "o2": 267.92,
+    "status": "healthy"
+  },
+  {
+    "id": 684,
+    "latitude": -29.073095,
+    "longitude": 47.667947,
+    "depth": 1112.71,
+    "timestamp": "2024-07-26 00:00:00",
+    "o2": 184.67,
+    "status": "healthy"
+  },
+  {
+    "id": 686,
+    "latitude": -15.185681,
+    "longitude": 63.62585,
+    "depth": 1161.57,
+    "timestamp": "2024-02-09 00:00:00",
+    "o2": 380.46,
+    "status": "healthy"
+  },
+  {
+    "id": 688,
+    "latitude": 17.847228,
+    "longitude": 65.285822,
+    "depth": 1027.57,
+    "timestamp": "2024-03-05 00:00:00",
+    "o2": 333.26,
+    "status": "healthy"
+  },
+  {
+    "id": 690,
+    "latitude": 2.401606,
+    "longitude": 57.548835,
+    "depth": 1510.13,
+    "timestamp": "2024-11-14 00:00:00",
+    "o2": 257.21,
+    "status": "healthy"
+  },
+  {
+    "id": 691,
+    "latitude": -21.405383,
+    "longitude": 67.783608,
+    "depth": 667.26,
+    "timestamp": "2024-06-21 00:00:00",
+    "o2": 190.83,
+    "status": "healthy"
+  },
+  {
+    "id": 693,
+    "latitude": -39.010371,
+    "longitude": 97.010271,
+    "depth": 766.67,
+    "timestamp": "2024-03-20 00:00:00",
+    "o2": 44.4,
+    "status": "hypoxic"
+  },
+  {
+    "id": 694,
+    "latitude": 1.031481,
+    "longitude": 64.229831,
+    "depth": 1059.69,
+    "timestamp": "2024-07-28 00:00:00",
+    "o2": 395.47,
+    "status": "healthy"
+  },
+  {
+    "id": 697,
+    "latitude": -15.881243,
+    "longitude": 94.096578,
+    "depth": 826.68,
+    "timestamp": "2024-09-16 00:00:00",
+    "o2": 248.79,
+    "status": "healthy"
+  },
+  {
+    "id": 701,
+    "latitude": -19.04013,
+    "longitude": 60.591797,
+    "depth": 724.56,
+    "timestamp": "2024-11-19 00:00:00",
+    "o2": 400.13,
+    "status": "healthy"
+  },
+  {
+    "id": 704,
+    "latitude": -20.64466,
+    "longitude": 103.425268,
+    "depth": 1712.68,
+    "timestamp": "2024-01-23 00:00:00",
+    "o2": 402.81,
+    "status": "healthy"
+  },
+  {
+    "id": 712,
+    "latitude": -39.592735,
+    "longitude": 72.12074,
+    "depth": 476.89,
+    "timestamp": "2024-11-24 00:00:00",
+    "o2": 290.7,
+    "status": "healthy"
+  },
+  {
+    "id": 716,
+    "latitude": -36.485073,
+    "longitude": 89.214941,
+    "depth": 138.31,
+    "timestamp": "2024-04-30 00:00:00",
+    "o2": 369.3,
+    "status": "healthy"
+  },
+  {
+    "id": 718,
+    "latitude": -27.77833,
+    "longitude": 91.701505,
+    "depth": 339.24,
+    "timestamp": "2024-02-23 00:00:00",
+    "o2": 392.63,
+    "status": "healthy"
+  },
+  {
+    "id": 720,
+    "latitude": -10.693485,
+    "longitude": 87.953929,
+    "depth": 1934.95,
+    "timestamp": "2024-12-21 00:00:00",
+    "o2": 370.32,
+    "status": "healthy"
+  },
+  {
+    "id": 728,
+    "latitude": -20.532806,
+    "longitude": 91.677155,
+    "depth": 1289.7,
+    "timestamp": "2024-03-15 00:00:00",
+    "o2": 254.47,
+    "status": "healthy"
+  },
+  {
+    "id": 729,
+    "latitude": -16.202563,
+    "longitude": 51.813287,
+    "depth": 1474.56,
+    "timestamp": "2024-07-01 00:00:00",
+    "o2": 56.84,
+    "status": "hypoxic"
+  },
+  {
+    "id": 733,
+    "latitude": -22.544922,
+    "longitude": 56.814974,
+    "depth": 1551.54,
+    "timestamp": "2024-02-15 00:00:00",
+    "o2": 367.5,
+    "status": "healthy"
+  },
+  {
+    "id": 735,
+    "latitude": 22.668876,
+    "longitude": 34.3907,
+    "depth": 21.96,
+    "timestamp": "2024-01-26 00:00:00",
+    "o2": 248.34,
+    "status": "healthy"
+  },
+  {
+    "id": 736,
+    "latitude": -26.665802,
+    "longitude": 72.382049,
+    "depth": 761.05,
+    "timestamp": "2024-11-10 00:00:00",
+    "o2": 265.5,
+    "status": "healthy"
+  },
+  {
+    "id": 737,
+    "latitude": -23.38863,
+    "longitude": 101.656465,
+    "depth": 323.09,
+    "timestamp": "2024-07-20 00:00:00",
+    "o2": 212.98,
+    "status": "healthy"
+  },
+  {
+    "id": 738,
+    "latitude": 11.085897,
+    "longitude": 53.349169,
+    "depth": 1802.8,
+    "timestamp": "2024-11-09 00:00:00",
+    "o2": 270.29,
+    "status": "healthy"
+  },
+  {
+    "id": 740,
+    "latitude": -7.507782,
+    "longitude": 70.581462,
+    "depth": 955.61,
+    "timestamp": "2024-09-26 00:00:00",
+    "o2": 205.21,
+    "status": "healthy"
+  },
+  {
+    "id": 742,
+    "latitude": -10.705251,
+    "longitude": 67.57679,
+    "depth": 143.02,
+    "timestamp": "2024-01-31 00:00:00",
+    "o2": 370.43,
+    "status": "healthy"
+  },
+  {
+    "id": 743,
+    "latitude": 4.94213,
+    "longitude": 71.516778,
+    "depth": 1521.11,
+    "timestamp": "2024-02-22 00:00:00",
+    "o2": 208.47,
+    "status": "healthy"
+  },
+  {
+    "id": 745,
+    "latitude": -27.89636,
+    "longitude": 84.24308,
+    "depth": 1472.9,
+    "timestamp": "2024-05-08 00:00:00",
+    "o2": 355.78,
+    "status": "healthy"
+  },
+  {
+    "id": 746,
+    "latitude": -32.91296,
+    "longitude": 67.124591,
+    "depth": 487.39,
+    "timestamp": "2024-06-01 00:00:00",
+    "o2": 410.03,
+    "status": "healthy"
+  },
+  {
+    "id": 754,
+    "latitude": -28.532268,
+    "longitude": 47.455886,
+    "depth": 828.81,
+    "timestamp": "2024-06-04 00:00:00",
+    "o2": 331.28,
+    "status": "healthy"
+  },
+  {
+    "id": 756,
+    "latitude": -28.342481,
+    "longitude": 110.679529,
+    "depth": 759.88,
+    "timestamp": "2024-08-01 00:00:00",
+    "o2": 265.87,
+    "status": "healthy"
+  },
+  {
+    "id": 757,
+    "latitude": -33.014877,
+    "longitude": 57.881828,
+    "depth": 152.44,
+    "timestamp": "2024-06-15 00:00:00",
+    "o2": 208.11,
+    "status": "healthy"
+  },
+  {
+    "id": 758,
+    "latitude": -37.156131,
+    "longitude": 113.937857,
+    "depth": 1667.91,
+    "timestamp": "2024-08-19 00:00:00",
+    "o2": 268.79,
+    "status": "healthy"
+  },
+  {
+    "id": 759,
+    "latitude": 1.590216,
+    "longitude": 78.762995,
+    "depth": 1346.01,
+    "timestamp": "2024-08-25 00:00:00",
+    "o2": 291.95,
+    "status": "healthy"
+  },
+  {
+    "id": 760,
+    "latitude": -25.878042,
+    "longitude": 110.884539,
+    "depth": 1984.57,
+    "timestamp": "2024-01-20 00:00:00",
+    "o2": 305.74,
+    "status": "healthy"
+  },
+  {
+    "id": 762,
+    "latitude": -5.602053,
+    "longitude": 62.538981,
+    "depth": 554.26,
+    "timestamp": "2024-03-03 00:00:00",
+    "o2": 388.31,
+    "status": "healthy"
+  },
+  {
+    "id": 763,
+    "latitude": 5.985861,
+    "longitude": 60.82392,
+    "depth": 1356.11,
+    "timestamp": "2024-08-30 00:00:00",
+    "o2": 371.87,
+    "status": "healthy"
+  },
+  {
+    "id": 764,
+    "latitude": -21.342137,
+    "longitude": 85.221096,
+    "depth": 1316.02,
+    "timestamp": "2024-06-13 00:00:00",
+    "o2": 241.96,
+    "status": "healthy"
+  },
+  {
+    "id": 768,
+    "latitude": -2.989902,
+    "longitude": 66.128837,
+    "depth": 1359.59,
+    "timestamp": "2024-03-27 00:00:00",
+    "o2": 325.37,
+    "status": "healthy"
+  },
+  {
+    "id": 769,
+    "latitude": -33.285847,
+    "longitude": 76.090457,
+    "depth": 1780.28,
+    "timestamp": "2024-06-02 00:00:00",
+    "o2": 341.52,
+    "status": "healthy"
+  },
+  {
+    "id": 772,
+    "latitude": -30.411806,
+    "longitude": 46.287143,
+    "depth": 33.54,
+    "timestamp": "2024-04-16 00:00:00",
+    "o2": 359.04,
+    "status": "healthy"
+  },
+  {
+    "id": 778,
+    "latitude": -36.090247,
+    "longitude": 117.288679,
+    "depth": 57.85,
+    "timestamp": "2024-02-16 00:00:00",
+    "o2": 414.35,
+    "status": "healthy"
+  },
+  {
+    "id": 779,
+    "latitude": -3.075562,
+    "longitude": 64.556906,
+    "depth": 628.36,
+    "timestamp": "2024-07-14 00:00:00",
+    "o2": 265.18,
+    "status": "healthy"
+  },
+  {
+    "id": 781,
+    "latitude": 7.880388,
+    "longitude": 54.872476,
+    "depth": 946.43,
+    "timestamp": "2024-10-19 00:00:00",
+    "o2": 317.13,
+    "status": "healthy"
+  },
+  {
+    "id": 785,
+    "latitude": -2.178174,
+    "longitude": 63.615765,
+    "depth": 342.58,
+    "timestamp": "2024-11-10 00:00:00",
+    "o2": 413.32,
+    "status": "healthy"
+  },
+  {
+    "id": 786,
+    "latitude": -6.030044,
+    "longitude": 59.927917,
+    "depth": 12.99,
+    "timestamp": "2024-06-19 00:00:00",
+    "o2": 241.35,
+    "status": "healthy"
+  },
+  {
+    "id": 788,
+    "latitude": -34.787357,
+    "longitude": 107.259235,
+    "depth": 838.96,
+    "timestamp": "2024-05-19 00:00:00",
+    "o2": 416.85,
+    "status": "healthy"
+  },
+  {
+    "id": 789,
+    "latitude": -24.940136,
+    "longitude": 80.127629,
+    "depth": 936.48,
+    "timestamp": "2024-04-28 00:00:00",
+    "o2": 207.34,
+    "status": "healthy"
+  },
+  {
+    "id": 792,
+    "latitude": -19.895566,
+    "longitude": 77.445617,
+    "depth": 1348.08,
+    "timestamp": "2024-06-08 00:00:00",
+    "o2": 225.7,
+    "status": "healthy"
+  },
+  {
+    "id": 799,
+    "latitude": -33.442411,
+    "longitude": 93.341976,
+    "depth": 860.49,
+    "timestamp": "2024-08-28 00:00:00",
+    "o2": 304.34,
+    "status": "healthy"
+  },
+  {
+    "id": 800,
+    "latitude": -34.404693,
+    "longitude": 95.915706,
+    "depth": 1653.6,
+    "timestamp": "2024-07-31 00:00:00",
+    "o2": 415.68,
+    "status": "healthy"
+  },
+  {
+    "id": 802,
+    "latitude": -8.859527,
+    "longitude": 70.428994,
+    "depth": 902.6,
+    "timestamp": "2024-08-24 00:00:00",
+    "o2": 241.09,
+    "status": "healthy"
+  },
+  {
+    "id": 805,
+    "latitude": 23.716672,
+    "longitude": 103.279052,
+    "depth": 1542.95,
+    "timestamp": "2024-10-09 00:00:00",
+    "o2": 390.01,
+    "status": "healthy"
+  },
+  {
+    "id": 806,
+    "latitude": -12.648276,
+    "longitude": 57.865729,
+    "depth": 5.1,
+    "timestamp": "2024-08-27 00:00:00",
+    "o2": 352.35,
+    "status": "healthy"
+  },
+  {
+    "id": 807,
+    "latitude": -15.212177,
+    "longitude": 69.486006,
+    "depth": 1993.5,
+    "timestamp": "2024-08-08 00:00:00",
+    "o2": 293.65,
+    "status": "healthy"
+  },
+  {
+    "id": 809,
+    "latitude": -39.723193,
+    "longitude": 78.66038,
+    "depth": 688.33,
+    "timestamp": "2024-11-04 00:00:00",
+    "o2": 190.94,
+    "status": "healthy"
+  },
+  {
+    "id": 812,
+    "latitude": -3.321193,
+    "longitude": 59.198888,
+    "depth": 807.18,
+    "timestamp": "2024-01-02 00:00:00",
+    "o2": 352.27,
+    "status": "healthy"
+  },
+  {
+    "id": 813,
+    "latitude": 4.293134,
+    "longitude": 93.286095,
+    "depth": 690.51,
+    "timestamp": "2024-06-09 00:00:00",
+    "o2": 353.15,
+    "status": "healthy"
+  },
+  {
+    "id": 815,
+    "latitude": 7.153127,
+    "longitude": 60.956699,
+    "depth": 634.4,
+    "timestamp": "2024-04-07 00:00:00",
+    "o2": 287.35,
+    "status": "healthy"
+  },
+  {
+    "id": 817,
+    "latitude": -15.740253,
+    "longitude": 86.234284,
+    "depth": 826.85,
+    "timestamp": "2024-07-22 00:00:00",
+    "o2": 259.98,
+    "status": "healthy"
+  },
+  {
+    "id": 818,
+    "latitude": -9.894828,
+    "longitude": 83.558998,
+    "depth": 1697.49,
+    "timestamp": "2024-02-12 00:00:00",
+    "o2": 254.92,
+    "status": "healthy"
+  },
+  {
+    "id": 820,
+    "latitude": -19.525865,
+    "longitude": 92.553886,
+    "depth": 769.94,
+    "timestamp": "2024-12-18 00:00:00",
+    "o2": 255.53,
+    "status": "healthy"
+  },
+  {
+    "id": 822,
+    "latitude": -37.170042,
+    "longitude": 40.76865,
+    "depth": 1963.88,
+    "timestamp": "2024-10-06 00:00:00",
+    "o2": 245.09,
+    "status": "healthy"
+  },
+  {
+    "id": 824,
+    "latitude": -3.464228,
+    "longitude": 84.713177,
+    "depth": 1714.21,
+    "timestamp": "2024-10-05 00:00:00",
+    "o2": 400.47,
+    "status": "healthy"
+  },
+  {
+    "id": 825,
+    "latitude": -26.527803,
+    "longitude": 95.606732,
+    "depth": 1840.94,
+    "timestamp": "2024-05-06 00:00:00",
+    "o2": 214.49,
+    "status": "healthy"
+  },
+  {
+    "id": 828,
+    "latitude": 20.520968,
+    "longitude": 35.633269,
+    "depth": 212.01,
+    "timestamp": "2024-07-24 00:00:00",
+    "o2": 249.31,
+    "status": "healthy"
+  },
+  {
+    "id": 830,
+    "latitude": -31.363566,
+    "longitude": 64.01369,
+    "depth": 839.55,
+    "timestamp": "2024-04-04 00:00:00",
+    "o2": 345.78,
+    "status": "healthy"
+  },
+  {
+    "id": 831,
+    "latitude": -22.788727,
+    "longitude": 90.802335,
+    "depth": 1737.06,
+    "timestamp": "2024-10-12 00:00:00",
+    "o2": 407.24,
+    "status": "healthy"
+  },
+  {
+    "id": 832,
+    "latitude": -33.610343,
+    "longitude": 45.716281,
+    "depth": 124.1,
+    "timestamp": "2024-10-27 00:00:00",
+    "o2": 31.74,
+    "status": "hypoxic"
+  },
+  {
+    "id": 834,
+    "latitude": -8.785739,
+    "longitude": 82.906396,
+    "depth": 1781.55,
+    "timestamp": "2024-06-09 00:00:00",
+    "o2": 364.99,
+    "status": "healthy"
+  },
+  {
+    "id": 835,
+    "latitude": -26.956164,
+    "longitude": 40.659461,
+    "depth": 1651.22,
+    "timestamp": "2024-03-21 00:00:00",
+    "o2": 308.86,
+    "status": "healthy"
+  },
+  {
+    "id": 838,
+    "latitude": -0.328197,
+    "longitude": 53.109008,
+    "depth": 227.65,
+    "timestamp": "2024-11-20 00:00:00",
+    "o2": 264.24,
+    "status": "healthy"
+  },
+  {
+    "id": 840,
+    "latitude": -31.447477,
+    "longitude": 89.306566,
+    "depth": 1901.65,
+    "timestamp": "2024-03-18 00:00:00",
+    "o2": 386.88,
+    "status": "healthy"
+  },
+  {
+    "id": 843,
+    "latitude": 15.919115,
+    "longitude": 65.308969,
+    "depth": 1737.68,
+    "timestamp": "2024-07-31 00:00:00",
+    "o2": 359.77,
+    "status": "healthy"
+  },
+  {
+    "id": 845,
+    "latitude": -26.312381,
+    "longitude": 106.112332,
+    "depth": 601.21,
+    "timestamp": "2024-02-03 00:00:00",
+    "o2": 247.15,
+    "status": "healthy"
+  },
+  {
+    "id": 847,
+    "latitude": -32.22556,
+    "longitude": 52.019755,
+    "depth": 1466.64,
+    "timestamp": "2024-05-25 00:00:00",
+    "o2": 374.89,
+    "status": "healthy"
+  },
+  {
+    "id": 848,
+    "latitude": -24.053608,
+    "longitude": 88.911026,
+    "depth": 1475.74,
+    "timestamp": "2024-11-02 00:00:00",
+    "o2": 205.17,
+    "status": "healthy"
+  },
+  {
+    "id": 851,
+    "latitude": -31.570491,
+    "longitude": 45.084455,
+    "depth": 234.24,
+    "timestamp": "2024-11-11 00:00:00",
+    "o2": 239.11,
+    "status": "healthy"
+  },
+  {
+    "id": 852,
+    "latitude": -10.701964,
+    "longitude": 84.966215,
+    "depth": 1937.32,
+    "timestamp": "2024-05-05 00:00:00",
+    "o2": 260.44,
+    "status": "healthy"
+  },
+  {
+    "id": 853,
+    "latitude": -17.907271,
+    "longitude": 67.916965,
+    "depth": 962.78,
+    "timestamp": "2024-05-11 00:00:00",
+    "o2": 301.11,
+    "status": "healthy"
+  },
+  {
+    "id": 854,
+    "latitude": -38.092003,
+    "longitude": 98.783762,
+    "depth": 635.96,
+    "timestamp": "2024-08-11 00:00:00",
+    "o2": 343.78,
+    "status": "healthy"
+  },
+  {
+    "id": 857,
+    "latitude": -34.421138,
+    "longitude": 106.222431,
+    "depth": 1528.16,
+    "timestamp": "2024-11-21 00:00:00",
+    "o2": 234.22,
+    "status": "healthy"
+  },
+  {
+    "id": 859,
+    "latitude": -0.131531,
+    "longitude": 67.492277,
+    "depth": 1023.05,
+    "timestamp": "2024-10-16 00:00:00",
+    "o2": 278.55,
+    "status": "healthy"
+  },
+  {
+    "id": 861,
+    "latitude": -31.511178,
+    "longitude": 97.343332,
+    "depth": 599.02,
+    "timestamp": "2024-12-06 00:00:00",
+    "o2": 407.42,
+    "status": "healthy"
+  },
+  {
+    "id": 863,
+    "latitude": -37.88602,
+    "longitude": 81.2925,
+    "depth": 1503.35,
+    "timestamp": "2024-06-04 00:00:00",
+    "o2": 203.13,
+    "status": "healthy"
+  },
+  {
+    "id": 866,
+    "latitude": -28.923337,
+    "longitude": 101.588947,
+    "depth": 1429.83,
+    "timestamp": "2024-08-16 00:00:00",
+    "o2": 244.47,
+    "status": "healthy"
+  },
+  {
+    "id": 867,
+    "latitude": -5.831996,
+    "longitude": 70.845311,
+    "depth": 528.39,
+    "timestamp": "2024-07-01 00:00:00",
+    "o2": 293.61,
+    "status": "healthy"
+  },
+  {
+    "id": 868,
+    "latitude": -16.189813,
+    "longitude": 83.648379,
+    "depth": 1143.45,
+    "timestamp": "2024-10-30 00:00:00",
+    "o2": 48.08,
+    "status": "hypoxic"
+  },
+  {
+    "id": 870,
+    "latitude": -9.568414,
+    "longitude": 66.093371,
+    "depth": 1530.84,
+    "timestamp": "2024-03-29 00:00:00",
+    "o2": 239.22,
+    "status": "healthy"
+  },
+  {
+    "id": 871,
+    "latitude": -3.352819,
+    "longitude": 69.373742,
+    "depth": 1904.05,
+    "timestamp": "2024-12-26 00:00:00",
+    "o2": 249.88,
+    "status": "healthy"
+  },
+  {
+    "id": 875,
+    "latitude": -2.652296,
+    "longitude": 75.873279,
+    "depth": 1070.88,
+    "timestamp": "2024-10-06 00:00:00",
+    "o2": 320.06,
+    "status": "healthy"
+  },
+  {
+    "id": 876,
+    "latitude": -36.065342,
+    "longitude": 59.010339,
+    "depth": 1129.79,
+    "timestamp": "2024-01-31 00:00:00",
+    "o2": 243.0,
+    "status": "healthy"
+  },
+  {
+    "id": 877,
+    "latitude": -6.199433,
+    "longitude": 63.22013,
+    "depth": 1900.66,
+    "timestamp": "2024-03-30 00:00:00",
+    "o2": 389.65,
+    "status": "healthy"
+  },
+  {
+    "id": 880,
+    "latitude": -37.30822,
+    "longitude": 58.142717,
+    "depth": 1848.15,
+    "timestamp": "2024-06-28 00:00:00",
+    "o2": 249.29,
+    "status": "healthy"
+  },
+  {
+    "id": 884,
+    "latitude": -21.835825,
+    "longitude": 74.311697,
+    "depth": 230.63,
+    "timestamp": "2024-11-18 00:00:00",
+    "o2": 54.43,
+    "status": "hypoxic"
+  },
+  {
+    "id": 886,
+    "latitude": -34.496681,
+    "longitude": 84.062375,
+    "depth": 553.78,
+    "timestamp": "2024-01-27 00:00:00",
+    "o2": 256.86,
+    "status": "healthy"
+  },
+  {
+    "id": 891,
+    "latitude": 3.375437,
+    "longitude": 67.945917,
+    "depth": 1843.48,
+    "timestamp": "2024-06-23 00:00:00",
+    "o2": 325.78,
+    "status": "healthy"
+  },
+  {
+    "id": 893,
+    "latitude": -24.650167,
+    "longitude": 82.110967,
+    "depth": 1121.01,
+    "timestamp": "2024-03-31 00:00:00",
+    "o2": 236.21,
+    "status": "healthy"
+  },
+  {
+    "id": 894,
+    "latitude": -32.459544,
+    "longitude": 107.485674,
+    "depth": 1876.21,
+    "timestamp": "2024-04-17 00:00:00",
+    "o2": 393.37,
+    "status": "healthy"
+  },
+  {
+    "id": 895,
+    "latitude": 8.854557,
+    "longitude": 64.078231,
+    "depth": 1061.57,
+    "timestamp": "2024-08-09 00:00:00",
+    "o2": 37.5,
+    "status": "hypoxic"
+  },
+  {
+    "id": 896,
+    "latitude": -34.122766,
+    "longitude": 85.23263,
+    "depth": 1411.28,
+    "timestamp": "2024-10-28 00:00:00",
+    "o2": 189.46,
+    "status": "healthy"
+  },
+  {
+    "id": 897,
+    "latitude": -23.71881,
+    "longitude": 93.073715,
+    "depth": 1348.33,
+    "timestamp": "2024-08-31 00:00:00",
+    "o2": 199.67,
+    "status": "healthy"
+  },
+  {
+    "id": 904,
+    "latitude": -14.308409,
+    "longitude": 93.026922,
+    "depth": 1509.13,
+    "timestamp": "2024-08-04 00:00:00",
+    "o2": 380.13,
+    "status": "healthy"
+  },
+  {
+    "id": 906,
+    "latitude": -2.580067,
+    "longitude": 67.10869,
+    "depth": 1121.15,
+    "timestamp": "2024-11-07 00:00:00",
+    "o2": 301.47,
+    "status": "healthy"
+  },
+  {
+    "id": 909,
+    "latitude": 22.882822,
+    "longitude": 63.121141,
+    "depth": 1899.37,
+    "timestamp": "2024-11-09 00:00:00",
+    "o2": 267.34,
+    "status": "healthy"
+  },
+  {
+    "id": 912,
+    "latitude": -3.322828,
+    "longitude": 58.391534,
+    "depth": 1526.44,
+    "timestamp": "2024-08-13 00:00:00",
+    "o2": 299.66,
+    "status": "healthy"
+  },
+  {
+    "id": 916,
+    "latitude": 2.853227,
+    "longitude": 84.305493,
+    "depth": 1651.18,
+    "timestamp": "2024-05-04 00:00:00",
+    "o2": 243.74,
+    "status": "healthy"
+  },
+  {
+    "id": 917,
+    "latitude": -12.376897,
+    "longitude": 76.474387,
+    "depth": 1465.34,
+    "timestamp": "2024-06-23 00:00:00",
+    "o2": 409.77,
+    "status": "healthy"
+  },
+  {
+    "id": 918,
+    "latitude": 0.562353,
+    "longitude": 83.904503,
+    "depth": 1908.18,
+    "timestamp": "2024-06-25 00:00:00",
+    "o2": 249.38,
+    "status": "healthy"
+  },
+  {
+    "id": 919,
+    "latitude": -21.373711,
+    "longitude": 103.935485,
+    "depth": 1342.41,
+    "timestamp": "2024-12-19 00:00:00",
+    "o2": 196.46,
+    "status": "healthy"
+  },
+  {
+    "id": 920,
+    "latitude": -24.629721,
+    "longitude": 77.983113,
+    "depth": 368.92,
+    "timestamp": "2024-08-22 00:00:00",
+    "o2": 353.62,
+    "status": "healthy"
+  },
+  {
+    "id": 921,
+    "latitude": 1.717346,
+    "longitude": 71.786694,
+    "depth": 636.75,
+    "timestamp": "2024-12-08 00:00:00",
+    "o2": 258.93,
+    "status": "healthy"
+  },
+  {
+    "id": 923,
+    "latitude": -30.264193,
+    "longitude": 74.413541,
+    "depth": 421.97,
+    "timestamp": "2024-06-05 00:00:00",
+    "o2": 355.76,
+    "status": "healthy"
+  },
+  {
+    "id": 924,
+    "latitude": -21.605422,
+    "longitude": 85.381794,
+    "depth": 182.11,
+    "timestamp": "2024-09-20 00:00:00",
+    "o2": 308.99,
+    "status": "healthy"
+  },
+  {
+    "id": 928,
+    "latitude": -38.168331,
+    "longitude": 76.132872,
+    "depth": 203.82,
+    "timestamp": "2024-11-03 00:00:00",
+    "o2": 347.66,
+    "status": "healthy"
+  },
+  {
+    "id": 930,
+    "latitude": -22.673071,
+    "longitude": 109.305789,
+    "depth": 994.44,
+    "timestamp": "2024-01-02 00:00:00",
+    "o2": 307.85,
+    "status": "healthy"
+  },
+  {
+    "id": 931,
+    "latitude": -29.133823,
+    "longitude": 102.779566,
+    "depth": 1672.22,
+    "timestamp": "2024-06-12 00:00:00",
+    "o2": 364.21,
+    "status": "healthy"
+  },
+  {
+    "id": 933,
+    "latitude": 6.951074,
+    "longitude": 52.131624,
+    "depth": 46.93,
+    "timestamp": "2024-06-08 00:00:00",
+    "o2": 315.8,
+    "status": "healthy"
+  },
+  {
+    "id": 936,
+    "latitude": -36.297478,
+    "longitude": 93.890944,
+    "depth": 1306.21,
+    "timestamp": "2024-04-04 00:00:00",
+    "o2": 378.78,
+    "status": "healthy"
+  },
+  {
+    "id": 940,
+    "latitude": -21.079567,
+    "longitude": 99.386935,
+    "depth": 1816.61,
+    "timestamp": "2024-10-17 00:00:00",
+    "o2": 320.96,
+    "status": "healthy"
+  },
+  {
+    "id": 942,
+    "latitude": -35.067428,
+    "longitude": 94.368109,
+    "depth": 290.09,
+    "timestamp": "2024-10-07 00:00:00",
+    "o2": 271.03,
+    "status": "healthy"
+  },
+  {
+    "id": 943,
+    "latitude": -18.607367,
+    "longitude": 52.47866,
+    "depth": 462.43,
+    "timestamp": "2024-04-08 00:00:00",
+    "o2": 203.21,
+    "status": "healthy"
+  },
+  {
+    "id": 946,
+    "latitude": -1.243113,
+    "longitude": 67.725859,
+    "depth": 1943.63,
+    "timestamp": "2024-11-27 00:00:00",
+    "o2": 363.78,
+    "status": "healthy"
+  },
+  {
+    "id": 948,
+    "latitude": -28.159459,
+    "longitude": 105.500861,
+    "depth": 720.83,
+    "timestamp": "2024-12-12 00:00:00",
+    "o2": 268.07,
+    "status": "healthy"
+  },
+  {
+    "id": 949,
+    "latitude": -35.024108,
+    "longitude": 110.511445,
+    "depth": 958.94,
+    "timestamp": "2024-03-22 00:00:00",
+    "o2": 248.29,
+    "status": "healthy"
+  },
+  {
+    "id": 953,
+    "latitude": 2.211092,
+    "longitude": 86.683808,
+    "depth": 803.59,
+    "timestamp": "2024-01-24 00:00:00",
+    "o2": 310.4,
+    "status": "healthy"
+  },
+  {
+    "id": 954,
+    "latitude": 2.07503,
+    "longitude": 93.316673,
+    "depth": 1126.19,
+    "timestamp": "2024-02-29 00:00:00",
+    "o2": 267.54,
+    "status": "healthy"
+  },
+  {
+    "id": 955,
+    "latitude": -28.120174,
+    "longitude": 111.939906,
+    "depth": 488.55,
+    "timestamp": "2024-12-05 00:00:00",
+    "o2": 252.26,
+    "status": "healthy"
+  },
+  {
+    "id": 958,
+    "latitude": -39.404388,
+    "longitude": 79.378373,
+    "depth": 762.04,
+    "timestamp": "2024-04-13 00:00:00",
+    "o2": 223.57,
+    "status": "healthy"
+  },
+  {
+    "id": 961,
+    "latitude": -27.071875,
+    "longitude": 83.842778,
+    "depth": 144.8,
+    "timestamp": "2024-08-11 00:00:00",
+    "o2": 210.38,
+    "status": "healthy"
+  },
+  {
+    "id": 963,
+    "latitude": -0.02942,
+    "longitude": 50.438757,
+    "depth": 1927.68,
+    "timestamp": "2024-05-29 00:00:00",
+    "o2": 281.1,
+    "status": "healthy"
+  },
+  {
+    "id": 965,
+    "latitude": -3.68544,
+    "longitude": 59.289948,
+    "depth": 1182.35,
+    "timestamp": "2024-12-25 00:00:00",
+    "o2": 323.67,
+    "status": "healthy"
+  },
+  {
+    "id": 967,
+    "latitude": -20.493192,
+    "longitude": 97.345669,
+    "depth": 26.43,
+    "timestamp": "2024-06-16 00:00:00",
+    "o2": 411.8,
+    "status": "healthy"
+  },
+  {
+    "id": 969,
+    "latitude": -16.818149,
+    "longitude": 84.51956,
+    "depth": 967.86,
+    "timestamp": "2024-02-05 00:00:00",
+    "o2": 301.55,
+    "status": "healthy"
+  },
+  {
+    "id": 970,
+    "latitude": -10.132285,
+    "longitude": 90.990728,
+    "depth": 1585.12,
+    "timestamp": "2024-09-21 00:00:00",
+    "o2": 206.88,
+    "status": "healthy"
+  },
+  {
+    "id": 974,
+    "latitude": -23.230373,
+    "longitude": 60.653704,
+    "depth": 629.97,
+    "timestamp": "2024-07-23 00:00:00",
+    "o2": 248.43,
+    "status": "healthy"
+  },
+  {
+    "id": 978,
+    "latitude": -30.998994,
+    "longitude": 65.907031,
+    "depth": 629.83,
+    "timestamp": "2024-11-07 00:00:00",
+    "o2": 265.86,
+    "status": "healthy"
+  },
+  {
+    "id": 979,
+    "latitude": -9.367521,
+    "longitude": 40.670202,
+    "depth": 1718.0,
+    "timestamp": "2024-11-20 00:00:00",
+    "o2": 306.07,
+    "status": "healthy"
+  },
+  {
+    "id": 981,
+    "latitude": -18.564194,
+    "longitude": 82.154923,
+    "depth": 946.08,
+    "timestamp": "2024-12-01 00:00:00",
+    "o2": 239.76,
+    "status": "healthy"
+  },
+  {
+    "id": 983,
+    "latitude": -38.500122,
+    "longitude": 32.396444,
+    "depth": 1969.12,
+    "timestamp": "2024-07-01 00:00:00",
+    "o2": 350.11,
+    "status": "healthy"
+  },
+  {
+    "id": 985,
+    "latitude": -25.788036,
+    "longitude": 53.851576,
+    "depth": 844.44,
+    "timestamp": "2024-01-08 00:00:00",
+    "o2": 232.39,
+    "status": "healthy"
+  },
+  {
+    "id": 986,
+    "latitude": 2.969278,
+    "longitude": 67.123926,
+    "depth": 1847.06,
+    "timestamp": "2024-02-13 00:00:00",
+    "o2": 356.98,
+    "status": "healthy"
+  },
+  {
+    "id": 987,
+    "latitude": -8.816257,
+    "longitude": 70.615258,
+    "depth": 125.92,
+    "timestamp": "2024-11-09 00:00:00",
+    "o2": 349.86,
+    "status": "healthy"
+  },
+  {
+    "id": 988,
+    "latitude": -10.935525,
+    "longitude": 75.805881,
+    "depth": 1250.36,
+    "timestamp": "2024-10-16 00:00:00",
+    "o2": 261.01,
+    "status": "healthy"
+  },
+  {
+    "id": 990,
+    "latitude": 12.029789,
+    "longitude": 66.37719,
+    "depth": 629.69,
+    "timestamp": "2024-02-14 00:00:00",
+    "o2": 348.02,
+    "status": "healthy"
+  },
+  {
+    "id": 992,
+    "latitude": -25.652311,
+    "longitude": 58.598366,
+    "depth": 1178.7,
+    "timestamp": "2024-10-23 00:00:00",
+    "o2": 217.25,
+    "status": "healthy"
+  },
+  {
+    "id": 993,
+    "latitude": -9.736027,
+    "longitude": 91.318371,
+    "depth": 520.92,
+    "timestamp": "2024-07-28 00:00:00",
+    "o2": 215.27,
+    "status": "healthy"
+  },
+  {
+    "id": 995,
+    "latitude": -18.568541,
+    "longitude": 87.955096,
+    "depth": 368.03,
+    "timestamp": "2024-10-07 00:00:00",
+    "o2": 212.04,
+    "status": "healthy"
+  }
+]

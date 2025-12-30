@@ -1,0 +1,311 @@
+/* CSS Variables and Base Styles */
+:root {
+  --bg-0: #0f1217;
+  --panel: #1a1f2a;
+  --panel-2: #182132;
+  --accent: #10b981; /* Emerald for fisheries */
+  --accent-2: #34d399;
+  --muted: #7f8aa3;
+  --ok: #2fd15a;
+  --warn: #ffb545;
+  --err: #ff6b6b;
+  --chip-bg: #122a18;
+  --tile: #243049;
+  --tile-border: #30405f;
+  --tile-text: #e6f0ff;
+  --level-row: #10b981;
+  --level-row-alt: #059669;
+  --divider: #2b3a57;
+  --white: #ffffff;
+  --shadow: 0 10px 26px rgba(2, 10, 24, 0.45), 0 2px 8px rgba(2, 10, 24, 0.3);
+  --focus: 0 0 0 3px rgba(16, 185, 129, 0.45);
+}
+
+/* Typography */
+.fishery-popup-modal {
+  font-feature-settings: "tnum" 1;
+}
+
+/* Overlay */
+.fishery-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(8, 12, 18, 0.72);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 80px 20px 20px 20px;
+  animation: fadeIn 200ms ease-out;
+  overflow-y: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal Container */
+.fishery-popup-modal {
+  background: #ffffff;
+  --white: #0f1217;
+  --muted: #4a5568;
+  --tile-text: #1a202c;
+  --tile: #f7fafc;
+  --tile-border: #e2e8f0;
+  --panel-2: #edf2f7;
+  --divider: #cbd5e0;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(2, 10, 24, 0.08), 0 2px 8px rgba(2, 10, 24, 0.06);
+  border: 1px solid rgba(2, 10, 24, 0.06);
+  max-width: 1000px;
+  min-width: 320px;
+  width: 100%;
+  max-height: calc(100vh - 120px);
+  position: relative;
+  animation: modalEnter 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+  margin: auto;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Close Button */
+.fishery-popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 2px solid #cbd5e0;
+  background: #f7fafc;
+  backdrop-filter: blur(8px);
+  color: #1a202c;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 200ms ease;
+}
+
+.fishery-popup-close:hover {
+  background: #e2e8f0;
+  border-color: #a0aec0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Section */
+.fishery-popup-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 24px;
+  min-height: 500px;
+}
+
+/* Map/Image Card placeholder */
+.fishery-popup-image-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+  box-shadow: 0 6px 16px rgba(2, 10, 24, 0.28);
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fishery-icon-large {
+  font-size: 120px;
+  opacity: 0.2;
+  color: var(--accent);
+}
+
+/* Risk Chip */
+.fishery-popup-risk-chip {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  height: 28px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.risk-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Summary Card */
+.fishery-popup-summary {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fishery-popup-title {
+  font-family: "Segoe UI", Inter, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.fishery-popup-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.title-divider {
+  height: 1px;
+  background: var(--divider);
+  margin: 12px 0 20px 0;
+}
+
+/* Metric Tiles */
+.metric-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.metric-tile {
+  background: var(--tile);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 12px 14px;
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(2, 10, 24, 0.1);
+}
+
+.metric-number {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+  color: var(--accent);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.metric-unit {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.metric-label {
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Species List */
+.species-section {
+  margin-top: 20px;
+}
+
+.species-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.species-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.species-item {
+  background: var(--tile);
+  border: 1px solid var(--tile-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.species-name {
+  font-weight: 600;
+  color: var(--white);
+  font-size: 14px;
+}
+
+.species-scientific {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.species-count {
+  background: var(--panel-2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fishery-popup-header {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .fishery-popup-image-card {
+    height: 200px;
+    min-height: 200px;
+  }
+}

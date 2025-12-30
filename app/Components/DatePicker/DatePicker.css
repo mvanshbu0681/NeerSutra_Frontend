@@ -1,0 +1,108 @@
+/* Date Picker Styles */
+
+.date-picker-container {
+  margin-bottom: 16px;
+}
+
+.date-picker-label {
+  display: block;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.date-picker-select {
+  width: 100%;
+  height: 40px;
+  background: #4886d3;
+  border: 1px solid #4886d3;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all 150ms ease;
+  position: relative;
+}
+
+.date-picker-select:hover {
+  border-color: #3670b8;
+  background: #3670b8;
+}
+
+.date-picker-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(78, 161, 255, 0.3);
+}
+
+.date-picker-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.date-picker-select option {
+  background: var(--panel);
+  color: var(--white);
+  padding: 8px;
+}
+
+.date-picker-empty {
+  width: 100%;
+  height: 40px;
+  background: var(--panel-2);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  color: var(--muted);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  font-style: italic;
+}
+
+.date-picker-loader {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--divider);
+  border-top: 2px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .date-picker-select {
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .date-picker-empty {
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .date-picker-label {
+    font-size: 11px;
+  }
+}

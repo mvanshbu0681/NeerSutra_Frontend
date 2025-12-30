@@ -1,0 +1,428 @@
+/* Level List Styles */
+
+.level-list-container {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(2, 10, 24, 0.08);
+  border: 2px solid #4886d3;
+}
+
+/* Data Summary */
+.data-summary {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: #f7fafc;
+  border-bottom: 2px solid #4886d3;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.summary-value {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4886d3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary-label {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Sticky Header */
+.level-header {
+  display: grid;
+  grid-template-columns: 64px 1fr 1fr 1fr;
+  height: 44px;
+  background: #4886d3;
+  border-bottom: 2px solid #3670b8;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(72, 134, 211, 0.2);
+}
+
+.depth-header {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: right;
+  padding-right: 12px;
+}
+
+.data-header {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: right;
+  padding-right: 12px;
+}
+
+/* List Body Container */
+.level-list-body {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Virtual List Styles */
+.virtual-list {
+  scrollbar-width: thin;
+  scrollbar-color: #4886d3 #f7fafc;
+}
+
+.virtual-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.virtual-list::-webkit-scrollbar-track {
+  background: #f7fafc;
+}
+
+.virtual-list::-webkit-scrollbar-thumb {
+  background: #4886d3;
+  border-radius: 4px;
+}
+
+.virtual-list::-webkit-scrollbar-thumb:hover {
+  background: #3670b8;
+}
+
+/* Simple Virtual List (no react-window) */
+.simple-virtual {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4886d3 #f7fafc;
+  scroll-behavior: smooth;
+}
+
+.simple-virtual::-webkit-scrollbar {
+  width: 10px;
+}
+
+.simple-virtual::-webkit-scrollbar-track {
+  background: #f7fafc;
+  border-radius: 5px;
+  margin: 4px 0;
+}
+
+.simple-virtual::-webkit-scrollbar-thumb {
+  background: #4886d3;
+  border-radius: 5px;
+  border: 1px solid #3670b8;
+}
+
+.simple-virtual::-webkit-scrollbar-thumb:hover {
+  background: #3670b8;
+  box-shadow: 0 2px 4px rgba(72, 134, 211, 0.3);
+}
+
+/* Level Rows */
+.level-row {
+  display: grid;
+  grid-template-columns: 64px 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #e2e8f0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  position: relative;
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  outline: none;
+}
+
+.level-row:focus {
+  box-shadow: inset 3px 0 0 #4886d3;
+  background: rgba(72, 134, 211, 0.08);
+}
+
+/* Zebra striping with semi-transparent overlays */
+.level-row.even {
+  background: #ffffff;
+}
+
+.level-row.odd {
+  background: #f7fafc;
+}
+
+/* Hover effects */
+.level-row.hovered {
+  background: rgba(72, 134, 211, 0.12) !important;
+  transform: translateX(2px);
+  box-shadow: inset 3px 0 0 #4886d3, 0 2px 8px rgba(72, 134, 211, 0.15);
+}
+
+.level-row.hovered .depth-cell,
+.level-row.hovered .data-cell {
+  color: #1a202c;
+}
+
+.depth-cell {
+  color: #4886d3;
+  text-align: right;
+  padding-right: 12px;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}
+
+.depth-value {
+  font-size: 15px;
+}
+
+.depth-unit {
+  font-size: 11px;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.data-cell {
+  color: #1a202c;
+  text-align: right;
+  padding-right: 12px;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}
+
+.data-value {
+  font-size: 14px;
+}
+
+.data-unit {
+  font-size: 10px;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+/* Blueprint Background Image */
+.blueprint-image {
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  width: min(240px, 28%);
+  height: 350px;
+  background-image: url("/floater-img.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 300ms ease;
+}
+
+/* Scroll indicators */
+.scroll-indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: #4886d3;
+  border: 1px solid #3670b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 8;
+  animation: pulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.scroll-indicator-top {
+  top: 0;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+}
+
+.scroll-indicator-bottom {
+  bottom: 0;
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Row animations */
+.level-row {
+  animation: fadeInUp 300ms ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation delays */
+.level-row:nth-child(1) {
+  animation-delay: 0ms;
+}
+.level-row:nth-child(2) {
+  animation-delay: 20ms;
+}
+.level-row:nth-child(3) {
+  animation-delay: 40ms;
+}
+.level-row:nth-child(4) {
+  animation-delay: 60ms;
+}
+.level-row:nth-child(5) {
+  animation-delay: 80ms;
+}
+.level-row:nth-child(n + 6) {
+  animation-delay: 100ms;
+}
+
+/* Responsive adjustments */
+/* Loading and interaction states */
+.level-list-container.loading {
+  opacity: 0.7;
+}
+
+.level-list-container.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border: 2px solid #e2e8f0;
+  border-top: 2px solid #4886d3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.level-list-container:hover .blueprint-image {
+  opacity: 0.12;
+}
+
+@media (max-width: 1023px) {
+  .blueprint-image {
+    width: 180px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 599px) {
+  .blueprint-image {
+    display: none;
+  }
+
+  .data-summary {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .summary-value {
+    font-size: 12px;
+  }
+
+  .summary-label {
+    font-size: 9px;
+  }
+
+  .level-header {
+    grid-template-columns: 56px 1fr 1fr 1fr;
+    height: 40px;
+    padding: 0 12px;
+  }
+
+  .level-row {
+    grid-template-columns: 56px 1fr 1fr 1fr;
+    padding: 0 12px;
+  }
+
+  .depth-header,
+  .data-header {
+    font-size: 10px;
+    padding-right: 8px;
+  }
+
+  .depth-cell,
+  .data-cell {
+    padding-right: 8px;
+  }
+
+  .depth-value,
+  .data-value {
+    font-size: 13px;
+  }
+
+  .depth-unit,
+  .data-unit {
+    font-size: 10px;
+  }
+
+  .scroll-indicator {
+    font-size: 9px;
+    height: 20px;
+  }
+}

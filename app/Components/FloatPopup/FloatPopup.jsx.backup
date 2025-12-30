@@ -1,0 +1,317 @@
+import React, { useState, useRef, useEffect } from 'react';
+import LevelList from './LevelList';
+import DatePicker from '../DatePicker';
+import { formatLatLon, formatDate, formatTime, formatNumber } from './utils/formatters';
+import floaterAPI from '../../utils/floaterAPI';
+import './FloatPopup.css';
+
+const FloatPopup = ({ isOpen, data, onClose }) => {
+  const [isDetailsExpanded, setIsDetailsExpanded] = useState(false);
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [currentData, setCurrentData] = useState(data);
+  const [loading, setLoading] = useState(false);
+  const detailsRef = useRef(null);
+  const previousFocusRef = useRef(null);
+  const modalRef = useRef(null);
+  const closeButtonRef = useRef(null);
+
+  // Initialize data when component opens
+  useEffect(() => {
+    if (isOpen && data) {
+      setCurrentData(data);
+      setSelectedDate(null);
+      setIsDatePickerOpen(false);
+      setIsDetailsExpanded(false);
+    }
+  }, [isOpen, data]);
+
+  // Focus management
+  useEffect(() => {
+    if (isOpen) {
+      previousFocusRef.current = document.activeElement;
+      // Focus the close button when modal opens
+      setTimeout(() => {
+        closeButtonRef.current?.focus();
+      }, 100);
+    } else {
+      // Restore focus when modal closes
+      previousFocusRef.current?.focus();
+    }
+  }, [isOpen]);
+
+  // Keyboard event handling
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isOpen) return;
+
+      if (e.key === 'Escape') {
+        onClose();
+      }
+
+      // Tab trapping
+      if (e.key === 'Tab') {
+        const focusableElements = modalRef.current?.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements?.[0];
+        const lastElement = focusableElements?.[focusableElements.length - 1];
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement?.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement?.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
+  const handleDetailsToggle = () => {
+    setIsDetailsExpanded(!isDetailsExpanded);
+    
+    // Scroll to details section when expanding
+    if (!isDetailsExpanded) {
+      setTimeout(() => {
+        detailsRef.current?.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }, 150);
+    }
+  };
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget && !isDatePickerOpen) {
+      onClose();
+    }
+  };
+
+  const handleDateChange = async (date) => {
+    if (!currentData?.platform_number) return;
+    
+    try {
+      setLoading(true);
+      const dateKey = floaterAPI.dateToDateKey(date);
+      console.log('Fetching data for date:', dateKey);
+      const newData = await floaterAPI.getFloaterByDate(currentData.platform_number, dateKey);
+      const transformedData = floaterAPI.transformToFloatPopupData(newData, currentData.platform_number);
+      
+      setCurrentData(transformedData);
+      setSelectedDate(date);
+    } catch (error) {
+      console.error('Failed to fetch data for selected date:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLoadLatestData = async () => {
+    if (!currentData?.platform_number) return;
+    
+    try {
+      setLoading(true);
+      const latestData = await floaterAPI.getFloaterLatest(currentData.platform_number);
+      const transformedData = floaterAPI.transformToFloatPopupData(latestData, currentData.platform_number);
+      
+      setCurrentData(transformedData);
+      setSelectedDate(null);
+    } catch (error) {
+      console.error('Failed to fetch latest data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (!isOpen || !currentData) return null;
+
+  const isActive = currentData.status === 'active';
+
+  return (
+    <div 
+      className="float-popup-overlay" 
+      onClick={handleOverlayClick}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="float-popup-title"
+    >
+      <div 
+        className="float-popup-modal"
+        ref={modalRef}
+      >
+        {/* Close Button */}
+        <button
+          ref={closeButtonRef}
+          className="float-popup-close"
+          onClick={onClose}
+          aria-label="Close popup"
+        >
+          ✕
+        </button>
+
+        {/* Header Section */}
+        <div className="float-popup-header">
+          {/* Left Column - Image */}
+          <div className="float-popup-image-card">
+            <img
+              src={currentData.image_url}
+              alt={`ARGO Float ${currentData.platform_number} in ocean`}
+              className="float-popup-image"
+            />
+            
+            {/* Status Chip */}
+            <div className={`float-popup-status-chip ${isActive ? 'active' : 'inactive'}`}>
+              <span className="status-dot" aria-live="polite"></span>
+              {isActive ? 'ACTIVE' : 'INACTIVE'}
+            </div>
+
+            {/* Location Tag */}
+            <div className="float-popup-location">
+              {formatLatLon(currentData.location.lat, currentData.location.lon)}
+            </div>
+
+            {/* Date and Time */}
+            <div className="float-popup-timestamp">
+              <span className="date">{formatDate(currentData.captured_at)}</span>
+              <span className="time">{formatTime(currentData.captured_at)}</span>
+            </div>
+          </div>
+
+          {/* Right Column - Summary */}
+          <div className="float-popup-summary">
+            <h1 id="float-popup-title" className="float-popup-title">
+              ARGO FLOAT {currentData.platform_number}
+            </h1>
+            <div className="title-divider"></div>
+
+            {/* Date Filter Controls */}
+            <div className="date-filter-controls" style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
+              <button
+                style={{ 
+                  flex: 1, 
+                  padding: '8px 12px', 
+                  backgroundColor: !selectedDate ? '#3b82f6' : '#f3f4f6',
+                  color: !selectedDate ? 'white' : '#6b7280',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '6px',
+                  cursor: loading ? 'not-allowed' : 'pointer',
+                  fontSize: '12px'
+                }}
+                onClick={handleLoadLatestData}
+                disabled={loading}
+              >
+                Latest Data
+              </button>
+              <button
+                style={{ 
+                  flex: 1, 
+                  padding: '8px 12px', 
+                  backgroundColor: selectedDate ? '#3b82f6' : '#f3f4f6',
+                  color: selectedDate ? 'white' : '#6b7280',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '6px',
+                  cursor: loading ? 'not-allowed' : 'pointer',
+                  fontSize: '12px'
+                }}
+                onClick={() => setIsDatePickerOpen(true)}
+                disabled={loading}
+              >
+                {selectedDate ? floaterAPI.formatDateKey(floaterAPI.dateToDateKey(selectedDate)) : 'Select Date'}
+              </button>
+            </div>
+
+            {/* Cycle Row */}
+            <div className="cycle-row">
+              <span className="cycle-label">Cycle No.</span>
+              <span className="cycle-value">{currentData.cycle_number}</span>
+            </div>
+
+            {/* Metric Tiles */}
+            <div className="metric-tiles">
+              <div className="metric-tile">
+                <div className="metric-number">
+                  {currentData.metrics.temperature_c !== null ? formatNumber(currentData.metrics.temperature_c, 1) : '—'}
+                </div>
+                <div className="metric-label">°C<br />Temperature</div>
+              </div>
+              <div className="metric-tile">
+                <div className="metric-number">
+                  {currentData.metrics.depth_m !== null ? formatNumber(currentData.metrics.depth_m, 0) : '—'}
+                </div>
+                <div className="metric-label">m<br />Depth</div>
+              </div>
+              <div className="metric-tile">
+                <div className="metric-number">
+                  {currentData.metrics.salinity_psu !== null ? formatNumber(currentData.metrics.salinity_psu, 2) : '—'}
+                </div>
+                <div className="metric-label">PSU<br />Salinity</div>
+              </div>
+              <div className="metric-tile">
+                <div className="metric-number">
+                  {currentData.metrics.pressure_dbar !== null ? formatNumber(currentData.metrics.pressure_dbar, 0) : '—'}
+                </div>
+                <div className="metric-label">dbar<br />Pressure</div>
+              </div>
+            </div>
+
+            {/* Details Button */}
+            <button
+              className="details-button"
+              onClick={handleDetailsToggle}
+              aria-expanded={isDetailsExpanded}
+            >
+              FLOATER DETAILS
+              <span className={`details-caret ${isDetailsExpanded ? 'expanded' : ''}`}>⌄</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Details Section */}
+        <div 
+          ref={detailsRef}
+          className={`float-popup-details ${isDetailsExpanded ? 'expanded' : ''}`}
+        >
+          <div className="details-content">
+            {loading ? (
+              <div style={{ textAlign: 'center', padding: '40px' }}>
+                <div>Loading data...</div>
+              </div>
+            ) : currentData.levels && currentData.levels.length > 0 ? (
+              <LevelList levels={currentData.levels} />
+            ) : (
+              <div className="empty-state">
+                No depth level data available for this float.
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+      
+      {/* Date Picker Modal */}
+      {isDatePickerOpen && (
+        <div style={{ 
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          bottom: 0, 
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+          zIndex: 1001 
+        }}>
+          <DatePicker
+            platformNumber={currentData.platform_number}
+            selectedDate={selectedDate}
+            onDateChange={handleDateChange}
+            onClose={() => setIsDatePickerOpen(false)}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default FloatPopup;

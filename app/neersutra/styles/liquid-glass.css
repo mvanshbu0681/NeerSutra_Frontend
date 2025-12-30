@@ -1,0 +1,684 @@
+/* ============================================
+   NeerSutra "Liquid Glass / Aerogel" Design System
+   Apple Vision Pro / visionOS Spatial UI
+   ============================================ */
+
+/* ============================================
+   CSS Custom Properties - Dark Theme (Primary)
+   ============================================ */
+
+:root {
+  /* === DARK SPACE THEME (Default) === */
+  --theme-bg-primary: #050505;
+  --theme-bg-secondary: #0a0a0f;
+  --theme-bg-tertiary: #111118;
+  
+  /* Aerogel Glass Material */
+  --glass-bg: rgba(18, 18, 23, 0.65);
+  --glass-bg-hover: rgba(28, 28, 36, 0.75);
+  --glass-border-top: rgba(255, 255, 255, 0.12);
+  --glass-border-bottom: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-subtle: rgba(255, 255, 255, 0.04);
+  --glass-highlight: rgba(255, 255, 255, 0.06);
+  
+  /* Specular Lighting Shadows */
+  --glass-shadow: 
+    inset 0 1px 0 0 var(--glass-border-top),
+    inset 0 -1px 0 0 var(--glass-border-bottom),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 20px 40px -10px rgba(0, 0, 0, 0.6),
+    0 8px 16px -4px rgba(0, 0, 0, 0.4);
+  --glass-shadow-elevated: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 0 var(--glass-border-bottom),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 32px 64px -16px rgba(0, 0, 0, 0.7),
+    0 16px 32px -8px rgba(0, 0, 0, 0.5);
+  --glass-blur: 40px;
+  --glass-saturate: 220%;
+  
+  /* Text - High Contrast */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+  
+  /* Neon Accent Colors */
+  --neon-cyan: #22d3ee;
+  --neon-blue: #2997ff;
+  --neon-emerald: #34d399;
+  --neon-amber: #fbbf24;
+  --neon-red: #f87171;
+  --neon-violet: #a78bfa;
+  
+  /* Accent Mapping */
+  --accent-primary: var(--neon-cyan);
+  --accent-primary-light: #67e8f9;
+  --accent-primary-dark: #06b6d4;
+  --accent-success: var(--neon-emerald);
+  --accent-warning: var(--neon-amber);
+  --accent-danger: var(--neon-red);
+  --accent-info: var(--neon-violet);
+  
+  /* Gradients with Glow */
+  --gradient-glass: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-blue) 100%);
+  --gradient-ocean: linear-gradient(180deg, #0ea5e9 0%, #0369a1 100%);
+  --glow-cyan: 0 0 30px rgba(34, 211, 238, 0.4);
+  --glow-emerald: 0 0 30px rgba(52, 211, 153, 0.4);
+  
+  /* Spacing Scale (increased for breathing room) */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1.25rem;   /* 20px */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 3rem;      /* 48px */
+  --space-2xl: 4rem;     /* 64px */
+  
+  /* Border Radius - Soft & Rounded */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* === LIGHT THEME (Alternative) === */
+[data-theme="light"] {
+  --theme-bg-primary: #f8fafc;
+  --theme-bg-secondary: #f1f5f9;
+  --theme-bg-tertiary: #e2e8f0;
+  
+  /* Glass - Frosted Ceramic */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg-hover: rgba(255, 255, 255, 0.88);
+  --glass-border-top: rgba(255, 255, 255, 0.9);
+  --glass-border-bottom: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-subtle: rgba(0, 0, 0, 0.04);
+  --glass-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 8px 32px -8px rgba(0, 0, 0, 0.12),
+    0 4px 16px -4px rgba(0, 0, 0, 0.08);
+  --glass-shadow-elevated: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 16px 48px -12px rgba(0, 0, 0, 0.2),
+    0 8px 24px -6px rgba(0, 0, 0, 0.12);
+  
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+  
+  /* Accents */
+  --accent-primary: #0ea5e9;
+  --accent-primary-light: #38bdf8;
+  --accent-primary-dark: #0284c7;
+  
+  /* Gradients */
+  --gradient-glass: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 100%);
+  --glow-cyan: 0 0 20px rgba(14, 165, 233, 0.3);
+  --glow-emerald: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--theme-bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  letter-spacing: -0.011em;
+  line-height: 1.6;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Liquid Glass Components
+   ============================================ */
+
+/* ===========================================
+   AEROGEL MATERIAL - The "Magic" Glass
+   Key: saturate(220%) makes colors POP
+   =========================================== */
+
+/* Primary Glass Panel */
+.glass-panel {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(1.05);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(1.05);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  transition: 
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-spring);
+  will-change: transform;
+}
+
+/* Noise Texture Overlay - Prevents banding, adds realism */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.035;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Inner highlight gradient */
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: var(--gradient-glass);
+  pointer-events: none;
+}
+
+.glass-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-panel:hover {
+  background: var(--glass-bg-hover);
+  box-shadow: var(--glass-shadow-elevated);
+}
+
+/* Floating Island - Dynamic Island style */
+.glass-island {
+  position: relative;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(48px) saturate(240%) brightness(1.1);
+  -webkit-backdrop-filter: blur(48px) saturate(240%) brightness(1.1);
+  border-radius: var(--radius-full);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.03),
+    0 24px 48px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* Noise texture for island */
+.glass-island::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.04;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.glass-island > * {
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .glass-island {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+    0 16px 40px -10px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+/* Capsule - Pill-shaped container */
+.glass-capsule {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--glass-shadow);
+  padding: var(--space-xs) var(--space-md);
+}
+
+/* Card with subtle inner glow */
+.glass-card {
+  background: var(--gradient-glass);
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ============================================
+   Button System
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Glass Button */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.btn-glass:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow-cyan);
+}
+
+/* Primary Button with Neon Glow */
+.btn-primary {
+  background: var(--gradient-accent);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  box-shadow: 
+    0 4px 16px -4px rgba(34, 211, 238, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 
+    0 8px 32px -4px rgba(34, 211, 238, 0.6),
+    0 0 48px rgba(34, 211, 238, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Neon Outline Button */
+.btn-neon {
+  background: transparent;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.btn-neon:hover:not(:disabled) {
+  background: rgba(34, 211, 238, 0.1);
+  box-shadow: 
+    0 0 24px rgba(34, 211, 238, 0.4),
+    inset 0 0 24px rgba(34, 211, 238, 0.1);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--glass-bg);
+  color: var(--text-primary);
+}
+
+/* Icon Button */
+.btn-icon {
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+}
+
+.btn-icon-rounded {
+  padding: var(--space-sm);
+  border-radius: var(--radius-full);
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+.font-display {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.font-data {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  font-variant-numeric: tabular-nums slashed-zero;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+}
+
+/* ============================================
+   Layout Utilities
+   ============================================ */
+
+.floating-panel {
+  position: absolute;
+  z-index: 50;
+}
+
+.floating-top {
+  top: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.floating-bottom {
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.floating-left {
+  left: var(--space-lg);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.floating-right {
+  right: var(--space-lg);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-in {
+  animation: float-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  animation: float-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+
+/* ============================================
+   Scrollbar - Minimal
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+  background-clip: content-box;
+}
+
+/* Custom scrollbar for inner panels - thinner and more subtle */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  border: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   Map Controls Override (Google Maps)
+   ============================================ */
+
+.gm-style {
+  font-family: inherit !important;
+}
+
+.gm-style-cc,
+.gm-style-mtc,
+.gmnoprint {
+  display: none !important;
+}
+
+.gm-control-active {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(var(--glass-blur)) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+/* ============================================
+   Status Indicators
+   ============================================ */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.status-online {
+  background: var(--accent-success);
+  box-shadow: 0 0 8px var(--accent-success);
+}
+
+.status-warning {
+  background: var(--accent-warning);
+  box-shadow: 0 0 8px var(--accent-warning);
+}
+
+.status-danger {
+  background: var(--accent-danger);
+  box-shadow: 0 0 8px var(--accent-danger);
+}
+
+/* ============================================
+   Data Display Components
+   ============================================ */
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.stat-unit {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-left: 0.25em;
+}
+
+/* ============================================
+   Dividers
+   ============================================ */
+
+.divider {
+  height: 1px;
+  background: var(--glass-border-subtle);
+  margin: var(--space-md) 0;
+}
+
+.divider-vertical {
+  width: 1px;
+  height: 100%;
+  background: var(--glass-border-subtle);
+  margin: 0 var(--space-md);
+}
