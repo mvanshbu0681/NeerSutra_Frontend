@@ -124,11 +124,11 @@ export default function SpeciesSelector() {
               </div>
               
               {/* Info */}
-              <div className="flex-1 text-left">
-                <p className={`text-sm font-medium ${isSelected ? 'text-white' : 'text-white/70'}`}>
+              <div className="flex-1 text-left min-w-0">
+                <p className={`text-sm font-medium truncate leading-tight ${isSelected ? 'text-white' : 'text-white/70'}`}>
                   {sp.name}
                 </p>
-                <p className="text-[10px] text-white/40 italic">
+                <p className="text-[10px] text-white/40 italic truncate">
                   {sp.scientificName}
                 </p>
               </div>

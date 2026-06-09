@@ -11,6 +11,7 @@ import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 import { MapboxOverlay } from '@deck.gl/mapbox';
 import { ScatterplotLayer, PolygonLayer, PathLayer, TextLayer } from '@deck.gl/layers';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Droplet, FlaskConical, CloudLightning, Thermometer, Waves, AlertTriangle } from 'lucide-react';
 import { useEWSStore, useFilteredEvents } from '../../../../src/store/useEWSStore';
 import { 
   generateCycloneTrack, 
@@ -182,33 +183,7 @@ export default function EWSMapPanel({ className = '' }: EWSMapPanelProps) {
 
         const map = new maplibregl.Map({
           container: mapContainer.current!,
-          style: {
-            version: 8,
-            name: 'EWS Hazard Map',
-            sources: {
-              'carto-dark': {
-                type: 'raster',
-                tiles: [
-                  'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-                  'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-                  'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-                ],
-                tileSize: 256,
-                attribution: '&copy; CARTO',
-                maxzoom: 19,
-              },
-            },
-            layers: [
-              {
-                id: 'carto-dark-layer',
-                type: 'raster',
-                source: 'carto-dark',
-                minzoom: 0,
-                maxzoom: 22,
-              },
-            ],
-            glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
-          },
+          style: `https://api.maptiler.com/maps/satellite-v4/style.json?key=${process.env.NEXT_PUBLIC_MAPTILER_API_KEY || 'BzBDfbnpDAN0yIDfeSBN'}`,
           center: [viewState.longitude, viewState.latitude],
           zoom: viewState.zoom,
           pitch: viewState.pitch,
@@ -787,7 +762,7 @@ export default function EWSMapPanel({ className = '' }: EWSMapPanelProps) {
     return (
       <div className={`w-full h-full bg-[#0a0a1a] flex items-center justify-center ${className}`}>
         <div className="text-center p-8">
-          <div className="text-red-400 text-4xl mb-4">⚠️</div>
+          <AlertTriangle className="w-10 h-10 text-red-400 mb-4" />
           <div className="text-red-400 text-lg mb-2">Map Error</div>
           <p className="text-white/50 text-sm mb-4">{error}</p>
           <button 
@@ -899,19 +874,18 @@ export default function EWSMapPanel({ className = '' }: EWSMapPanelProps) {
         style={{ borderBottom: `3px solid ${hazardConfig.accentColor}` }}
       >
         <div className="flex items-center gap-3">
-          <div 
+          <div
             className="w-8 h-8 rounded-lg flex items-center justify-center"
-            style={{ 
+            style={{
               background: `linear-gradient(135deg, ${hazardConfig.gradientFrom}, ${hazardConfig.gradientTo})`,
               boxShadow: `0 0 15px ${hazardConfig.accentColor}50`,
             }}
           >
-            <span className="text-white text-lg">
-              {activeHazard === 'oil_spill' ? '💧' : 
-               activeHazard === 'hab' ? '🧪' :
-               activeHazard === 'cyclone' ? '🌀' :
-               activeHazard === 'mhw' ? '🌡️' : '🌊'}
-            </span>
+            {activeHazard === 'oil_spill' ? <Droplet      className="w-4 h-4 text-white" /> :
+             activeHazard === 'hab'       ? <FlaskConical  className="w-4 h-4 text-white" /> :
+             activeHazard === 'cyclone'   ? <CloudLightning className="w-4 h-4 text-white" /> :
+             activeHazard === 'mhw'       ? <Thermometer   className="w-4 h-4 text-white" /> :
+                                            <Waves         className="w-4 h-4 text-white" />}
           </div>
           <div>
             <div 

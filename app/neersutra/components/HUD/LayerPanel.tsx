@@ -1,107 +1,85 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  Layers,
-  Ship,
-  Wind,
-  Waves,
-  Navigation,
-  AlertCircle,
-  Map,
-  Eye,
-  EyeOff,
-} from 'lucide-react';
+import { Layers, Ship, Wind, Waves, Navigation, AlertCircle, Map, Eye, EyeOff } from 'lucide-react';
 import { useMapStore } from '../../store';
 import { cn } from '../../types/utils';
 import type { LayerVisibility } from '../../types';
 
-interface LayerPanelProps {
-  className?: string;
-}
+interface LayerPanelProps { className?: string }
 
-/**
- * LayerPanel - Floating layer toggle panel
- * Minimal design with smooth animations
- */
+const LAYERS: {
+  key: keyof LayerVisibility;
+  label: string;
+  icon: React.ReactNode;
+  accentColor: string;
+}[] = [
+  { key: 'aisTraffic',      label: 'AIS Traffic', icon: <Ship className="w-3.5 h-3.5" />,       accentColor: '#34d399' },
+  { key: 'weatherWind',     label: 'Wind Field',  icon: <Wind className="w-3.5 h-3.5" />,        accentColor: '#22d3ee' },
+  { key: 'weatherWaves',    label: 'Wave Height', icon: <Waves className="w-3.5 h-3.5" />,       accentColor: '#60a5fa' },
+  { key: 'weatherCurrents', label: 'Currents',    icon: <Navigation className="w-3.5 h-3.5" />, accentColor: '#a78bfa' },
+  { key: 'routes',          label: 'Routes',      icon: <Map className="w-3.5 h-3.5" />,         accentColor: '#fbbf24' },
+  { key: 'congestion',      label: 'Congestion',  icon: <AlertCircle className="w-3.5 h-3.5" />, accentColor: '#f87171' },
+];
+
 export function LayerPanel({ className }: LayerPanelProps) {
   const { layerVisibility, toggleLayer } = useMapStore();
 
-  const layers: {
-    key: keyof LayerVisibility;
-    label: string;
-    icon: React.ReactNode;
-    color: string;
-    activeColor: string;
-  }[] = [
-    { key: 'aisTraffic', label: 'AIS Traffic', icon: <Ship className="w-4 h-4" />, color: 'text-[#64748b]', activeColor: 'text-[#34d399]' },
-    { key: 'weatherWind', label: 'Wind', icon: <Wind className="w-4 h-4" />, color: 'text-[#64748b]', activeColor: 'text-[#22d3ee]' },
-    { key: 'weatherWaves', label: 'Waves', icon: <Waves className="w-4 h-4" />, color: 'text-[#64748b]', activeColor: 'text-[#2997ff]' },
-    { key: 'weatherCurrents', label: 'Currents', icon: <Navigation className="w-4 h-4" />, color: 'text-[#64748b]', activeColor: 'text-[#a78bfa]' },
-    { key: 'routes', label: 'Routes', icon: <Map className="w-4 h-4" />, color: 'text-[#64748b]', activeColor: 'text-[#fbbf24]' },
-    { key: 'congestion', label: 'Congestion', icon: <AlertCircle className="w-4 h-4" />, color: 'text-[#64748b]', activeColor: 'text-[#f87171]' },
-  ];
-
   return (
     <motion.div
-      className={cn('glass-panel p-4 rounded-3xl w-48', className)}
+      className={cn('glass-panel p-3 rounded-2xl w-44', className)}
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 30, delay: 0.25 }}
     >
       {/* Header */}
-      <div className="flex items-center gap-3 mb-4 pb-3 border-b border-white/5">
-        <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center">
-          <Layers className="w-4 h-4 text-[#22d3ee]" />
+      <div className="flex items-center gap-2 mb-3 pb-2.5 border-b border-white/[0.06]">
+        <div className="w-6 h-6 rounded-lg bg-white/[0.06] flex items-center justify-center">
+          <Layers className="w-3.5 h-3.5 text-white/50" />
         </div>
-        <span className="text-sm font-medium text-white">Layers</span>
+        <span className="text-xs font-semibold text-white/80 tracking-tight">Layers</span>
       </div>
 
-      {/* Layer List */}
-      <div className="space-y-1">
-        {layers.map((layer) => {
+      {/* Rows */}
+      <div className="space-y-0.5">
+        {LAYERS.map((layer) => {
           const isActive = layerVisibility[layer.key];
-          
           return (
-            <motion.button
+            <button
               key={layer.key}
               onClick={() => toggleLayer(layer.key)}
               className={cn(
-                'w-full flex items-center gap-3 p-3 rounded-xl transition-all text-left',
-                isActive
-                  ? 'bg-white/5'
-                  : 'hover:bg-white/[0.03]'
+                'w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-all text-left',
+                isActive ? 'bg-white/[0.06]' : 'hover:bg-white/[0.03]'
               )}
-              whileHover={{ x: 2 }}
-              whileTap={{ scale: 0.98 }}
             >
-              <div
-                className={cn(
-                  'transition-colors',
-                  isActive ? layer.activeColor : layer.color
-                )}
+              {/* Icon */}
+              <span
+                className="transition-colors"
+                style={{ color: isActive ? layer.accentColor : 'rgba(255,255,255,0.3)' }}
               >
                 {layer.icon}
-              </div>
+              </span>
+
+              {/* Label */}
               <span
                 className={cn(
-                  'flex-1 text-sm transition-colors',
-                  isActive ? 'text-white' : 'text-[#64748b]'
+                  'flex-1 text-[11px] font-medium transition-colors',
+                  isActive ? 'text-white/90' : 'text-white/40'
                 )}
               >
                 {layer.label}
               </span>
-              <div className={cn(
-                'transition-colors',
-                isActive ? 'text-white' : 'text-[#475569]'
-              )}>
-                {isActive ? (
-                  <Eye className="w-4 h-4" />
-                ) : (
-                  <EyeOff className="w-4 h-4" />
+
+              {/* Toggle dot */}
+              <span
+                className={cn(
+                  'w-1.5 h-1.5 rounded-full transition-all',
+                  isActive ? 'opacity-100' : 'opacity-20'
                 )}
-              </div>
-            </motion.button>
+                style={{ backgroundColor: isActive ? layer.accentColor : '#64748b' }}
+              />
+            </button>
           );
         })}
       </div>

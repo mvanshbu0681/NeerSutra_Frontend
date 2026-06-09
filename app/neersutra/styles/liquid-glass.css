@@ -8,35 +8,43 @@
    ============================================ */
 
 :root {
-  /* === DARK SPACE THEME (Default) === */
-  --theme-bg-primary: #050505;
-  --theme-bg-secondary: #0a0a0f;
-  --theme-bg-tertiary: #111118;
-  
-  /* Aerogel Glass Material */
-  --glass-bg: rgba(18, 18, 23, 0.65);
-  --glass-bg-hover: rgba(28, 28, 36, 0.75);
-  --glass-border-top: rgba(255, 255, 255, 0.12);
+  /* === DEEP OCEAN THEME (Default) === */
+  --theme-bg-primary: #020c1b;
+  --theme-bg-secondary: #041428;
+  --theme-bg-tertiary: #071f40;
+
+  /* Ocean background gradient (shown while maps load) */
+  --ocean-bg: radial-gradient(ellipse 120% 80% at 50% 100%, #051830 0%, #020c1b 55%, #010810 100%);
+
+  /* Aerogel Glass Material — 50% opacity + 24px blur = visible-through glass */
+  --glass-bg: rgba(5, 15, 40, 0.50);
+  --glass-bg-hover: rgba(8, 22, 55, 0.62);
+  --glass-border-top: rgba(255, 255, 255, 0.14);
   --glass-border-bottom: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-subtle: rgba(255, 255, 255, 0.04);
-  --glass-highlight: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-highlight: rgba(255, 255, 255, 0.07);
+
+  /* Section accent (overridden per section theme class) */
+  --section-accent: #22d3ee;
+  --section-accent-dim: rgba(34, 211, 238, 0.15);
+  --section-accent-glow: 0 0 28px rgba(34, 211, 238, 0.30);
   
-  /* Specular Lighting Shadows */
-  --glass-shadow: 
+  /* Specular Lighting Shadows — lighter for transparent glass over map */
+  --glass-shadow:
     inset 0 1px 0 0 var(--glass-border-top),
     inset 0 -1px 0 0 var(--glass-border-bottom),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
-    0 20px 40px -10px rgba(0, 0, 0, 0.6),
-    0 8px 16px -4px rgba(0, 0, 0, 0.4);
-  --glass-shadow-elevated: 
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 12px 28px -8px rgba(0, 0, 0, 0.45),
+    0 4px 10px -2px rgba(0, 0, 0, 0.25);
+  --glass-shadow-elevated:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.16),
     inset 0 -1px 0 0 var(--glass-border-bottom),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 32px 64px -16px rgba(0, 0, 0, 0.7),
-    0 16px 32px -8px rgba(0, 0, 0, 0.5);
-  --glass-blur: 40px;
-  --glass-saturate: 220%;
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 20px 40px -10px rgba(0, 0, 0, 0.55),
+    0 8px 20px -5px rgba(0, 0, 0, 0.35);
+  --glass-blur: 24px;
+  --glass-saturate: 180%;
   
   /* Text - High Contrast */
   --text-primary: #f8fafc;
@@ -681,4 +689,97 @@ body {
   height: 100%;
   background: var(--glass-border-subtle);
   margin: 0 var(--space-md);
+}
+
+/* ============================================
+   Section Accent Themes
+   Applied to the root layout div of each section.
+   Child components use var(--section-accent) for
+   highlights, borders, glows, and active states.
+   ============================================ */
+
+.theme-fleet {
+  --section-accent: #22d3ee;
+  --section-accent-dim: rgba(34, 211, 238, 0.12);
+  --section-accent-glow: 0 0 28px rgba(34, 211, 238, 0.28);
+  --accent-primary: #22d3ee;
+  --glow-accent: var(--section-accent-glow);
+}
+
+.theme-che {
+  --section-accent: #10b981;
+  --section-accent-dim: rgba(16, 185, 129, 0.12);
+  --section-accent-glow: 0 0 28px rgba(16, 185, 129, 0.28);
+  --accent-primary: #10b981;
+  --glow-accent: var(--section-accent-glow);
+}
+
+.theme-pfz {
+  --section-accent: #f59e0b;
+  --section-accent-dim: rgba(245, 158, 11, 0.12);
+  --section-accent-glow: 0 0 28px rgba(245, 158, 11, 0.28);
+  --accent-primary: #f59e0b;
+  --glow-accent: var(--section-accent-glow);
+}
+
+.theme-ews {
+  --section-accent: #ef4444;
+  --section-accent-dim: rgba(239, 68, 68, 0.12);
+  --section-accent-glow: 0 0 28px rgba(239, 68, 68, 0.28);
+  --accent-primary: #ef4444;
+  --glow-accent: var(--section-accent-glow);
+}
+
+/* Ocean background — deep navy gradient shown while map tiles load */
+.ocean-bg {
+  background: radial-gradient(ellipse 120% 80% at 50% 100%, #051830 0%, #020c1b 55%, #010810 100%);
+}
+
+/* Accent-border helper — reacts to whatever section theme is active */
+.border-accent {
+  border-color: var(--section-accent) !important;
+}
+
+/* Accent glow helper */
+.glow-accent {
+  box-shadow: var(--section-accent-glow) !important;
+}
+
+/* Thin top accent line — for cards that want a colored header bar */
+.accent-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+  background: var(--section-accent);
+  opacity: 0.7;
+}
+
+/* Section header badge */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--section-accent-dim);
+  border: 1px solid var(--section-accent);
+  color: var(--section-accent);
+}
+
+/* Panel collapse animation helpers */
+.panel-enter {
+  animation: panel-slide-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes panel-slide-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

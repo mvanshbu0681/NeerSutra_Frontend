@@ -65,7 +65,7 @@ const ThinkingProcess = ({ isVisible, onComplete }) => {
       <div className="thinking-container">
         <div className="thinking-header">
           <div className="thinking-avatar">
-            <img src="/mainlogo.svg" alt="ARGO AI" style={{ width: '18px', height: '18px' }} />
+            <img src="/mainlogo.png" alt="ARGO AI" style={{ width: '18px', height: '18px' }} />
           </div>
           <div className="thinking-title">ARGO AI is processing...</div>
         </div>

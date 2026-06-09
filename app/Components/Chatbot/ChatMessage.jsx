@@ -176,7 +176,7 @@ const ChatMessage = ({
       <div className={`chat-message bot`} ref={messageRef}>
         <div className="message-avatar bot">
           <img
-            src="/mainlogo.svg"
+            src="/mainlogo.png"
             alt="ARGO AI"
             style={{ width: "24px", height: "24px" }}
           />
@@ -208,7 +208,7 @@ const ChatMessage = ({
           <div className="user-avatar">U</div>
         ) : (
           <img
-            src="/mainlogo.svg"
+            src="/mainlogo.png"
             alt="ARGO AI"
             style={{ width: "28px", height: "28px", filter: "grayscale(100%)" }}
           />

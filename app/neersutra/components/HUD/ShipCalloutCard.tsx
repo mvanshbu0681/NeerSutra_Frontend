@@ -1,179 +1,138 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { X, Ship, Compass, Gauge, Anchor, ExternalLink, MapPin } from 'lucide-react';
 import { useMapStore } from '../../store';
 import { cn } from '../../types/utils';
-import { formatCoordinate, formatSpeed } from '../../types/utils';
+import { formatCoordinate } from '../../types/utils';
 import type { AISData } from '../../types';
 
+const SHIP_TYPE_ACCENT: Record<string, string> = {
+  Cargo:     '#34d399',
+  Tanker:    '#fbbf24',
+  Container: '#60a5fa',
+  Passenger: '#a78bfa',
+  Fishing:   '#22d3ee',
+  Other:     '#94a3b8',
+};
+
 /**
- * ShipCalloutCard - Context-aware popup for selected vessels
- * Docks to the right side of the screen
+ * ShipCalloutCard — no self-positioning; parent layout controls placement via
+ * AnimatePresence + motion.div in NeerSutraLayoutV2.
  */
 export function ShipCalloutCard() {
   const { selectedShip, setSelectedShip } = useMapStore();
 
   if (!selectedShip) return null;
 
-  const shipTypeColors: Record<string, string> = {
-    Cargo: 'from-emerald-400 to-emerald-600',
-    Tanker: 'from-amber-400 to-orange-600',
-    Container: 'from-blue-400 to-blue-600',
-    Passenger: 'from-violet-400 to-purple-600',
-    Fishing: 'from-teal-400 to-cyan-600',
-    Other: 'from-slate-400 to-slate-600',
-  };
-
-  const gradientClass = shipTypeColors[selectedShip.shipType] || shipTypeColors.Other;
+  const accent = SHIP_TYPE_ACCENT[selectedShip.shipType] ?? SHIP_TYPE_ACCENT.Other;
 
   return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed right-8 top-1/2 -translate-y-1/2 z-50 w-80"
-        initial={{ opacity: 0, x: 100, scale: 0.95 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
-        exit={{ opacity: 0, x: 100, scale: 0.95 }}
-        transition={{
-          type: 'spring',
-          stiffness: 300,
-          damping: 30,
-        }}
-      >
-        <div className="glass-card overflow-hidden">
-          {/* Header with gradient */}
-          <div className={cn('bg-gradient-to-r p-5', gradientClass)}>
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <Ship className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-white/80 font-medium uppercase tracking-wider">
-                    {selectedShip.shipType}
-                  </p>
-                  <p className="font-data text-lg text-white font-bold">
-                    {selectedShip.MMSI}
-                  </p>
-                </div>
-              </div>
-              
-              <motion.button
-                onClick={() => setSelectedShip(null)}
-                className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <X className="w-4 h-4" />
-              </motion.button>
-            </div>
+    <div className="w-72 glass-panel rounded-2xl overflow-hidden">
+      {/* Thin accent line at top */}
+      <div className="h-[2px] w-full" style={{ background: accent }} />
+
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 pt-3 pb-2">
+        <div className="flex items-center gap-3">
+          <div
+            className="w-9 h-9 rounded-xl flex items-center justify-center"
+            style={{ background: `${accent}20`, border: `1px solid ${accent}40` }}
+          >
+            <Ship className="w-4 h-4" style={{ color: accent }} />
           </div>
-
-          {/* Content */}
-          <div className="p-5 space-y-5">
-            {/* Position */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-[var(--text-muted)]">
-                <MapPin className="w-4 h-4" />
-                <span className="text-xs font-medium uppercase tracking-wider">Position</span>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="stat-card">
-                  <span className="stat-label">Latitude</span>
-                  <span className="stat-value text-base">
-                    {formatCoordinate(selectedShip.latitude, 'lat')}
-                  </span>
-                </div>
-                <div className="stat-card">
-                  <span className="stat-label">Longitude</span>
-                  <span className="stat-value text-base">
-                    {formatCoordinate(selectedShip.longitude, 'lon')}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Movement */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-[var(--text-muted)]">
-                <Compass className="w-4 h-4" />
-                <span className="text-xs font-medium uppercase tracking-wider">Movement</span>
-              </div>
-              <div className="grid grid-cols-3 gap-3">
-                <div className="stat-card">
-                  <span className="stat-label">Speed</span>
-                  <span className="stat-value text-base">
-                    {selectedShip.SOG.toFixed(1)}
-                    <span className="stat-unit">kn</span>
-                  </span>
-                </div>
-                <div className="stat-card">
-                  <span className="stat-label">Course</span>
-                  <span className="stat-value text-base">
-                    {selectedShip.COG.toFixed(0)}°
-                  </span>
-                </div>
-                <div className="stat-card">
-                  <span className="stat-label">Heading</span>
-                  <span className="stat-value text-base">
-                    {selectedShip.heading.toFixed(0)}°
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Dimensions */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-[var(--text-muted)]">
-                <Anchor className="w-4 h-4" />
-                <span className="text-xs font-medium uppercase tracking-wider">Vessel</span>
-              </div>
-              <div className="grid grid-cols-3 gap-3">
-                <div className="stat-card">
-                  <span className="stat-label">Length</span>
-                  <span className="stat-value text-base">
-                    {selectedShip.length.toFixed(0)}
-                    <span className="stat-unit">m</span>
-                  </span>
-                </div>
-                <div className="stat-card">
-                  <span className="stat-label">Beam</span>
-                  <span className="stat-value text-base">
-                    {selectedShip.beam.toFixed(0)}
-                    <span className="stat-unit">m</span>
-                  </span>
-                </div>
-                <div className="stat-card">
-                  <span className="stat-label">Draft</span>
-                  <span className="stat-value text-base">
-                    {selectedShip.draft.toFixed(1)}
-                    <span className="stat-unit">m</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Actions */}
-            <div className="flex gap-3 pt-2">
-              <motion.button
-                className="btn-primary flex-1 py-3 rounded-xl"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Track Vessel
-              </motion.button>
-              <motion.button
-                className="btn-glass py-3 px-4 rounded-xl"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <ExternalLink className="w-4 h-4" />
-              </motion.button>
-            </div>
+          <div>
+            <p
+              className="text-[10px] font-semibold uppercase tracking-widest"
+              style={{ color: accent }}
+            >
+              {selectedShip.shipType}
+            </p>
+            <p className="font-mono text-sm font-bold text-white leading-tight">
+              {selectedShip.MMSI}
+            </p>
           </div>
         </div>
-      </motion.div>
-    </AnimatePresence>
+        <button
+          onClick={() => setSelectedShip(null)}
+          className="w-7 h-7 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+        >
+          <X className="w-3.5 h-3.5 text-white/50" />
+        </button>
+      </div>
+
+      {/* Divider */}
+      <div className="mx-4 h-px bg-white/[0.06]" />
+
+      {/* Body */}
+      <div className="px-4 py-3 space-y-3">
+        {/* Position */}
+        <div>
+          <div className="flex items-center gap-1.5 mb-1.5">
+            <MapPin className="w-3 h-3 text-white/30" />
+            <span className="text-[10px] font-medium uppercase tracking-widest text-white/30">Position</span>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <Metric label="Latitude"  value={formatCoordinate(selectedShip.latitude, 'lat')} />
+            <Metric label="Longitude" value={formatCoordinate(selectedShip.longitude, 'lon')} />
+          </div>
+        </div>
+
+        {/* Movement */}
+        <div>
+          <div className="flex items-center gap-1.5 mb-1.5">
+            <Compass className="w-3 h-3 text-white/30" />
+            <span className="text-[10px] font-medium uppercase tracking-widest text-white/30">Movement</span>
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            <Metric label="Speed"   value={`${selectedShip.SOG.toFixed(1)} kn`} />
+            <Metric label="Course"  value={`${selectedShip.COG.toFixed(0)}°`} />
+            <Metric label="Heading" value={`${selectedShip.heading.toFixed(0)}°`} />
+          </div>
+        </div>
+
+        {/* Vessel */}
+        <div>
+          <div className="flex items-center gap-1.5 mb-1.5">
+            <Anchor className="w-3 h-3 text-white/30" />
+            <span className="text-[10px] font-medium uppercase tracking-widest text-white/30">Vessel</span>
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            <Metric label="Length" value={`${selectedShip.length.toFixed(0)} m`} />
+            <Metric label="Beam"   value={`${selectedShip.beam.toFixed(0)} m`} />
+            <Metric label="Draft"  value={`${selectedShip.draft.toFixed(1)} m`} />
+          </div>
+        </div>
+      </div>
+
+      {/* Actions */}
+      <div className="px-4 pb-4 flex gap-2">
+        <button
+          className="flex-1 py-2 rounded-xl text-sm font-semibold transition-all"
+          style={{
+            background: `${accent}22`,
+            border: `1px solid ${accent}40`,
+            color: accent,
+          }}
+        >
+          Track Vessel
+        </button>
+        <button className="py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/[0.08]">
+          <ExternalLink className="w-4 h-4 text-white/50" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function Metric({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="p-2 rounded-lg bg-white/[0.04] border border-white/[0.05]">
+      <span className="text-[9px] font-medium uppercase tracking-wider text-white/35 block mb-0.5">
+        {label}
+      </span>
+      <span className="font-mono text-xs font-semibold text-white/90">{value}</span>
+    </div>
   );
 }
 

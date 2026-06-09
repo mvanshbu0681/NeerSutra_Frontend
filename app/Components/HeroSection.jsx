@@ -94,6 +94,8 @@ const HeroSection = () => {
         muted
         loop
         playsInline
+        preload="metadata"
+        poster="/main-poster.jpg"
         style={{
           position: "absolute",
           top: 0,

@@ -65,7 +65,7 @@ export default function HazardSelector() {
                 transition-all duration-200
                 ${isActive 
                   ? 'bg-white/10 border border-white/20' 
-                  : 'bg-white/5 border border-transparent hover:bg-white/8 hover:border-white/10'
+                  : 'bg-white/5 border border-transparent hover:bg-white/[0.08] hover:border-white/10'
                 }
               `}
               whileHover={{ scale: 1.02 }}

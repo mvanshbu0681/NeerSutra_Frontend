@@ -65,7 +65,7 @@ const Navigation = () => {
         <hr className="line line-top" />
         <h1 className="nav-title">
           <span className="title-part title-fl">FL</span>
-          <img src="/mainlogo.svg" alt="O" className="logo-inline" />
+          <img src="/mainlogo.png" alt="O" className="logo-inline" />
           <span className="title-part title-at">AT CHAT</span>
         </h1>
         <p className="nav-subtitle">

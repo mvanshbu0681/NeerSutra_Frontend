@@ -59,10 +59,17 @@ export default function AdvisoryPanel() {
         ? polygons.reduce((sum, p) => sum + p.meanHSI, 0) / polygons.length
         : 0;
 
+    // Format large area as "3.3M" or "120k" for readability
+    const fmtArea = (km2: number) => {
+      if (km2 >= 1_000_000) return `${(km2 / 1_000_000).toFixed(1)}M`;
+      if (km2 >= 1_000) return `${(km2 / 1_000).toFixed(0)}k`;
+      return String(km2);
+    };
+
     return {
       totalZones: polygons.length,
       highZones: highZones.length,
-      totalArea: Math.round(totalArea),
+      totalArea: fmtArea(Math.round(totalArea)),
       avgHSI: (avgHSI * 100).toFixed(0),
       confidence: Math.round(currentForecast.confidence * 100),
     };
@@ -210,7 +217,7 @@ export default function AdvisoryPanel() {
         <div className="glass-panel rounded-2xl p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-cyan-400" />
+              <div className="w-2 h-2 rounded-full bg-amber-400" />
               <h2 className="text-sm font-semibold tracking-tight">
                 Detected Zones
               </h2>

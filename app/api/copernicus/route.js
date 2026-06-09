@@ -38,11 +38,16 @@ export async function GET() {
           !Number.isNaN(p.longitude)
       );
 
-    return NextResponse.json({ ok: true, rows: minimal });
+    return NextResponse.json(
+      { ok: true, rows: minimal },
+      // Static dataset — let the browser/CDN cache it instead of re-reading.
+      { headers: { "Cache-Control": "public, max-age=3600" } }
+    );
   } catch (err) {
+    // Log the real error server-side; never leak file paths/stack to the client.
     console.error("Error reading copernicus JSON", err);
     return NextResponse.json(
-      { ok: false, error: String(err) },
+      { ok: false, error: "Failed to load ocean data." },
       { status: 500 }
     );
   }

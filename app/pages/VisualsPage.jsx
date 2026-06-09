@@ -1,8 +1,20 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import Navbar from "../Components/Navbar";
-import MissionDashboard from "../Components/MissionDashboard";
+
+// MissionDashboard pulls in recharts + framer-motion (large). It is already a
+// client-only component, so deferring it to its own chunk keeps the initial
+// route payload small without changing what the user sees.
+const MissionDashboard = dynamic(() => import("../Components/MissionDashboard"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center min-h-[60vh] text-slate-400">
+      Loading dashboard…
+    </div>
+  ),
+});
 
 const VisualsPage = () => {
   return (

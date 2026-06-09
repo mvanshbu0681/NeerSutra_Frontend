@@ -65,7 +65,7 @@ const Navbar = ({ isVisible = true }) => {
         <div className="navbar-brand" onClick={handleLogoClick}>
           <div className="logo">
             <img
-              src="/mainlogo.svg"
+              src="/mainlogo.png"
               alt="Float Chat Logo"
               width="80"
               height="80"

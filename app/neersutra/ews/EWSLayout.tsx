@@ -45,20 +45,19 @@ const EWSMapPanel = dynamic<EWSMapPanelProps>(
 
 function MapLoader() {
   return (
-    <div className="w-full h-full bg-[#050505] flex items-center justify-center">
+    <div
+      className="w-full h-full flex items-center justify-center"
+      style={{ background: "radial-gradient(ellipse 120% 80% at 50% 100%, #1c0404 0%, #020c1b 55%, #010810 100%)" }}
+    >
       <div className="flex flex-col items-center gap-6">
-        <div className="relative w-20 h-20">
-          <div className="absolute inset-0 rounded-full border border-[rgba(255,255,255,0.1)]" />
+        <div className="relative w-16 h-16">
+          <div className="absolute inset-0 rounded-full border border-white/[0.08]" />
           <div className="absolute inset-1 rounded-full border-2 border-t-[#ef4444] border-r-transparent border-b-transparent border-l-transparent animate-spin" />
-          <div className="absolute inset-3 rounded-full border border-[rgba(239,68,68,0.3)] animate-pulse" />
+          <div className="absolute inset-3 rounded-full border border-[rgba(239,68,68,0.2)] animate-pulse" />
         </div>
-        <div className="text-center space-y-2">
-          <p className="font-display text-xl text-white tracking-tight">
-            Hazard Watch
-          </p>
-          <p className="text-sm text-[#64748b] font-mono">
-            Initializing Early Warning System...
-          </p>
+        <div className="text-center space-y-1">
+          <p className="font-display text-base text-white/90 tracking-tight">Hazard Watch</p>
+          <p className="text-xs text-[#ef4444]/60 font-mono">Initializing Early Warning System…</p>
         </div>
       </div>
     </div>
@@ -68,7 +67,6 @@ function MapLoader() {
 function EWSLayoutInner() {
   const [isInitialized, setIsInitialized] = useState(false);
   const [isLeftOpen, setIsLeftOpen] = useState(true);
-  const [isRightOpen, setIsRightOpen] = useState(true);
 
   const {
     activeHazard,
@@ -103,9 +101,11 @@ function EWSLayoutInner() {
 
   const selectedEvent = events.find((e) => e.eventId === selectedEventId);
 
+  const LEFT_W = 264;
+
   return (
     <div
-      className="relative w-full h-screen overflow-hidden bg-[#050505] text-white font-sans"
+      className="theme-ews relative w-full h-screen overflow-hidden ocean-bg text-white font-sans"
       style={
         {
           "--hazard-accent": hazardConfig.accentColor,
@@ -114,12 +114,28 @@ function EWSLayoutInner() {
         } as React.CSSProperties
       }
     >
-      {/* Layer 0: Floating TopBar (z-50 for dropdown visibility) */}
+      {/* Layer 0: Full-screen Map */}
+      <div className="absolute inset-0 z-0">
+        <EWSMapPanel className="w-full h-full" />
+      </div>
+
+      {/* Layer 1: Subtle edge vignette */}
+      <div
+        className="absolute inset-0 z-[5] pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(ellipse 90% 70% at 50% 50%, transparent 0%, transparent 60%, rgba(0,0,0,0.22) 100%),
+            linear-gradient(180deg, rgba(2,12,27,0.15) 0%, transparent 12%, transparent 88%, rgba(2,12,27,0.20) 100%)
+          `,
+        }}
+      />
+
+      {/* Layer 2: TopBar */}
       <div
         className="absolute top-0 left-0 right-0 z-50 flex justify-center pointer-events-none px-4 pt-4 pb-2"
         style={{
           background:
-            "linear-gradient(180deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.8) 60%, transparent 100%)",
+            "linear-gradient(180deg, rgba(2,12,27,0.82) 0%, rgba(2,12,27,0.50) 55%, transparent 100%)",
         }}
       >
         <div className="pointer-events-auto">
@@ -127,179 +143,114 @@ function EWSLayoutInner() {
         </div>
       </div>
 
-      {/* Main Content - Flexbox Layout */}
-      <div className="relative w-full h-full flex">
-        {/* Left Sidebar (Collapsible) */}
-        <motion.div
-          initial={false}
-          animate={{
-            width: isLeftOpen ? 320 : 0,
-            opacity: isLeftOpen ? 1 : 0,
-          }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="relative z-30 h-full bg-black/40 backdrop-blur-xl border-r border-white/5 flex flex-col overflow-hidden"
+      {/* Layer 3: Left sidebar — collapsible, absolute, no flex layout fight */}
+      <motion.div
+        initial={false}
+        animate={{ width: isLeftOpen ? LEFT_W : 0, opacity: isLeftOpen ? 1 : 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="absolute left-0 top-0 h-full z-20 bg-[rgba(2,12,27,0.55)] backdrop-blur-[24px] border-r border-white/[0.07] overflow-hidden"
+      >
+        {/* min-width keeps content from collapsing while animating to 0 */}
+        <div
+          className="overflow-y-auto p-4 pb-6 space-y-3 custom-scrollbar h-full"
+          style={{ minWidth: LEFT_W, paddingTop: 88 }}
         >
-          <div className="flex-1 overflow-y-auto p-4 pt-24 pb-6 space-y-4 min-w-[320px]">
-            <HazardSelector />
-            <LayerControls />
-            <div className="flex-1 min-h-[300px]">
-              <AlertFeed />
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Left Toggle Button */}
-        <button
-          onClick={() => setIsLeftOpen(!isLeftOpen)}
-          className="absolute top-1/2 -translate-y-1/2 z-40 bg-black/60 hover:bg-black/80 p-1.5 rounded-r-lg backdrop-blur-md border border-l-0 border-white/10 transition-all text-white/70 hover:text-white"
-          style={{ left: isLeftOpen ? 320 : 0 }}
-        >
-          {isLeftOpen ? (
-            <ChevronLeft className="w-4 h-4" />
-          ) : (
-            <ChevronRight className="w-4 h-4" />
-          )}
-        </button>
-
-        {/* Center - Map Area */}
-        <div className="flex-1 relative h-full bg-[#050510]">
-          <EWSMapPanel className="w-full h-full" />
-
-          {/* Bottom Timeline (Floating) */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-auto w-full max-w-2xl px-4">
-            <ForecastTimeline />
-          </div>
-
-          {/* Alert Banner (Top Center, if extreme) */}
-          <AnimatePresence>
-            {alerts.some((a) => a.event.severity === "extreme") && (
-              <motion.div
-                className="absolute top-20 left-1/2 -translate-x-1/2 z-30 pointer-events-auto"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-              >
-                <div className="glass-panel rounded-xl px-6 py-3 border border-red-500/50 bg-red-950/30 flex items-center gap-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
-                  <span className="text-red-400 font-medium text-sm">
-                    {
-                      alerts.filter((a) => a.event.severity === "extreme")
-                        .length
-                    }{" "}
-                    EXTREME ALERT
-                    {alerts.filter((a) => a.event.severity === "extreme")
-                      .length > 1
-                      ? "S"
-                      : ""}{" "}
-                    ACTIVE
-                  </span>
-                  <button className="text-xs text-white/50 hover:text-white/80 transition-colors">
-                    View All →
-                  </button>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <HazardSelector />
+          <LayerControls />
+          <AlertFeed />
         </div>
+      </motion.div>
 
-        {/* Right Sidebar (Collapsible) */}
-        <motion.div
-          initial={false}
-          animate={{
-            width: isRightOpen ? 380 : 0,
-            opacity: isRightOpen ? 1 : 0,
-          }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="relative z-30 h-full bg-black/40 backdrop-blur-xl border-l border-white/5 flex flex-col overflow-hidden"
-        >
-          <div className="flex-1 overflow-y-auto p-4 pt-24 pb-6 space-y-4 min-w-[380px]">
-            {selectedEvent ? (
-              <>
-                <ConfidenceGauge event={selectedEvent} />
+      {/* Left toggle — animates x in sync with sidebar width (same spring) */}
+      <motion.button
+        animate={{ x: isLeftOpen ? LEFT_W : 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        onClick={() => setIsLeftOpen(!isLeftOpen)}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-[rgba(2,12,27,0.75)] hover:bg-[rgba(2,12,27,0.92)] p-1.5 rounded-r-md backdrop-blur-sm border border-l-0 border-white/[0.10] transition-colors text-white/60 hover:text-white"
+      >
+        {isLeftOpen ? (
+          <ChevronLeft className="w-4 h-4" />
+        ) : (
+          <ChevronRight className="w-4 h-4" />
+        )}
+      </motion.button>
 
-                {/* Hazard-specific panels */}
-                {activeHazard === "cyclone" &&
-                  selectedEvent.hazardType === "cyclone" &&
-                  (() => {
-                    const track = generateCycloneTrack(
-                      selectedEvent,
-                      currentForecastHour
-                    );
-                    return track ? (
-                      <CycloneInfoPanel
-                        track={track}
-                        currentHour={currentForecastHour}
-                      />
-                    ) : null;
-                  })()}
+      {/* Layer 4: Right floating event-detail card — only renders when event is selected */}
+      <AnimatePresence>
+        {selectedEvent && (
+          <motion.div
+            key={selectedEvent.eventId}
+            className="absolute right-4 z-20 pointer-events-auto w-[300px] overflow-y-auto overflow-x-hidden custom-scrollbar"
+            style={{ top: 84, maxHeight: "calc(100vh - 164px)" }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 40 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            <div className="flex flex-col gap-3">
+              <ConfidenceGauge event={selectedEvent} />
 
-                {activeHazard === "oil_spill" &&
-                  selectedEvent.hazardType === "oil_spill" && (
-                    <OilSpillStatsPanel
-                      event={selectedEvent}
-                      particleCount={300}
-                      currentHour={currentForecastHour}
-                    />
-                  )}
+              {activeHazard === "cyclone" &&
+                selectedEvent.hazardType === "cyclone" &&
+                (() => {
+                  const track = generateCycloneTrack(selectedEvent, currentForecastHour);
+                  return track ? (
+                    <CycloneInfoPanel track={track} currentHour={currentForecastHour} />
+                  ) : null;
+                })()}
 
-                <EventDetailPanel event={selectedEvent} />
-              </>
-            ) : (
-              <div className="glass-panel rounded-2xl p-6 h-full flex flex-col items-center justify-center text-center">
-                <div
-                  className="w-16 h-16 rounded-2xl mb-4 flex items-center justify-center"
-                  style={{
-                    background: `linear-gradient(135deg, ${hazardConfig.gradientFrom}, ${hazardConfig.gradientTo})`,
-                    boxShadow: `0 0 30px ${hazardConfig.accentColor}40`,
-                  }}
-                >
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-white/90 mb-2">
-                  Select an Event
-                </h3>
-                <p className="text-sm text-white/50 max-w-[200px]">
-                  Click on a hazard event on the map or select from the alert
-                  feed to view details
-                </p>
-                <div className="mt-6 flex items-center gap-2 text-xs text-white/30">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>{events.length} active events</span>
-                </div>
-              </div>
-            )}
-          </div>
-        </motion.div>
+              {activeHazard === "oil_spill" &&
+                selectedEvent.hazardType === "oil_spill" && (
+                  <OilSpillStatsPanel
+                    event={selectedEvent}
+                    particleCount={300}
+                    currentHour={currentForecastHour}
+                  />
+                )}
 
-        {/* Right Toggle Button */}
-        <button
-          onClick={() => setIsRightOpen(!isRightOpen)}
-          className="absolute top-1/2 -translate-y-1/2 z-40 bg-black/60 hover:bg-black/80 p-1.5 rounded-l-lg backdrop-blur-md border border-r-0 border-white/10 transition-all text-white/70 hover:text-white"
-          style={{ right: isRightOpen ? 380 : 0 }}
-        >
-          {isRightOpen ? (
-            <ChevronRight className="w-4 h-4" />
-          ) : (
-            <ChevronLeft className="w-4 h-4" />
-          )}
-        </button>
-      </div>
+              <EventDetailPanel event={selectedEvent} />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Subtle Scanlines */}
+      {/* Layer 5: Bottom Timeline */}
+      <motion.div
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-auto w-full max-w-2xl px-4"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.5 }}
+      >
+        <ForecastTimeline />
+      </motion.div>
+
+      {/* Extreme-alert banner (above map, below TopBar) */}
+      <AnimatePresence>
+        {alerts.some((a) => a.event.severity === "extreme") && (
+          <motion.div
+            className="absolute top-[88px] left-1/2 -translate-x-1/2 z-[25] pointer-events-auto"
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+          >
+            <div className="glass-panel rounded-xl px-5 py-2.5 border border-red-500/40 bg-red-950/25 flex items-center gap-3">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse shrink-0" />
+              <span className="text-red-400 font-medium text-sm">
+                {alerts.filter((a) => a.event.severity === "extreme").length}{" "}
+                EXTREME ALERT
+                {alerts.filter((a) => a.event.severity === "extreme").length > 1 ? "S" : ""} ACTIVE
+              </span>
+              <button className="text-xs text-white/40 hover:text-white/70 transition-colors ml-1">
+                View →
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Scanlines */}
       <div
-        className="absolute inset-0 z-[5] pointer-events-none opacity-[0.015]"
+        className="absolute inset-0 z-[15] pointer-events-none opacity-[0.012]"
         style={{
           background:
             "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)",

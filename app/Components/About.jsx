@@ -21,7 +21,7 @@ const About = () => {
       <div
         className="about-page"
         style={{
-          backgroundImage: "url(/About.png)",
+          backgroundImage: "url(/About.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

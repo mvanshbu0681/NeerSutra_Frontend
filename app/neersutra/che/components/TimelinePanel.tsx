@@ -7,16 +7,19 @@
 
 'use client';
 
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useEffect, useRef, type ComponentType } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Play, 
-  Pause, 
-  SkipForward, 
-  SkipBack, 
+import {
+  Play,
+  Pause,
+  SkipForward,
+  SkipBack,
   RotateCcw,
   ChevronUp,
   ChevronDown,
+  Zap,
+  History,
+  TrendingUp,
 } from 'lucide-react';
 import { useCHEStore, type TimeMode } from '../../../../src/store/useCHEStore';
 
@@ -122,10 +125,10 @@ export default function TimelinePanel() {
     { label: '1h', value: 3600 },
   ];
 
-  const timeModeLabels: Record<TimeMode, { icon: string; label: string }> = {
-    realtime: { icon: '⚡', label: 'Live' },
-    historical: { icon: '📜', label: 'Past' },
-    forecast: { icon: '🔮', label: 'Forecast' },
+  const timeModeLabels: Record<TimeMode, { Icon: React.ComponentType<{className?: string}>; label: string }> = {
+    realtime:   { Icon: Zap,         label: 'Live' },
+    historical: { Icon: History,     label: 'Past' },
+    forecast:   { Icon: TrendingUp,  label: 'Forecast' },
   };
 
   return (
@@ -144,24 +147,25 @@ export default function TimelinePanel() {
       {/* Main Controls */}
       <div className="flex items-center gap-4 px-6 py-4">
         
-        {/* Time Mode Selector (Compact Pills) */}
+        {/* Time Mode Selector */}
         <div className="flex items-center gap-1 bg-black/20 rounded-full p-1">
-          {(['realtime', 'historical', 'forecast'] as TimeMode[]).map((mode) => (
-            <button
-              key={mode}
-              onClick={() => setTimeMode(mode)}
-              className={`
-                px-3 py-1.5 text-xs font-medium rounded-full transition-all flex items-center gap-1.5
-                ${timeMode === mode
-                  ? 'bg-cyan-500 text-black'
-                  : 'text-[#64748b] hover:text-white'
-                }
-              `}
-            >
-              <span>{timeModeLabels[mode].icon}</span>
-              <span>{timeModeLabels[mode].label}</span>
-            </button>
-          ))}
+          {(['realtime', 'historical', 'forecast'] as TimeMode[]).map((mode) => {
+            const { Icon, label } = timeModeLabels[mode];
+            const isActive = timeMode === mode;
+            return (
+              <button
+                key={mode}
+                onClick={() => setTimeMode(mode)}
+                className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all flex items-center gap-1.5 ${
+                  isActive ? 'text-black' : 'text-[#64748b] hover:text-white'
+                }`}
+                style={isActive ? { background: '#10b981' } : {}}
+              >
+                <Icon className="w-3 h-3" />
+                <span>{label}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Divider */}
@@ -191,13 +195,10 @@ export default function TimelinePanel() {
 
           <motion.button
             onClick={toggleAnimation}
-            className={`
-              w-10 h-10 rounded-full flex items-center justify-center transition-all
-              ${isAnimating 
-                ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/40' 
-                : 'bg-white/10 text-white hover:bg-white/15'
-              }
-            `}
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+              isAnimating ? 'text-black shadow-lg shadow-emerald-500/40' : 'bg-white/10 text-white hover:bg-white/15'
+            }`}
+            style={isAnimating ? { background: '#10b981' } : {}}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -224,7 +225,7 @@ export default function TimelinePanel() {
           <div className="relative h-1.5 bg-white/10 rounded-full overflow-hidden">
             {/* Progress fill with glow */}
             <motion.div
-              className="absolute inset-y-0 left-0 bg-gradient-to-r from-cyan-500 to-emerald-400 rounded-full shadow-[0_0_12px_rgba(34,211,238,0.5)]"
+              className="absolute inset-y-0 left-0 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full shadow-[0_0_12px_rgba(16,185,129,0.5)]"
               style={{ width: `${progress}%` }}
               layoutId="che-progress"
             />
@@ -248,13 +249,10 @@ export default function TimelinePanel() {
             <button
               key={option.value}
               onClick={() => setAnimationSpeed(option.value)}
-              className={`
-                px-3 py-1 text-xs font-medium rounded-full transition-all
-                ${animationSpeed === option.value
-                  ? 'bg-cyan-500 text-black'
-                  : 'text-[#64748b] hover:text-white'
-                }
-              `}
+              className={`px-3 py-1 text-xs font-medium rounded-full transition-all ${
+                animationSpeed === option.value ? 'text-black' : 'text-[#64748b] hover:text-white'
+              }`}
+              style={animationSpeed === option.value ? { background: '#10b981' } : {}}
             >
               {option.label}
             </button>
@@ -304,7 +302,7 @@ export default function TimelinePanel() {
             </div>
             <div>
               <span className="text-[#64748b]">Mode: </span>
-              <span className="font-mono text-cyan-400">
+              <span className="font-mono text-emerald-400">
                 {timeModeLabels[timeMode].label}
               </span>
             </div>

@@ -8,9 +8,12 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
-import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
-import { GoogleMapsOverlay } from "@deck.gl/google-maps";
+import { MapboxOverlay } from "@deck.gl/mapbox";
 import { ScatterplotLayer, PolygonLayer, TextLayer } from "@deck.gl/layers";
+
+const MAPTILER_STYLE = `https://api.maptiler.com/maps/satellite-v4/style.json?key=${
+  process.env.NEXT_PUBLIC_MAPTILER_API_KEY || "BzBDfbnpDAN0yIDfeSBN"
+}`;
 import { usePFZStore } from "../../../../src/store/usePFZStore";
 import {
   generatePFZForecast,
@@ -33,8 +36,8 @@ export default function PFZMapPanel({
   className = "",
 }: PFZMapPanelProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<google.maps.Map | null>(null);
-  const overlayRef = useRef<GoogleMapsOverlay | null>(null);
+  const mapRef = useRef<any>(null);
+  const overlayRef = useRef<MapboxOverlay | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [hsiGrid, setHsiGrid] = useState<HSIResult[]>([]);
@@ -77,8 +80,9 @@ export default function PFZMapPanel({
       maxLon: 90,
     };
 
-    // Generate grid data with finer resolution for better visualization
-    const grid = generateHSIGrid(bounds, 0.4, selectedSpecies);
+    // 1.0° resolution: ~430 cells instead of 2700 at 0.4° — prevents the
+    // solid-orange overlay effect while still covering the full Indian coast.
+    const grid = generateHSIGrid(bounds, 1.0, selectedSpecies);
 
     // Debug logging
     console.log("🗺️ PFZ Grid Generated:", {
@@ -125,33 +129,25 @@ export default function PFZMapPanel({
       let r: number, g: number, b: number, a: number;
 
       if (hsi < 0.4) {
-        // Low-medium - faint cyan (barely visible)
+        // Low-medium: faint teal, very transparent so map shows through
         const t = (hsi - hsiThreshold) / (0.4 - hsiThreshold);
-        r = 60;
-        g = 150 + Math.round(t * 50);
-        b = 200;
-        a = 40 + Math.round(t * 40);
+        r = 60; g = 180; b = 200;
+        a = 25 + Math.round(t * 25);           // max 50 — near-transparent
       } else if (hsi < 0.6) {
-        // Medium - green-yellow
+        // Medium: yellow-green
         const t = (hsi - 0.4) / 0.2;
-        r = 100 + Math.round(t * 80);
-        g = 200;
-        b = 100 - Math.round(t * 60);
-        a = 80 + Math.round(t * 40);
+        r = 120 + Math.round(t * 80); g = 210; b = 80 - Math.round(t * 40);
+        a = 55 + Math.round(t * 30);           // max 85
       } else if (hsi < 0.75) {
-        // High - yellow-orange (GOOD ZONE)
+        // High: warm amber
         const t = (hsi - 0.6) / 0.15;
-        r = 255;
-        g = 200 - Math.round(t * 60);
-        b = 50;
-        a = 120 + Math.round(t * 40);
+        r = 255; g = 190 - Math.round(t * 50); b = 40;
+        a = 90 + Math.round(t * 30);           // max 120
       } else {
-        // Very high - orange-red (HOT ZONE!)
+        // Very high: orange-red hotspot
         const t = (hsi - 0.75) / 0.25;
-        r = 255;
-        g = 140 - Math.round(t * 100);
-        b = 50 + Math.round(t * 50);
-        a = 160 + Math.round(t * 60);
+        r = 255; g = 140 - Math.round(t * 90); b = 40 + Math.round(t * 30);
+        a = 120 + Math.round(t * 40);          // max 160 — clearly visible but not opaque
       }
 
       return [r, g, b, Math.round(a * layerOpacity)];
@@ -159,124 +155,77 @@ export default function PFZMapPanel({
     [layerOpacity, hsiThreshold]
   );
 
-  // Initialize Google Maps
+  // ── Map initialisation — MapTiler Satellite via MapLibre ──────────────────
   useEffect(() => {
-    if (!mapContainer.current) return;
+    if (!mapContainer.current || mapRef.current) return;
 
-    const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+    const init = async () => {
+      try {
+        const maplibregl = (await import("maplibre-gl")).default;
 
-    if (!googleMapsApiKey) {
-      setError("Google Maps API key not configured.");
-      initFallbackMap();
-      return;
-    }
+        if (!document.getElementById("maplibre-gl-css")) {
+          const link = document.createElement("link");
+          link.id = "maplibre-gl-css";
+          link.rel = "stylesheet";
+          link.href = "https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css";
+          document.head.appendChild(link);
+          await new Promise((r) => setTimeout(r, 100));
+        }
 
-    setOptions({
-      key: googleMapsApiKey,
-      v: "weekly",
-      libraries: ["maps", "marker"],
-    });
-
-    importLibrary("maps")
-      .then((mapsLibrary) => {
-        if (!mapContainer.current) return;
-
-        const { Map } = mapsLibrary;
-
-        mapRef.current = new Map(mapContainer.current, {
-          center: { lat: 12.0, lng: 78.0 },
+        const map = new maplibregl.Map({
+          container: mapContainer.current!,
+          style: MAPTILER_STYLE,
+          center: [78.0, 12.0],
           zoom: 5,
-          tilt: 0,
-          heading: 0,
-          mapId: "PFZ_FORECAST_MAP",
-          mapTypeId: "satellite",
-          disableDefaultUI: true,
-          gestureHandling: "greedy",
+          attributionControl: false,
         });
 
-        overlayRef.current = new GoogleMapsOverlay({ layers: [] });
-        overlayRef.current.setMap(mapRef.current);
+        mapRef.current = map;
 
-        console.log("✅ Google Maps loaded, overlay initialized");
-        console.log("📍 Map center: 12.0, 78.0 (Indian subcontinent)");
-
-        mapRef.current.addListener("click", (e: google.maps.MapMouseEvent) => {
-          if (e.latLng) {
-            const lat = e.latLng.lat();
-            const lon = e.latLng.lng();
-            const analysis = analyzeLocation(lat, lon, selectedSpecies);
-            setLocationAnalysis(analysis);
-            onLocationClick?.(lat, lon);
-          }
+        map.on("style.load", () => {
+          const overlay = new MapboxOverlay({ layers: [], interleaved: false });
+          map.addControl(overlay as any);
+          overlayRef.current = overlay;
+          setMapLoaded(true);
         });
 
-        mapRef.current.addListener("idle", () => {
-          if (!mapRef.current) return;
-          const center = mapRef.current.getCenter();
-          if (center) {
-            setViewState({
-              longitude: center.lng(),
-              latitude: center.lat(),
-              zoom: mapRef.current.getZoom() || viewState.zoom,
-              pitch: 0,
-              bearing: 0,
-            });
-          }
+        map.on("error", (e) => {
+          console.error("PFZ map error:", e);
+          setError("Satellite tiles could not be loaded.");
         });
 
-        setMapLoaded(true);
-      })
-      .catch((err) => {
-        console.error("Google Maps failed to load:", err);
-        setError("Failed to load Google Maps.");
-        initFallbackMap();
-      });
+        map.on("click", (e: any) => {
+          const lat = e.lngLat.lat;
+          const lon = e.lngLat.lng;
+          const analysis = analyzeLocation(lat, lon, selectedSpecies);
+          setLocationAnalysis(analysis);
+          onLocationClick?.(lat, lon);
+        });
 
-    return () => {
-      if (overlayRef.current) {
-        overlayRef.current.setMap(null);
+        map.on("move", () => {
+          const c = map.getCenter();
+          setViewState({
+            longitude: c.lng,
+            latitude: c.lat,
+            zoom: map.getZoom(),
+            pitch: map.getPitch(),
+            bearing: map.getBearing(),
+          });
+        });
+      } catch (err) {
+        console.error("PFZ map init failed:", err);
+        setError("Failed to initialise map.");
       }
     };
+
+    init();
+
+    return () => {
+      mapRef.current?.remove();
+      mapRef.current = null;
+    };
   }, []);
-
-  // Fallback to MapLibre
-  const initFallbackMap = useCallback(async () => {
-    if (!mapContainer.current) return;
-
-    const maplibregl = (await import("maplibre-gl")).default;
-
-    const fallbackMap = new maplibregl.Map({
-      container: mapContainer.current,
-      style: {
-        version: 8,
-        name: "PFZ Fallback",
-        sources: {
-          "carto-dark": {
-            type: "raster",
-            tiles: [
-              "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
-            ],
-            tileSize: 256,
-          },
-        },
-        layers: [
-          { id: "carto-dark-layer", type: "raster", source: "carto-dark" },
-        ],
-      },
-      center: [viewState.longitude, viewState.latitude],
-      zoom: viewState.zoom,
-    });
-
-    fallbackMap.on("load", () => setMapLoaded(true));
-
-    fallbackMap.on("click", (e) => {
-      const lat = e.lngLat.lat;
-      const lon = e.lngLat.lng;
-      const analysis = analyzeLocation(lat, lon, selectedSpecies);
-      setLocationAnalysis(analysis);
-      onLocationClick?.(lat, lon);
-    });
-  }, [viewState, selectedSpecies, setLocationAnalysis, onLocationClick]);
+  // ─────────────────────────────────────────────────────────────────────────
 
   // Update Deck.gl layers
   useEffect(() => {
@@ -310,12 +259,12 @@ export default function PFZMapPanel({
           id: "hsi-heatmap-layer",
           data: hsiGrid,
           pickable: true,
-          opacity: 1, // Full opacity, alpha handled in color
-          stroked: viewMode === "contour",
+          opacity: 1,
+          stroked: false,
           filled: true,
-          radiusScale: 8000, // Reduced for better visibility
-          radiusMinPixels: 3, // Smaller minimum
-          radiusMaxPixels: 12, // Smaller maximum
+          radiusScale: 55000, // larger scale so 1° dots look right at zoom 5
+          radiusMinPixels: 5,
+          radiusMaxPixels: 20,
           getPosition: (d: HSIResult) => [d.lon, d.lat], // [lng, lat] format for Deck.gl
           getFillColor: getHSIColor,
           getLineColor: (d: HSIResult) => {
@@ -473,7 +422,7 @@ export default function PFZMapPanel({
 
       {error && (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 glass-panel px-4 py-2 text-sm text-amber-400 rounded-xl">
-          ⚠️ {error}
+          {error}
         </div>
       )}
 
@@ -510,7 +459,7 @@ export default function PFZMapPanel({
             <span className="text-cyan-400">Fair</span>
             <span className="text-yellow-400">Good</span>
             <span className="text-orange-400">High</span>
-            <span className="text-red-400">🔥</span>
+            <span className="text-red-400 font-bold text-[9px]">MAX</span>
           </div>
           <div className="mt-2 pt-2 border-t border-white/10 flex items-center gap-3 text-[10px]">
             <div className="flex items-center gap-1">

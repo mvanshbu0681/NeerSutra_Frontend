@@ -1,4 +1,4 @@
-import MapPage from "@/app/pages/MapPage";
+import MapPage from "../../pages/MapPage";
 import React from "react";
 
 

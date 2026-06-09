@@ -55,47 +55,40 @@ export default function AlertFeed() {
 
   return (
     <div className="glass-panel rounded-2xl h-full flex flex-col">
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-white/5">
+      {/* Header — two rows so filter pills never overflow 264px sidebar */}
+      <div className="px-4 pt-3 pb-2 border-b border-white/5 space-y-2">
+        {/* Row 1: title + count */}
         <div className="flex items-center gap-2">
           <div className="relative">
-            <Bell className="w-4 h-4 text-white/70" />
+            <Bell className="w-4 h-4 text-white/60" />
             {alerts.length > 0 && (
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse" />
             )}
           </div>
-          <h2 className="text-sm font-semibold text-white/90">
-            Alert Feed
-          </h2>
-          <span className="text-xs text-white/40">
-            ({alerts.length})
-          </span>
+          <h2 className="text-sm font-semibold text-white/85">Alert Feed</h2>
+          <span className="ml-auto font-mono text-xs text-white/35">{alerts.length}</span>
         </div>
-
-        {/* Filter Dropdown */}
+        {/* Row 2: severity filter pills */}
         <div className="flex items-center gap-1">
-          {severityOptions.map((severity) => (
-            <button
-              key={severity}
-              onClick={() => setAlertFilter(severity)}
-              className={`
-                px-2 py-1 rounded-md text-[10px] uppercase tracking-wider font-medium
-                transition-all duration-150
-                ${alertFilter === severity 
-                  ? severity === 'all'
-                    ? 'bg-white/15 text-white'
-                    : `text-white`
-                  : 'text-white/40 hover:text-white/60 hover:bg-white/5'
-                }
-              `}
-              style={alertFilter === severity && severity !== 'all' ? {
-                backgroundColor: `${SEVERITY_CONFIG[severity as AlertSeverity].color}25`,
-                color: SEVERITY_CONFIG[severity as AlertSeverity].color,
-              } : {}}
-            >
-              {severity === 'all' ? 'All' : severity.slice(0, 3)}
-            </button>
-          ))}
+          {severityOptions.map((severity) => {
+            const isActive = alertFilter === severity;
+            const accentColor = severity !== 'all' ? SEVERITY_CONFIG[severity as AlertSeverity].color : undefined;
+            return (
+              <button
+                key={severity}
+                onClick={() => setAlertFilter(severity)}
+                className={`flex-1 py-1 rounded-lg text-[10px] font-semibold uppercase tracking-wide transition-all ${
+                  isActive ? 'text-white' : 'text-white/30 hover:text-white/55 hover:bg-white/[0.04]'
+                }`}
+                style={isActive ? {
+                  backgroundColor: accentColor ? `${accentColor}22` : 'rgba(255,255,255,0.10)',
+                  color: accentColor ?? 'white',
+                } : {}}
+              >
+                {severity === 'all' ? 'All' : severity.slice(0, 3)}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -133,25 +126,14 @@ export default function AlertFeed() {
                   className={`
                     relative mb-2 rounded-xl overflow-hidden
                     transition-all duration-200 cursor-pointer
-                    ${isSelected 
-                      ? 'ring-1 ring-white/30' 
-                      : 'hover:bg-white/5'
-                    }
+                    ${isSelected ? 'ring-1 ring-white/20' : 'hover:bg-white/[0.04]'}
                   `}
                   style={{
-                    backgroundColor: `${severityConfig.bgColor}`,
-                    borderLeft: `3px solid ${severityConfig.color}`,
+                    backgroundColor: severityConfig.bgColor,
+                    borderLeft: `2px solid ${severityConfig.color}60`,
                   }}
                   onClick={() => selectEvent(alert.event.eventId)}
                 >
-                  {/* Pulse animation for extreme/severe */}
-                  {severityConfig.pulseAnimation && (
-                    <div 
-                      className="absolute inset-0 animate-pulse opacity-30 pointer-events-none"
-                      style={{ backgroundColor: severityConfig.color }}
-                    />
-                  )}
-
                   <div className="relative p-3">
                     {/* Top Row */}
                     <div className="flex items-start justify-between gap-2 mb-2">

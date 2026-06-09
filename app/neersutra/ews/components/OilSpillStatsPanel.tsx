@@ -73,7 +73,7 @@ export default function OilSpillStatsPanel({
               Lagrangian Trajectory
             </div>
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <span className="text-2xl">💧</span>
+              <Droplet className="w-5 h-5 text-purple-400" />
               Oil Spill Forecast
             </h3>
           </div>
